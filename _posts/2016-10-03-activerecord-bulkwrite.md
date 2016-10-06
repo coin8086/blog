@@ -35,6 +35,7 @@ gem install activerecord-bulkwrite
 ## 批量Insert
 
 安装它之后，我们就可以这样进行批量插入：
+
 ```ruby
 require "activerecord/bulkwrite"
 
