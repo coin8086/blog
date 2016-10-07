@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "ActiveRecord批量写入（Bulk Write）的问题与解决"
+title:  "ActiveRecord批量写入（Bulk Insert/Upsert）的问题与解决"
 date:   2016-10-03 20:54:24 +0800
 tags: ruby postgresql
 ---
-# 批量写入（bulk write）的问题
+## 批量写入的问题
 
 Ruby ActiveRecord向数据库的批量写入效率很低：要插入一条记录，你只能先用model的`create`方法构造一个对象，然后保存到数据库；如果你有一批数据要插入，你就要循环调用`create`方法——这一过程可能缓慢到令人难以忍受！
 
@@ -27,12 +27,12 @@ INSERT INTO table_name (col1, col2, col3, ...) VALUES (v11, v12, v13, ...), (v21
 * 你需要处理数据类型转换——把普通Ruby对象或者用户输入的字符串转换为数据库接受的类型，比如把`nil`转换成NULL，把Time对象转换为数据库接受的字符串格式——别忘了Time Zone（ActiveRecord Timestamp其实对应着数据库的datetime without timezone类型，但ActiveRecord保存的是UTC time）和时间精度（ActiveRecord Timestamp 保留秒的六位小数），等等。
 * 字符串转义，处理`'`和`\`字符
 
-# activerecord-bulkwrite来解决
+## activerecord-bulkwrite来解决
 ```
 gem install activerecord-bulkwrite
 ```
 
-## 批量Insert
+### Bulk Insert
 
 安装它之后，我们就可以这样进行批量插入：
 
@@ -52,7 +52,7 @@ result = User.bulk_write(fields, rows)
 
 activerecord-bulkwrite会为我们构造SQL，并处理上面提到的问题。更酷的是，它还支持 *upsert*：即先尝试insert，如有冲突（如primary key violation或unique violation）则转为update。
 
-## 批量Upsert
+### Bulk Upsert
 ```ruby
 result = User.bulk_write(fields, rows, :conflict => [:id])
 ```
