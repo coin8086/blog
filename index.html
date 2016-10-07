@@ -12,6 +12,8 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
         </h2>
+
+        <p>{% include post-tags.html tags=post.tags %}</p>
       </li>
     {% endfor %}
   </ul>
