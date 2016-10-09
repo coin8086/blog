@@ -2,7 +2,7 @@
 layout: post
 title:  ActiveRecord批量写入（Bulk Insert/Upsert）的问题与解决
 date:   2016-10-03 20:54:24 +0800
-tags:   ruby postgresql
+tags:   ruby activerecord postgresql
 ---
 ## 批量写入的问题
 
