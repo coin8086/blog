@@ -1,18 +1,18 @@
 ---
 layout: post
-title:  Mongoid VS MongoDB Ruby Driver，以及mongo-document
+title:  在Ruby Rack应用中直接使用MongoDB Ruby Driver
 date:   2016-10-07 13:07:32 +0800
-tags:   ruby mongodb mongoid
+tags:   ruby mongodb mongoid mongo rack rails
 ---
-## Mongoid VS MongoDB Ruby Driver
 
-在Ruby程序中使用MongoDB你有两种选择：使用一种ODM（Object-Document-Mapper）库，如Mongoid，或者是MongoDB官方的Ruby Driver。
+在Ruby程序中使用MongoDB你有两种主要的选择：Mongoid或者是MongoDB官方的Ruby Driver。有这么一种常见的说法：Mongoid一般用于Rack应用程序，如Rails，而MongoDB Ruby Driver则用在Rack应用以外的领域。这主要是因为Mongoid作为ActiveRecord在NoSQL数据库上的替代品具有同ActiveRecord相似的API风格，对于熟悉后者的用户来说容易上手。然而，在Rack应用程序中直接使用MongoDB Ruby Driver也并没有什么问题，与Mongoid相比还有一些优点：
 
-### Mongoid
+* 简单——用一套API实现所有功能。相比之下，Mongoid并未实现MongoDB的所有功能：当你需要做aggregation查询时，你不得不直接操作其底层Driver API来完成。也就是说，Mongoid的用户与MongoDB打交道实际上需要两套API：高级的ODM和低级的驱动。
+* API一致性——除了Ruby，你很可能还要用到其他语言实现的MongoDB Driver，如JavaScript——Mongo Shell的操作语言。这些官方实现的不同语言的API都有相似的风格，熟悉了其中一种就比较容易掌握另一种。
 
-Mongoid的API风格与ActiveRecord类似，对于熟悉后者的用户来说比较容易上手。它的早期版本（3.0）使用一个名为Moped的Ruby库与MongoDB通讯。从5.0开始，Moped已替换为MongoDB官方的Ruby Driver，而且Mongoid也被MongoDB官方支持。
+但是，直接在Rack里使用MongoDB Ruby Driver毕竟有一些不够方便的地方。下文将通过比较二者的典型用法来说明问题，并给出解决方案。
 
-以Mongoid 6.0为例，一段示例代码如下：
+我们先来看一个Mongoid的例子：
 
 ```ruby
 require 'mongoid'
@@ -26,7 +26,9 @@ User.create(...)  # Insert one document
 User.where(...)   # Find documents
 ```
 
-与ActiveRecord类似，Mongoid会自动连接数据库，根据用户定义的配置文件（缺省位于your-app/config/mongoid.yml），如：
+与ActiveRecord类似，首先你要定义一个model类，如`User`，其后的CRUD就跟ActiveRecord差不多。
+
+Mongoid会自动连接数据库，根据用户定义的配置文件（缺省位于your-app/config/mongoid.yml），如：
 
 ```yaml
 test:
@@ -37,13 +39,7 @@ test:
         - localhost:27017
 ```
 
-### MongoDB Ruby Driver
-
-与Mongoid相比，MongoDB官方的Ruby Driver简单、功能全面——后者尤为重要，要知道在早些年，Mongoid等ODM库的功能还不完善，用户有时不得不求助于这些ODM底层的Ruby驱动（如Moped）来完成一些任务。因此对这些用户而言与MongoDB打交道实际上需要两套API：高级的ODM和低级的驱动——令人头疼。因此一些有经验的用户选择了简单但功能全面的MongoDB官方Ruby Driver。
-
-此外，用户选择官方Ruby Driver还有一个原因：API一致性——要知道除了Ruby，你很可能还要用到其他语言实现的MongoDB Driver，如JavaScript——Mongo Shell的操作语言。这些官方实现的不同语言的API都有相似的风格和方法名称，因此熟悉了其中一种语言的API就比较容易掌握另一种。
-
-使用Ruby Driver实现上面Mongoid的代码的功能如下：
+如果用MongoDB Ruby Driver，你得这么做：
 
 ```ruby
 require 'mongo'
@@ -60,31 +56,38 @@ collection.find(...)        # Find documents
 # ...
 ```
 
-跟Mongoid相比，它显得不那么“方便”：你需要手工建立一个连接——得到一个client对象，然后从它得到一个collection对象，然后才能开始在其中插入或者查找文档；相比之下，Mongoid可以让你直接从collection对象——即User类——开始工作。另外，有了一个User类，就可以把User相关的方法也定义在这个类中，就像ActiveRecord那样，但它也没有。
+首先你需要建立一个连接——得到一个`client`对象，然后从它得到一个`collection`对象，然后才能开始在其中插入或者查找文档。
 
-于是我想，如果给MongoDB Ruby Driver加上这些功能好不好？具体地说：
+与Mongoid相比，这显得不那么方便：Mongoid可以让你直接从collection对象——`User`类——开始工作，也不需要你手工建立数据库连接；此外，有了model类定义，如`User`，就可以把相关的操作数据库的方法都定义在这个类中，像ActiveRecord那样，如：
 
-* 增加一个model类定义，像上面的`class User; ... end`，以免每次都要先建立一个client对象，然后从中得到一个collection对象，然后才能开始实际的插入、查找等工作
+```ruby
+class User
+  include Mongoid::Document
+  # ...
+
+  def change_password(old_pw, new_pw)
+  end
+end
+```
+
+其时，解决这些问题一点也不难，只要给MongoDB Ruby Driver增加几个功能：
+
+* model类定义，像上面Mongoid的`class User; ... end`，并且用户可以直接把它当作collection对象来用
 * 根据用户定义的配置文件自动连接数据库
 
-同时还要：
+mongo-document这个Gem正是为此目的：<https://github.com/coin8086/mongo-document>
 
-* *对数据库的各种操作仍然直接通过MongoDB Ruby Driver进行，不影响效率，用户也不用学习一套新的API*
-* 轻巧的实现，很少的代码，易于理解和维护
+它的用法如下：
 
-这样就有了`mongo-document`
-
-## mongo-document
-
+安装
 ```
 gem install mongo-document
 ```
 
-GitHub: <https://github.com/coin8086/mongo-document>
-
-使用方法：
+用例
 
 ```ruby
+require "mongo"
 require "mongo/document"
 
 class User
@@ -92,14 +95,14 @@ class User
   # ...
 end
 
-# Here User is used as if a collection object
+# Here User can be used as if a collection object
 User.insert_one(...)  # Insert one document
 User.find(...)        # Find documents
 ```
 
-这个User类含有Mongo::Collection类型的对象的全部方法，包括`insert_one`和`find`等等——实际上，User的内部实现含有一个collection对象（可以通过`User.collection`得到）；User自身只有很少的几个方法，它把此外的方法调用都转发到它的collection对象上。
+这个`User`类含有`Mongo::Collection`类型的对象的全部方法，包括`insert_one`和`find`等等——实际上，`User`的内部实现含有一个collection对象（可以通过`User.collection`得到）；User自身只有很少的几个方法，它把此外的方法调用都转发到它的collection对象上。
 
-mongo-document也会自动读取用户配置文件（缺省位于your-app/config/database.yml），如：
+mongo-document会自动读取用户配置文件（缺省位于your-app/config/database.yml），如：
 
 ```yaml
 test:
@@ -110,4 +113,4 @@ test:
 
 Mongo::Client::new方法的所有[options](https://docs.mongodb.com/ruby-driver/v2.2/tutorials/ruby-driver-create-client/#ruby-driver-client-options)都可以在这个配置文件中指定。
 
-`mongo` + `mongo-document`，是不是很方便？
+mongo-document自身不到100行代码，十分轻巧，是MongoDB Ruby Driver在Rack应用中的好帮手。
