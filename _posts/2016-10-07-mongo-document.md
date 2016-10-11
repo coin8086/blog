@@ -70,7 +70,7 @@ class User
 end
 ```
 
-其时，解决这些问题一点也不难，只要给MongoDB Ruby Driver增加几个功能：
+其实，解决这些问题一点也不难，只要给MongoDB Ruby Driver增加几个功能：
 
 * model类定义，像上面Mongoid的`class User; ... end`，并且用户可以直接把它当作collection对象来用
 * 根据用户定义的配置文件自动连接数据库
@@ -80,6 +80,7 @@ mongo-document这个Gem正是为此目的：<https://github.com/coin8086/mongo-d
 它的用法如下：
 
 安装
+
 ```
 gem install mongo-document
 ```
