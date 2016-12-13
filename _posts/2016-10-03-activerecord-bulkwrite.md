@@ -3,6 +3,8 @@ layout: post
 title:  ActiveRecord批量写入（Bulk Insert/Upsert）的问题与解决
 date:   2016-10-03 20:54:24 +0800
 tags:   ruby activerecord postgresql
+excerpt: Ruby ActiveRecord向数据库的批量写入效率很低：要插入一条记录，你只能先用model的`create`方法构造一个对象，然后保存到数据库；如果你有一批数据要插入，你就要循环调用`create`方法——这一过程可能缓慢到令人难以忍受！
+githuber-blog: true
 ---
 ## 批量写入的问题
 

@@ -3,6 +3,8 @@ layout: post
 title:  在Ruby Rack应用中直接使用MongoDB Ruby Driver
 date:   2016-10-07 13:07:32 +0800
 tags:   ruby rack rails mongodb mongoid
+excerpt: 在Ruby程序中使用MongoDB你有两种主要的选择：Mongoid或者是MongoDB官方的Ruby Driver。有这么一种常见的说法：Mongoid一般用于Rack应用程序，如Rails，而MongoDB Ruby Driver则用在Rack应用以外的领域。然而，在Rack应用程序中直接使用MongoDB Ruby Driver也并没有什么问题，与Mongoid相比还有一些优点
+githuber-blog: true
 ---
 
 在Ruby程序中使用MongoDB你有两种主要的选择：Mongoid或者是MongoDB官方的Ruby Driver。有这么一种常见的说法：Mongoid一般用于Rack应用程序，如Rails，而MongoDB Ruby Driver则用在Rack应用以外的领域。这主要是因为Mongoid作为ActiveRecord在NoSQL数据库上的替代品具有同ActiveRecord相似的API风格，对于熟悉后者的用户来说容易上手。然而，在Rack应用程序中直接使用MongoDB Ruby Driver也并没有什么问题，与Mongoid相比还有一些优点：
