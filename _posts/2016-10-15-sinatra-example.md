@@ -3,6 +3,7 @@ layout: post
 title:  Sinatra + ActiveRecord = Really Lean Startup?
 date:   2016-10-15 10:18:26 +0800
 tags:   ruby sinatra rails activerecord
+githuber-blog: false
 ---
 ## 为什么不是Rails？为什么是Sinatra + ActiveRecord？
 Rails太臃肿了！如果你有一个好创意，你应该从Sinatra轻快地开始。Sinatra十分轻盈——它只是在Rack的基础上添加了一些必要的辅助功能，如routes、views以及一些HTTP辅助方法，总共不到2500行代码（v1.4.7）——框架代码越少越好，这样你就容易掌控全局；相比之下，Rails仅ActiveRecord代码就超过35000行！
