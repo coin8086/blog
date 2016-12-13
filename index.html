@@ -11,6 +11,10 @@ layout: default
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
         </h2>
         <p>{% include post-tags.html tags=post.tags %}</p>
+        <p>
+          {{ post.excerpt }}
+          <a href="{{ post.url | prepend: site.baseurl }}">继续阅读 &raquo;</a>
+        </p>
       </li>
     {% endfor %}
   </ul>
