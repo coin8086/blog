@@ -4,7 +4,7 @@ title: 【译】“中等成功（Mid-Success）”导航
 tags: 创业 融资 收购
 excerpt: 创业就像跌下悬崖，而你身上只带着一口袋飞行器零件。你希望用这些零件造出一艘飞船，而有时候你手上的零件只够造架飞机。飞机也不错，但很多投资人看重的是宇宙飞船而不是飞机，他们往往愿意冒极大风险看看你能不能把飞机变成飞船。那么你该怎么办？
 ---
-（原文[https://blog.ycombinator.com/navigating-mid-success/](https://blog.ycombinator.com/navigating-mid-success/){:target="_blank"}）
+（原作者Sam Altman于2017年 [https://blog.ycombinator.com/navigating-mid-success/](https://blog.ycombinator.com/navigating-mid-success/){:target="_blank"}）
 
 创业就像跌下悬崖，而你身上只带着一口袋飞行器零件。你希望用这些零件造出一艘宇宙飞船。它们看着像那么回事，但谁也无法断定。
 
