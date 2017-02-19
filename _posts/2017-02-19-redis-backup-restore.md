@@ -20,7 +20,7 @@ redis-cli --rdb <filename>
 redis-cli --pipe
 ```
 
-从stdin恢复数据，但输入必须符合Redis protocol——不幸的是rdb文件并不符合，但你可以从它生成Redis protocol文件，用这个[redis-rdb-tools](https://github.com/sripathikrishnan/redis-rdb-tools)：
+从stdin恢复数据，但输入必须符合Redis protocol——不幸的是rdb文件并不符合，但你可以从它生成Redis protocol文件，用这个[redis-rdb-tools](https://github.com/sripathikrishnan/redis-rdb-tools){:target="_blank"}：
 
 ```
 rdb --command protocol <rdbfile>
