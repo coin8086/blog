@@ -2,7 +2,7 @@
 layout: post
 title: 作为缓存的Redis实例的备份和恢复
 tags: redis backup restore
-excerpt: 为有persistence的Redis实例进行备份和恢复比较简单，然而为没有persistence、仅配置为缓存的Redis实例进行备份和恢复就不是那么容易了。
+excerpt: 听上去很简单，然而并不是——今天我要说的是为仅配置为缓存、没有persistence的Redis实例进行备份和恢复。为什么要对缓存进行备份和恢复？每个人的需求都不一样，其中一种是为了debug：你必须复原一个与production一模一样的环境——不仅是db，还有缓存，否则一些问题就没法重现。
 ---
 听上去很简单，然而并不是——今天我要说的是为仅配置为缓存、没有persistence的Redis实例进行备份和恢复。为什么要对缓存进行备份和恢复？每个人的需求都不一样，其中一种是为了debug：你必须复原一个与production一模一样的环境——不仅是db，还有缓存，否则一些问题就没法重现。
 
