@@ -33,3 +33,4 @@ rdb --command protocol <rdbfile> | redis-cli --pipe
 ```
 
 如果你的Redis实例不在默认的6379端口，使用参数`-p xxxx`指明，如`redis-cli -p 6390 --pipe`。
+
