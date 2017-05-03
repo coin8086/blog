@@ -2,6 +2,7 @@
 title: How Many Pieces of Land?
 date: 2013-06-17T19:09:55+00:00
 layout: post
+excerpt_separator: <!--more-->
 category_sticky_post:
   - "0"
 tags: algorithm

@@ -2,6 +2,7 @@
 title: Reverse and Add
 date: 2013-06-14T14:22:10+00:00
 layout: post
+excerpt_separator: <!--more-->
 category_sticky_post:
   - "0"
 tags: algorithm

@@ -2,6 +2,7 @@
 title: Complete Tree Labeling
 date: 2013-05-22T18:06:07+00:00
 layout: post
+excerpt_separator: <!--more-->
 category_sticky_post:
   - "0"
 tags: algorithm

@@ -2,6 +2,7 @@
 title: Interpreter
 date: 2013-04-27T20:36:17+00:00
 layout: post
+excerpt_separator: <!--more-->
 tags: algorithm
 categories:
   - 编程挑战

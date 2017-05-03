@@ -2,6 +2,7 @@
 title: Cutting Sticks
 date: 2013-06-07T23:01:55+00:00
 layout: post
+excerpt_separator: <!--more-->
 tags: algorithm
 categories:
   - 编程挑战

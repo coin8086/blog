@@ -2,6 +2,7 @@
 title: Primary Arithmetic
 date: 2013-06-14T12:37:23+00:00
 layout: post
+excerpt_separator: <!--more-->
 category_sticky_post:
   - "0"
 tags: algorithm

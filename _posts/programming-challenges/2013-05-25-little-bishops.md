@@ -2,6 +2,7 @@
 title: Little Bishops
 date: 2013-05-25T18:46:56+00:00
 layout: post
+excerpt_separator: <!--more-->
 tags: algorithm
 categories:
   - 编程挑战

@@ -2,6 +2,7 @@
 title: Light, More Light
 date: 2013-06-21T23:57:45+00:00
 layout: post
+excerpt_separator: <!--more-->
 category_sticky_post:
   - "0"
 tags: algorithm

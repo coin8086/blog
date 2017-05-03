@@ -2,6 +2,7 @@
 title: Poker Hands
 date: 2013-04-21T21:16:38+00:00
 layout: post
+excerpt_separator: <!--more-->
 tags: algorithm
 categories:
   - 编程挑战

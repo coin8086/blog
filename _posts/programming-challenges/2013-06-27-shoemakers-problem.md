@@ -2,6 +2,7 @@
 title: Shoemaker’s Problem
 date: 2013-06-27T12:55:13+00:00
 layout: post
+excerpt_separator: <!--more-->
 tags: algorithm
 categories:
   - 编程挑战
