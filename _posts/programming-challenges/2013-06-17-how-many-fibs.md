@@ -15,13 +15,13 @@ PC/UVa IDs: 110601/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 
 
   
-F(n) = (a ^ n &#8211; b ^ n) / c
+F(n) = (a ^ n - b ^ n) / c
   
 其中a，b，c为常数：
   
 a = (1 + 5 ^ (1 / 2)) / 2
   
-b = (1 &#8211; 5 ^ (1 / 2)) / 2
+b = (1 - 5 ^ (1 / 2)) / 2
   
 c = 5 ^ (1 / 2)
   

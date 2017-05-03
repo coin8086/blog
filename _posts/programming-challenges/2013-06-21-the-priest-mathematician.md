@@ -17,9 +17,9 @@ PC/UVa IDs: 110606/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
   
 设h4(n)为在四根柱汉诺塔上把一个柱子的n个盘子搬到另一个指定柱子上所需的搬运次数（**按照牧师规则的最小次数**），h3(n)为在三根柱汉诺塔（即普通汉诺塔）上把一根柱子上的n个盘子搬到另一个柱子上的最小次数，则有：
   
-h4(n) = h4(k) * 2 + h3(n &#8211; k)
+h4(n) = h4(k) * 2 + h3(n - k)
   
-h3(n) = 2 ^ n &#8211; 1
+h3(n) = 2 ^ n - 1
   
 其中 0 <= k < n
   
@@ -58,7 +58,7 @@ inline BigInt p2(int n) {
 }
 
 inline BigInt h(int n, int k) {
-  return H[k] * 2 + p2(n &#8211; k) &#8211; 1;
+  return H[k] * 2 + p2(n - k) - 1;
 }
 
 BigInt h(int n) {

@@ -17,7 +17,7 @@ PC/UVa IDs: 110506/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
   
 其中
   
-x1 ^ m * x2 ^ (n &#8211; m)
+x1 ^ m * x2 ^ (n - m)
   
 项的系数是组合数
   
@@ -29,17 +29,17 @@ C(n, m)
   
 可以记为
   
-((x1 + x2 + &#8230; + x(k &#8211; 1)) + xk) ^ n <!--more-->
+((x1 + x2 + &#8230; + x(k - 1)) + xk) ^ n <!--more-->
 
 
   
 其中
   
-(x1 + x2 + &#8230; + x(k -1)) ^ (n &#8211; nk) * xk ^ nk
+(x1 + x2 + &#8230; + x(k -1)) ^ (n - nk) * xk ^ nk
   
 项的系数是
   
-C(n, nk) * f(n &#8211; nk, k &#8211; 1)
+C(n, nk) * f(n - nk, k - 1)
   
 其中f(n, k)即n次k项式中
   

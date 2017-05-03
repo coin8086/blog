@@ -55,18 +55,18 @@ int cut(int l, const vector<int> & pos) {
   sec.push_back(0);
   sec.insert(sec.end(), pos.begin(), pos.end());
   sec.push_back(l);
-  int n = sec.size() &#8211; 1;
+  int n = sec.size() - 1;
   vector<vector<int> > seg(n, vector<int>(n, 0));
   for (int j = 1; j < n; j++) {
-    for (int i = j &#8211; 1; i >= 0; i&#8211;) {
+    for (int i = j - 1; i >= 0; i-) {
       int s = 0;
       int m = INT_MAX;
-      for (int k = 1; k <= j &#8211; i; k++) {
+      for (int k = 1; k <= j - i; k++) {
         s = seg[i][j - k] + seg[j - k + 1][j];
         if (s < m)
           m = s;
       }
-      seg[i][j] = m + (sec[j + 1] &#8211; sec[i]); //m + the length of sections from i to j
+      seg[i][j] = m + (sec[j + 1] - sec[i]); //m + the length of sections from i to j
     }
   }
   return seg[0][n - 1];
