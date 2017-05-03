@@ -29,4 +29,4 @@ markdown: kramdown
 theme: minima
 google_analytics: "UA-85747376-1"
 
-paginate: 5
+paginate: 10
