@@ -1,11 +1,7 @@
 ---
-id: 485
 title: Cutting Sticks
 date: 2013-06-07T23:01:55+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=230
-permalink: /2013/06/07/cutting-sticks/
 categories:
   - 编程挑战
 ---

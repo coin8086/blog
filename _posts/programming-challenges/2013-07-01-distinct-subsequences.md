@@ -1,11 +1,7 @@
 ---
-id: 508
 title: Distinct Subsequences
 date: 2013-07-01T17:52:20+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=385
-permalink: /2013/07/01/distinct-subsequences/
 categories:
   - 编程挑战
 ---

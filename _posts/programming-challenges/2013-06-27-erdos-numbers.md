@@ -1,11 +1,7 @@
 ---
-id: 506
 title: Erdos Numbers
 date: 2013-06-27T23:13:27+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=377
-permalink: /2013/06/27/erdos-numbers/
 categories:
   - 编程挑战
 ---

@@ -1,11 +1,7 @@
 ---
-id: 488
 title: The Archeologist’s Dilemma
 date: 2013-06-15T11:35:17+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=271
-permalink: /2013/06/15/the-archeologists-dilemma/
 category_sticky_post:
   - "0"
 categories:

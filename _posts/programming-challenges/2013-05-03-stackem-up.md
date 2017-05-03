@@ -1,11 +1,7 @@
 ---
-id: 462
 title: 'Stack&#8217;em Up'
 date: 2013-05-03T23:42:34+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=96
-permalink: /2013/05/03/stackem-up/
 categories:
   - 编程挑战
 ---

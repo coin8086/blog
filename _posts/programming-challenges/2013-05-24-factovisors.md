@@ -1,11 +1,7 @@
 ---
-id: 476
 title: Factovisors
 date: 2013-05-24T16:51:46+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=155
-permalink: /2013/05/24/factovisors/
 categories:
   - 编程挑战
 ---

@@ -1,11 +1,7 @@
 ---
-id: 494
 title: How Many Fibs?
 date: 2013-06-17T00:25:37+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=297
-permalink: /2013/06/17/how-many-fibs/
 category_sticky_post:
   - "0"
 categories:

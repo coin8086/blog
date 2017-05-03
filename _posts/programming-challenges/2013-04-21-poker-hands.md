@@ -1,11 +1,7 @@
 ---
-id: 456
 title: Poker Hands
 date: 2013-04-21T21:16:38+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=53
-permalink: /2013/04/21/poker-hands/
 categories:
   - 编程挑战
 ---

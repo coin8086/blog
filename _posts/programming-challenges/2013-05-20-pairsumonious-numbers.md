@@ -1,11 +1,7 @@
 ---
-id: 473
 title: Pairsumonious Numbers
 date: 2013-05-20T00:54:46+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=131
-permalink: /2013/05/20/pairsumonious-numbers/
 categories:
   - 编程挑战
 ---

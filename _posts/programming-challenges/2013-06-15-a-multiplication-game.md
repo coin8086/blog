@@ -1,11 +1,7 @@
 ---
-id: 491
 title: A Multiplication Game
 date: 2013-06-15T19:40:57+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=285
-permalink: /2013/06/15/a-multiplication-game/
 category_sticky_post:
   - "0"
 categories:

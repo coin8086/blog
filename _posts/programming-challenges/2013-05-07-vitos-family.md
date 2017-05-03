@@ -1,11 +1,7 @@
 ---
-id: 465
 title: 'Vito&#8217;s Family'
 date: 2013-05-07T23:20:13+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=111
-permalink: /2013/05/07/vitos-family/
 categories:
   - 编程挑战
 ---

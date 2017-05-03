@@ -1,11 +1,7 @@
 ---
-id: 505
 title: Shoemaker’s Problem
 date: 2013-06-27T12:55:13+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=372
-permalink: /2013/06/27/shoemakers-problem/
 categories:
   - 编程挑战
 ---

@@ -1,11 +1,7 @@
 ---
-id: 466
 title: Stacks of Flapjacks
 date: 2013-05-08T19:47:04+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=113
-permalink: /2013/05/08/stacks-of-flapjacks/
 categories:
   - 编程挑战
 ---

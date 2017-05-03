@@ -1,11 +1,7 @@
 ---
-id: 499
 title: Light, More Light
 date: 2013-06-21T23:57:45+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=331
-permalink: /2013/06/21/light-more-light/
 category_sticky_post:
   - "0"
 categories:

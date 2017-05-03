@@ -1,11 +1,7 @@
 ---
-id: 487
 title: Servicing Stations
 date: 2013-06-13T00:14:25+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=263
-permalink: /2013/06/13/servicing-stations/
 category_sticky_post:
   - "0"
 categories:

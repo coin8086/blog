@@ -1,11 +1,7 @@
 ---
-id: 463
 title: Crypt Kicker II
 date: 2013-05-05T10:57:11+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=98
-permalink: /2013/05/05/crypt-kicker-ii/
 categories:
   - 编程挑战
 ---

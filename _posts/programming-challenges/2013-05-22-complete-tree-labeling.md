@@ -1,11 +1,7 @@
 ---
-id: 474
 title: Complete Tree Labeling
 date: 2013-05-22T18:06:07+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=137
-permalink: /2013/05/22/complete-tree-labeling/
 category_sticky_post:
   - "0"
 categories:

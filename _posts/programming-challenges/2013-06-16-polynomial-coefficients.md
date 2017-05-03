@@ -1,11 +1,7 @@
 ---
-id: 493
 title: Polynomial Coefficients
 date: 2013-06-16T13:15:28+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=293
-permalink: /2013/06/16/polynomial-coefficients/
 category_sticky_post:
   - "0"
 categories:

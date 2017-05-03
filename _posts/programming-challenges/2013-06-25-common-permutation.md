@@ -1,11 +1,7 @@
 ---
-id: 503
 title: Common Permutation
 date: 2013-06-25T19:38:41+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=360
-permalink: /2013/06/25/common-permutation/
 categories:
   - 编程挑战
 ---

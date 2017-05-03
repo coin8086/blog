@@ -1,11 +1,7 @@
 ---
-id: 204
 title: The Tourist Guide
 date: 2013-05-30T21:28:52+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=204
-permalink: /2013/05/30/the-tourist-guide/
 categories:
   - 编程挑战
 ---

@@ -1,11 +1,7 @@
 ---
-id: 454
 title: Crypt Kicker
 date: 2013-05-01T12:53:05+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=20
-permalink: /2013/05/01/crypt-kicker-2/
 categories:
   - 编程挑战
 ---

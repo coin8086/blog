@@ -1,11 +1,7 @@
 ---
-id: 468
 title: ShellSort
 date: 2013-05-09T21:25:01+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=125
-permalink: /2013/05/09/shellsort/
 categories:
   - 编程挑战
 ---

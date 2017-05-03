@@ -1,11 +1,7 @@
 ---
-id: 498
 title: Self-describing Sequence
 date: 2013-06-21T18:15:34+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=327
-permalink: /2013/06/21/self-describing-sequence/
 category_sticky_post:
   - "0"
 categories:

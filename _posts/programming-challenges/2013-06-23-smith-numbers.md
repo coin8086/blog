@@ -1,11 +1,7 @@
 ---
-id: 501
 title: Smith Numbers
 date: 2013-06-23T11:29:54+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=341
-permalink: /2013/06/23/smith-numbers/
 category_sticky_post:
   - "0"
 categories:

@@ -1,11 +1,7 @@
 ---
-id: 455
 title: Interpreter
 date: 2013-04-27T20:36:17+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=35
-permalink: /2013/04/27/interpreter/
 categories:
   - 编程挑战
 ---

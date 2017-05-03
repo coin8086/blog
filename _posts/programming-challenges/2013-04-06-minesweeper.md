@@ -1,11 +1,7 @@
 ---
-id: 469
 title: Minesweeper
 date: 2013-04-06T15:04:26+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=367
-permalink: /2013/04/06/minesweeper/
 categories:
   - 编程挑战
 ---

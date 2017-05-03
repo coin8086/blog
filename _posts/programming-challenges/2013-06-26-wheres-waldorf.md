@@ -1,11 +1,7 @@
 ---
-id: 504
 title: Where’s Waldorf?
 date: 2013-06-26T12:33:46+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=364
-permalink: /2013/06/26/wheres-waldorf/
 categories:
   - 编程挑战
 ---

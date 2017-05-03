@@ -1,11 +1,7 @@
 ---
-id: 497
 title: The Priest Mathematician
 date: 2013-06-21T11:06:32+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=321
-permalink: /2013/06/21/the-priest-mathematician/
 category_sticky_post:
   - "0"
 categories:

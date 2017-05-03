@@ -1,11 +1,7 @@
 ---
-id: 479
 title: Bicoloring
 date: 2013-05-30T20:59:49+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=201
-permalink: /2013/05/30/bicoloring/
 categories:
   - 编程挑战
 ---

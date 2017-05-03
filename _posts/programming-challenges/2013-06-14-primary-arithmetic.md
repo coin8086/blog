@@ -1,11 +1,7 @@
 ---
-id: 489
 title: Primary Arithmetic
 date: 2013-06-14T12:37:23+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=276
-permalink: /2013/06/14/primary-arithmetic/
 category_sticky_post:
   - "0"
 categories:

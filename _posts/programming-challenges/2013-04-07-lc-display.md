@@ -1,11 +1,7 @@
 ---
-id: 460
 title: LC-Display
 date: 2013-04-07T18:07:04+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=69
-permalink: /2013/04/07/lc-display/
 categories:
   - 编程挑战
 ---

@@ -1,11 +1,7 @@
 ---
-id: 482
 title: Fire Station
 date: 2013-06-03T14:10:06+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=223
-permalink: /2013/06/03/fire-station/
 categories:
   - 编程挑战
 ---

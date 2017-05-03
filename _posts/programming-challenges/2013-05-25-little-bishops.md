@@ -1,11 +1,7 @@
 ---
-id: 478
 title: Little Bishops
 date: 2013-05-25T18:46:56+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=192
-permalink: /2013/05/25/little-bishops/
 categories:
   - 编程挑战
 ---

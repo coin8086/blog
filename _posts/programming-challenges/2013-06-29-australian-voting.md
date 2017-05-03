@@ -1,11 +1,7 @@
 ---
-id: 507
 title: Australian Voting
 date: 2013-06-29T01:22:38+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=382
-permalink: /2013/06/29/australian-voting/
 categories:
   - 编程挑战
 ---

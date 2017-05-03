@@ -1,11 +1,7 @@
 ---
-id: 490
 title: Reverse and Add
 date: 2013-06-14T14:22:10+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=280
-permalink: /2013/06/14/reverse-and-add/
 category_sticky_post:
   - "0"
 categories:

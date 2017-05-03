@@ -1,11 +1,7 @@
 ---
-id: 457
 title: Jolly Jumper
 date: 2013-04-20T17:30:31+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=57
-permalink: /2013/04/20/jolly-jumper/
 categories:
   - 编程挑战
 ---

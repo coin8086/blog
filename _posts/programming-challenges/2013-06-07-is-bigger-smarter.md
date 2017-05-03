@@ -1,11 +1,7 @@
 ---
-id: 484
 title: Is Bigger Smarter?
 date: 2013-06-07T16:56:34+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=228
-permalink: /2013/06/07/is-bigger-smarter/
 categories:
   - 编程挑战
 ---

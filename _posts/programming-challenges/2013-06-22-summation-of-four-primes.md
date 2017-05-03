@@ -1,11 +1,7 @@
 ---
-id: 500
 title: Summation of Four Primes
 date: 2013-06-22T20:55:26+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=336
-permalink: /2013/06/22/summation-of-four-primes/
 category_sticky_post:
   - "0"
 categories:

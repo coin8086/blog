@@ -1,11 +1,7 @@
 ---
-id: 461
 title: Check the Check
 date: 2013-04-14T17:12:11+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=73
-permalink: /2013/04/14/check-the-check/
 categories:
   - 编程挑战
 ---

@@ -1,11 +1,7 @@
 ---
-id: 477
 title: Carmichael Numbers
 date: 2013-05-24T21:37:16+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=188
-permalink: /2013/05/24/carmichael-numbers/
 categories:
   - 编程挑战
 ---

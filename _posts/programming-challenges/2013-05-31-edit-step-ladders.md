@@ -1,11 +1,7 @@
 ---
-id: 480
 title: Edit Step Ladders
 date: 2013-05-31T22:18:50+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=209
-permalink: /2013/05/31/edit-step-ladders/
 categories:
   - 编程挑战
 ---

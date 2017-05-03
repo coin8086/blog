@@ -1,11 +1,7 @@
 ---
-id: 492
 title: The Stern-Brocot Number System
 date: 2013-06-15T21:27:54+00:00
-author: Robert
 layout: post
-guid: http://kuangtong.net/?p=289
-permalink: /2013/06/15/the-stern-brocot-number-system/
 category_sticky_post:
   - "0"
 categories:
