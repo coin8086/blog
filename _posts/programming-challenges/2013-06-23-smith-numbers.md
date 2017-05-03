@@ -7,7 +7,7 @@ category_sticky_post:
   - "0"
 tags: algorithm
 categories:
-  - 编程挑战
+  - programming-challenges
 ---
 PC/UVa IDs: 110706/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=983" target="_blank">10042</a>
 

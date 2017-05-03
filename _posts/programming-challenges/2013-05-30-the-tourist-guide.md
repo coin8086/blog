@@ -5,7 +5,7 @@ layout: post
 excerpt_separator: <!--more-->
 tags: algorithm
 categories:
-  - 编程挑战
+  - programming-challenges
 ---
 PC/UVa IDs: 110903/10099 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;category=37&#038;page=show_problem&#038;problem=1040" target="_blank">题目描述</a>
 

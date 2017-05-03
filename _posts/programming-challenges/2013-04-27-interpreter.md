@@ -5,7 +5,7 @@ layout: post
 excerpt_separator: <!--more-->
 tags: algorithm
 categories:
-  - 编程挑战
+  - programming-challenges
 ---
 PC/UVa题号：110106/10033 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=29&page=show_problem&problem=974" target="_blank">题目描述</a>
 

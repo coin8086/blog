@@ -5,7 +5,7 @@ layout: post
 excerpt_separator: <!--more-->
 tags: algorithm
 categories:
-  - 编程挑战
+  - programming-challenges
 ---
 <a href="http://www.programming-challenges.com/pg.php?page=downloadproblem&probid=110704&format=html" target="_blank">题目描述</a>
 
