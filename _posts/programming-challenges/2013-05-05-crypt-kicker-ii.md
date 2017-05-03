@@ -12,15 +12,15 @@ PC/UVa题号：110304/850 <a href="http://uva.onlinejudge.org/index.php?option=c
 分析：注意到“the quick brown fox jumps over the lazy dog”包含了全部26个英文字母，所以只要找到一句相匹配的密文，就可以解密全部了。<!--more-->
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;sstream&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-#include &lt;cstdlib&gt;
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <cstdlib>
 
 using namespace std;
 
-typedef vector&lt;string&gt; Line;
+typedef vector<string> Line;
 
 string known_line = "the quick brown fox jumps over the lazy dog";
 Line known;
@@ -29,7 +29,7 @@ inline Line break_down(const string & line) {
   Line words;
   string word;
   istringstream is(line);
-  while (is &gt;&gt; word) {
+  while (is >> word) {
     words.push_back(word);
   }
   return words;
@@ -39,11 +39,11 @@ inline void init() {
   known = break_down(known_line);
 }
 
-bool match_word(const string & enc, const string & known, vector&lt;char&gt; & alphabet) {
+bool match_word(const string & enc, const string & known, vector<char> & alphabet) {
   if (enc.size() != known.size())
     return false;
-  vector&lt;char&gt; alpha = alphabet;
-  for (int i = 0; i &lt; enc.size(); i++) {
+  vector<char> alpha = alphabet;
+  for (int i = 0; i < enc.size(); i++) {
     int idx = enc[i] - 'a';
     if (alpha[idx]) {
       if (alpha[idx] != known[i]) {
@@ -54,8 +54,8 @@ bool match_word(const string & enc, const string & known, vector&lt;char&gt; & a
       alpha[idx] = known[i];
     }
   }
-  vector&lt;bool&gt; map(alpha.size(), false);
-  for (int i = 0; i &lt; alpha.size(); i++) {
+  vector<bool> map(alpha.size(), false);
+  for (int i = 0; i < alpha.size(); i++) {
     if (alpha[i]) {
       int idx = alpha[i] - 'a';
       if (!map[idx])
@@ -68,11 +68,11 @@ bool match_word(const string & enc, const string & known, vector&lt;char&gt; & a
   return true;
 }
 
-bool match_line(const Line & encrypted, vector&lt;char&gt; & alphabet) {
+bool match_line(const Line & encrypted, vector<char> & alphabet) {
   if (encrypted.size() != known.size())
     return false;
-  vector&lt;char&gt; alpha(26);
-  for (int i = 0; i &lt; encrypted.size(); i++) {
+  vector<char> alpha(26);
+  for (int i = 0; i < encrypted.size(); i++) {
     if (!match_word(encrypted[i], known[i], alpha))
       return false;
   }
@@ -80,17 +80,17 @@ bool match_line(const Line & encrypted, vector&lt;char&gt; & alphabet) {
   return true;
 }
 
-inline bool decrypt(const vector&lt;string&gt; & lines, vector&lt;char&gt; & alphabet) {
-  for (int i = 0; i &lt; lines.size(); i++) {
+inline bool decrypt(const vector<string> & lines, vector<char> & alphabet) {
+  for (int i = 0; i < lines.size(); i++) {
     if (match_line(break_down(lines[i]), alphabet))
       return true;
   }
   return false;
 }
 
-inline string translate(const string & line, const vector&lt;char&gt; & alphabet) {
+inline string translate(const string & line, const vector<char> & alphabet) {
   string r(line);
-  for (int i = 0; i &lt; r.size(); i++) {
+  for (int i = 0; i < r.size(); i++) {
     if (r[i] != ' ')
       r[i] = alphabet[r[i] - 'a'];
   }
@@ -103,22 +103,22 @@ int main() {
   getline(cin, line);
   int n_test = atoi(line.c_str());
   getline(cin, line); //skip empty line
-  for (int i = 0; i &lt; n_test; i++) {
-    vector&lt;string&gt; lines;
+  for (int i = 0; i < n_test; i++) {
+    vector<string> lines;
     while (getline(cin, line) && !line.empty()) {
       lines.push_back(line);
     }
-    vector&lt;char&gt; alphabet(26);
+    vector<char> alphabet(26);
     if (decrypt(lines, alphabet)) {
-      for (int j = 0; j &lt; lines.size(); j++) {
-        cout &lt;&lt; translate(lines[j], alphabet) &lt;&lt; endl;
+      for (int j = 0; j < lines.size(); j++) {
+        cout << translate(lines[j], alphabet) << endl;
       }
     }
     else {
-      cout &lt;&lt; "No solution." &lt;&lt; endl;
+      cout << "No solution." << endl;
     }
     if (i != n_test - 1)
-      cout &lt;&lt; endl;
+      cout << endl;
   }
 }
 ```

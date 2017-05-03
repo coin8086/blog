@@ -38,20 +38,20 @@ c = 5 ^ (1 / 2)
 解法：根据输入范围先算好一个Fibonaaci数列的子序列，然后对输入的数在该序列中进行二分查找。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
+#include <iostream>
+#include <vector>
 #include "bigint.h"
 
 using namespace std;
 
-vector&lt;BigInt&gt; fib;
+vector<BigInt> fib;
 
 void init() {
   fib.reserve(501);
   fib.push_back(0);
   fib.push_back(1);
   fib.push_back(2);
-  for (int i = 0; i &lt; 498; i++) {
+  for (int i = 0; i < 498; i++) {
     int l = fib.size() - 1;
     fib.push_back(fib[l] + fib[l - 1]);
   }
@@ -64,7 +64,7 @@ int bsearch(const BigInt & v, int s/* start */, int e/* end */) {
   if (!r) {
     i = mid;
   }
-  else if (r &lt; 0) {
+  else if (r < 0) {
     if (s == mid)
       i = s - 1;
     else
@@ -90,8 +90,8 @@ inline int fibs(const BigInt & a, const BigInt & b) {
 int main() {
   init();
   BigInt a, b;
-  while (cin &gt;&gt; a &gt;&gt; b && !(a.zero() && b.zero())) {
-    cout &lt;&lt; fibs(a, b) &lt;&lt; endl;
+  while (cin >> a >> b && !(a.zero() && b.zero())) {
+    cout << fibs(a, b) << endl;
   }
   return 0;
 }

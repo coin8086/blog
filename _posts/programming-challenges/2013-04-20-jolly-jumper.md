@@ -10,37 +10,37 @@ categories:
 PC/UVa 题号：110201/10038　<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=30&page=show_problem&problem=979" target="_blank">题目描述</a><!--more-->
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
 typedef long long ll_t;
 
-bool load_input(vector&lt;ll_t&gt; & s) {
+bool load_input(vector<ll_t> & s) {
   s.clear();
   int n;
-  if (!(cin &gt;&gt; n))
+  if (!(cin >> n))
     return false;
-  for (int i = 0; i &lt; n; i++) {
+  for (int i = 0; i < n; i++) {
     ll_t k;
-    if (!(cin &gt;&gt; k))
+    if (!(cin >> k))
       return false;
     s.push_back(k);
   }
   return true;
 }
 
-bool jolly(const vector&lt;ll_t&gt; & s) {
+bool jolly(const vector<ll_t> & s) {
   int n = s.size();
-  if (n &lt;= 1)
+  if (n <= 1)
     return true;
-  vector&lt;bool&gt; r(n, false);
-  for (int i = 0; i &lt; n - 1; i++) {
+  vector<bool> r(n, false);
+  for (int i = 0; i < n - 1; i++) {
     ll_t d = s[i] - s[i + 1];
-    if (d &lt; 0)
+    if (d < 0)
       d *= -1;
-    if (d &gt; n - 1 || d &lt; 1 || r[d])
+    if (d > n - 1 || d < 1 || r[d])
       return false;
     r[d] = true;
   }
@@ -48,13 +48,13 @@ bool jolly(const vector&lt;ll_t&gt; & s) {
 }
 
 int main() {
-  vector&lt;ll_t&gt; s;
+  vector<ll_t> s;
   while (load_input(s)) {
     if (jolly(s)) {
-      cout &lt;&lt; "Jolly" &lt;&lt; endl;
+      cout << "Jolly" << endl;
     }
     else {
-      cout &lt;&lt; "Not jolly" &lt;&lt; endl;
+      cout << "Not jolly" << endl;
     }
   }
   return 0;

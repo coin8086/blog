@@ -12,8 +12,8 @@ PC/UVa IDs: 110102/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 <!--more-->
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
+#include <iostream>
+#include <vector>
 
 #ifdef DEBUG
 #include "../comm_headers/debug_helper.h"
@@ -23,21 +23,21 @@ PC/UVa IDs: 110102/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 
 using namespace std;
 
-typedef vector&lt;char&gt; Row;
-typedef vector&lt;Row&gt; Map;
+typedef vector<char> Row;
+typedef vector<Row> Map;
 
 bool load_map(Map & map) {
   map.clear();
   int n_row, n_col;
-  cin &gt;&gt; n_row &gt;&gt; n_col;
+  cin >> n_row >> n_col;
   if (!(n_row && n_col && cin))
     return false;
 
   DEBUG_OUT("row: %d col: %dn", n_row, n_col);
-  for (int i = 0; i &lt; n_row; i++) {
+  for (int i = 0; i < n_row; i++) {
     Row row(n_col);
-    for (int j = 0; j &lt; n_col; j++) {
-      cin &gt;&gt; row[j];
+    for (int j = 0; j < n_col; j++) {
+      cin >> row[j];
     }
     map.push_back(row);
   }
@@ -45,18 +45,18 @@ bool load_map(Map & map) {
 }
 
 void put_map(Map & map, int n) {
-  cout &lt;&lt; "Field #" &lt;&lt; n &lt;&lt; ":" &lt;&lt; endl;
-  for (int i = 0; i &lt; map.size(); i++) {
+  cout << "Field #" << n << ":" << endl;
+  for (int i = 0; i < map.size(); i++) {
     Row & r = map[i];
-    for (int j = 0; j &lt; r.size(); j++) {
-      cout &lt;&lt; r[j];
+    for (int j = 0; j < r.size(); j++) {
+      cout << r[j];
     }
-    cout &lt;&lt; endl;
+    cout << endl;
   }
 }
 
 inline void increase(Map & map, int row, int col, int max_row, int max_col) {
-  if (row &lt; 0 || row &gt;= max_row || col &lt; 0 || col &gt;= max_col)
+  if (row < 0 || row >= max_row || col < 0 || col >= max_col)
     return;
 
   char ch = map[row][col];
@@ -88,9 +88,9 @@ void update_neighbors(Map & map, int row, int col) {
 }
 
 void mark(Map & map) {
-  for (int i = 0; i &lt; map.size(); i++) {
+  for (int i = 0; i < map.size(); i++) {
     Row & r = map[i];
-    for (int j = 0; j &lt; r.size(); j++) {
+    for (int j = 0; j < r.size(); j++) {
       if (r[j] == '*') {
         update_neighbors(map, i, j);
       }
@@ -108,7 +108,7 @@ int main() {
     ++n;
     mark(map);
     if (n != 1)
-      cout &lt;&lt; endl;
+      cout << endl;
     put_map(map, n);
   }
 }

@@ -18,21 +18,21 @@ PC/UVa IDs: 111003/10278 <a href="http://uva.onlinejudge.org/index.php?option=co
 对图g中的所有点，依次尝试在没有消防站的点上建立一个消防站，找出一个最远“最近距离”；再比较这些值，找出一个最小的即可解题。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;sstream&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-#include &lt;algorithm&gt;
-#include &lt;climits&gt;
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <climits>
 
 using namespace std;
 
-typedef vector&lt;vector&lt;int&gt; &gt; Graph;
+typedef vector<vector<int> > Graph;
 
 void init(Graph & g) {
   int n = g.size();
-  for (int i = 0; i &lt; n; i++) {
-    for (int j = 0; j &lt; n; j++) {
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
       if (i != j)
         g[i][j] = INT_MAX;
       else
@@ -43,12 +43,12 @@ void init(Graph & g) {
 
 void floyd(Graph & g) {
   int n = g.size();
-  for (int k = 0; k &lt; n; k++) {
-    for (int i = 0; i &lt; n; i++) {
+  for (int k = 0; k < n; k++) {
+    for (int i = 0; i < n; i++) {
       int ik = g[i][k];
       if (ik == INT_MAX)
         continue;
-      for (int j = 0; j &lt; n; j++) {
+      for (int j = 0; j < n; j++) {
         if (g[k][j] == INT_MAX)
           continue;
         g[i][j] = min(g[i][j], ik + g[k][j]);
@@ -57,25 +57,25 @@ void floyd(Graph & g) {
   }
 }
 
-inline void merge(vector&lt;int&gt; & v1, const vector&lt;int&gt; & v2) {
-  for (int i = 0; i &lt; v1.size(); i++) {
+inline void merge(vector<int> & v1, const vector<int> & v2) {
+  for (int i = 0; i < v1.size(); i++) {
     v1[i] = min(v1[i], v2[i]);
   }
 }
 
-int station(Graph & g, const vector&lt;int&gt; & f) {
+int station(Graph & g, const vector<int> & f) {
   floyd(g);
-  vector&lt;int&gt; dist = g[f[0]]; //current nearest fire station distance vector.
+  vector<int> dist = g[f[0]]; //current nearest fire station distance vector.
   int i;
-  for (i = 1; i &lt; f.size(); i++) {
+  for (i = 1; i < f.size(); i++) {
     merge(dist, g[f[i]]);
   }
   int n = g.size();
-  vector&lt;int&gt; max; //if new position is at i, then max[i] is the max nearest distance
-  vector&lt;int&gt;::iterator it;
-  for (i = 0; i &lt; n; i++) {
+  vector<int> max; //if new position is at i, then max[i] is the max nearest distance
+  vector<int>::iterator it;
+  for (i = 0; i < n; i++) {
     if (dist[i]) {  // if there's no fire station at i
-      vector&lt;int&gt; d = dist;
+      vector<int> d = dist;
       merge(d, g[i]);
       it = max_element(d.begin(), d.end());
       max.push_back(*it);
@@ -90,34 +90,34 @@ int station(Graph & g, const vector&lt;int&gt; & f) {
 
 int main() {
   int n = 0;
-  cin &gt;&gt; n;
-  for (int i = 0; i &lt; n; i++) {
+  cin >> n;
+  for (int i = 0; i < n; i++) {
     int nf, nv;
-    cin &gt;&gt; nf &gt;&gt; nv;
-    vector&lt;int&gt; s;
-    for (int j = 0; j &lt; nf; j++) {
+    cin >> nf >> nv;
+    vector<int> s;
+    for (int j = 0; j < nf; j++) {
       int f;
-      cin &gt;&gt; f;
+      cin >> f;
       s.push_back(f - 1);  //we start from 0
     }
-    vector&lt;int&gt;::iterator it = unique(s.begin(), s.end()); //it says fire stations may overlap
+    vector<int>::iterator it = unique(s.begin(), s.end()); //it says fire stations may overlap
     s.erase(it, s.end());
     string line;
     getline(cin, line); //skip trailing 'n'
-    Graph g(nv, vector&lt;int&gt;(nv));
+    Graph g(nv, vector<int>(nv));
     init(g);
     while (getline(cin, line) && !line.empty()) {
       istringstream is(line);
       int u, v;
       int w;
-      is &gt;&gt; u &gt;&gt; v &gt;&gt; w;
+      is >> u >> v >> w;
       u--, v--; //we start from 0
       g[u][v] = w;
       g[v][u] = w;
     }
     if (i)
-      cout &lt;&lt; endl;
-    cout &lt;&lt; station(g, s) + 1 &lt;&lt; endl;
+      cout << endl;
+    cout << station(g, s) + 1 << endl;
   }
   return 0;
 }

@@ -26,14 +26,14 @@ f(n) = f(n &#8211; 1) + n
 算法的思想需要借助一些图示，这个<a href="http://en.wikipedia.org/wiki/Dividing_a_circle_into_areas" target="_blank">Wiki</a>说得比较清楚了。可惜的是，本题用递推的方法解会超时！从递推式又很难推导出封闭形式！不过上面提到的Wiki里还记录了一种使用欧拉公式的拓扑方法，形式比较简单，应用这种方式解就可以AC。但笔者以为，贴出递推式的解法也是有意义的——起码笔者很难想到欧拉公式！
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
 typedef long long llt;
 
-vector&lt;llt&gt; pieces;
+vector<llt> pieces;
 
 inline void init() {
   pieces.reserve(3000);
@@ -60,7 +60,7 @@ inline llt S(llt N, llt n) {
 }
 
 void compute(int n) {
-  for (int i = pieces.size(); i &lt;= n; i++) {
+  for (int i = pieces.size(); i <= n; i++) {
     llt last = pieces[i - 1];
     llt inc = S(i - 1, i - 2);
     last += inc;
@@ -69,7 +69,7 @@ void compute(int n) {
 }
 
 inline llt how_many_pieces(int n) {
-  if (n &gt;= pieces.size())
+  if (n >= pieces.size())
     compute(n);
   return pieces[n];
 }
@@ -77,11 +77,11 @@ inline llt how_many_pieces(int n) {
 int main() {
   init();
   int s;
-  cin &gt;&gt; s;
-  for (int i = 0; i &lt; s; i++) {
+  cin >> s;
+  for (int i = 0; i < s; i++) {
     int n;
-    cin &gt;&gt; n;
-    cout &lt;&lt; how_many_pieces(n) &lt;&lt; endl;
+    cin >> n;
+    cout << how_many_pieces(n) << endl;
   }
   return 0;
 }

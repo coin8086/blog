@@ -48,9 +48,9 @@ O1, O2, ..., Oj, Oi, ..., On
 由结论**(d)**我们可以用插入排序，结论**(e)**可以用冒泡排序，结论**(f)**则可以使我们用任何排序算法给订单排序而不失正确性。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;algorithm&gt;
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -58,16 +58,16 @@ class Order {
 public:
   Order(int i, int t, int s) : _i(i), _t(t), _s(s) {}
 
-  bool operator &lt;(const Order & o) const {
+  bool operator <(const Order & o) const {
     int m1 = _t * o._s;
     int m2 = o._t * _s;
-    return m1 &lt; m2 ? true : (m1 == m2 ? _i &lt; o._i : false);
+    return m1 < m2 ? true : (m1 == m2 ? _i < o._i : false);
   }
 
   int idx() const { return _i; }
 
   static bool cmp(const Order * p1, const Order * p2) {
-    return *p1 &lt; *p2;
+    return *p1 < *p2;
   }
 
 private:
@@ -78,29 +78,29 @@ private:
 
 int main() {
   int N = 0;
-  cin &gt;&gt; N;
-  for (int i = 0; i &lt; N; i++) {
+  cin >> N;
+  for (int i = 0; i < N; i++) {
     int n;
-    cin &gt;&gt; n;
-    vector&lt;Order&gt; orders;
-    vector&lt;Order *&gt; p;
+    cin >> n;
+    vector<Order> orders;
+    vector<Order *> p;
     orders.reserve(n);
     p.reserve(n);
-    for (int j = 1; j &lt;= n; j++) {
+    for (int j = 1; j <= n; j++) {
       int t, s;
-      cin &gt;&gt; t &gt;&gt; s;
+      cin >> t >> s;
       orders.push_back(Order(j, t, s));
       p.push_back(&orders.back());
     }
     sort(p.begin(), p.end(), Order::cmp);
     if (i)
-      cout &lt;&lt; endl;
-    for (int k = 0; k &lt; n; k++) {
+      cout << endl;
+    for (int k = 0; k < n; k++) {
       if (k)
-        cout &lt;&lt; ' ';
-      cout &lt;&lt; p[k]-&gt;idx();
+        cout << ' ';
+      cout << p[k]->idx();
     }
-    cout &lt;&lt; endl;
+    cout << endl;
   }
   return 0;
 }

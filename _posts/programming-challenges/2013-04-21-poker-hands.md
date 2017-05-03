@@ -10,9 +10,9 @@ categories:
 PC/UVa 题号：110202/10315 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=30&page=show_problem&problem=1256" target="_blank">题目描述</a><!--more-->
 
 ```cpp
-#include &lt;cassert&gt;
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
+#include <cassert>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -37,15 +37,15 @@ typedef enum {
   SequenceWithSameColor
 } CardType;
 
-typedef vector&lt;vector&lt;char&gt; &gt; TypeInfo;
+typedef vector<vector<char> > TypeInfo;
 
 #define VALUES "23456789TJQKA"
 
 #ifdef DEBUG
   #include "../comm_headers/debug_helper.h"
 
-  void SHOW_CARDS(const vector&lt;Card&gt; & cards) {
-    for (int i = 0; i &lt; cards.size(); i++) {
+  void SHOW_CARDS(const vector<Card> & cards) {
+    for (int i = 0; i < cards.size(); i++) {
       DEBUG_OUT("%c%c ", VALUES[cards[i].v], cards[i].t);
     }
     DEBUG_OUT("n");
@@ -66,9 +66,9 @@ typedef vector&lt;vector&lt;char&gt; &gt; TypeInfo;
 
   void SHOW_TYPE_INFO(CardType t, const TypeInfo & ti) {
     DEBUG_OUT("type: %sn", TYPE_NAMES[t]);
-    for (int i = 1; i &lt; ti.size(); i++) {
+    for (int i = 1; i < ti.size(); i++) {
       DEBUG_OUT("%d: [", i);
-      for (int j = 0; j &lt; ti[i].size(); j++) {
+      for (int j = 0; j < ti[i].size(); j++) {
         DEBUG_OUT("%c, ", VALUES[ti[i][j]]);
       }
       DEBUG_OUT("]n");
@@ -82,7 +82,7 @@ typedef vector&lt;vector&lt;char&gt; &gt; TypeInfo;
 #endif
 
 inline char value(char v) {
-  for (int i = 0; i &lt; 13; i++) {
+  for (int i = 0; i < 13; i++) {
     if (VALUES[i] == v)
       return i;
   }
@@ -90,18 +90,18 @@ inline char value(char v) {
   return -1;
 }
 
-bool load_cards(vector&lt;Card&gt; & cards) {
+bool load_cards(vector<Card> & cards) {
   cards.clear();
   cards.resize(5);
-  for (int i = 0; i &lt; 5; i++) {
+  for (int i = 0; i < 5; i++) {
     char v, t;
-    if (!(cin &gt;&gt; v &gt;&gt; t))
+    if (!(cin >> v >> t))
       return false;
     v = value(v);
     Card c(v, t);
     int j = i - 1;
-    for (; j &gt;= 0; j--) {
-      if (cards[j].v &lt; v)
+    for (; j >= 0; j--) {
+      if (cards[j].v < v)
         cards[j + 1] = cards[j];
       else
         break;
@@ -112,16 +112,16 @@ bool load_cards(vector&lt;Card&gt; & cards) {
   return true;
 }
 
-bool load_input(vector&lt;Card&gt; & b, vector&lt;Card&gt; & w) {
+bool load_input(vector<Card> & b, vector<Card> & w) {
   return load_cards(b) && load_cards(w);
 }
 
-CardType type(const vector&lt;Card&gt; & cards, TypeInfo & info) {
+CardType type(const vector<Card> & cards, TypeInfo & info) {
   assert(5 == cards.size());
   bool same_color = true;
   char c = cards[0].t;
   int i;
-  for (i = 1; i &lt; 5; i++) {
+  for (i = 1; i < 5; i++) {
     if (cards[i].t != c) {
       same_color = false;
       break;
@@ -129,7 +129,7 @@ CardType type(const vector&lt;Card&gt; & cards, TypeInfo & info) {
   }
 
   bool sequential = true;
-  for (i = 0; i &lt; 4; i++) {
+  for (i = 0; i < 4; i++) {
     if (cards[i].v - cards[i + 1].v != 1) {
       sequential = false;
       break;
@@ -150,7 +150,7 @@ CardType type(const vector&lt;Card&gt; & cards, TypeInfo & info) {
   int n_pair = 0, n_three = 0, n_four = 0;
   char v = cards[0].v;
   int len = 1;
-  for (i = 1; i &lt;= 5; i++) {
+  for (i = 1; i <= 5; i++) {
     if (i != 5 && cards[i].v == v) {
       len++;
     }
@@ -183,11 +183,11 @@ CardType type(const vector&lt;Card&gt; & cards, TypeInfo & info) {
     return n_pair ? ThreeWithPair : Three;
 
   if (n_pair) {
-    vector&lt;char&gt; & excludes = info[2];
-    for (i = 0; i &lt; 5; i++) {
+    vector<char> & excludes = info[2];
+    for (i = 0; i < 5; i++) {
       char v = cards[i].v;
       bool excluded = false;
-      for (int j = 0; j &lt; excludes.size(); j++) {
+      for (int j = 0; j < excludes.size(); j++) {
         if (v == excludes[j]) {
           excluded = true;
           break;
@@ -202,9 +202,9 @@ CardType type(const vector&lt;Card&gt; & cards, TypeInfo & info) {
   return Big;
 }
 
-int compare_sequence(const vector&lt;Card&gt; & b, const vector&lt;Card&gt; & w) {
+int compare_sequence(const vector<Card> & b, const vector<Card> & w) {
   assert(b.size() == w.size());
-  for (int i = 0; i &lt; b.size(); i++) {
+  for (int i = 0; i < b.size(); i++) {
     char r = b[i].v - w[i].v;
     if (r) {
       return r;
@@ -213,7 +213,7 @@ int compare_sequence(const vector&lt;Card&gt; & b, const vector&lt;Card&gt; & w)
   return 0;
 }
 
-int compare(const vector&lt;Card&gt; & b, const vector&lt;Card&gt; & w) {
+int compare(const vector<Card> & b, const vector<Card> & w) {
   TypeInfo tib, tiw;
   CardType tb = type(b, tib);
   CardType tw = type(w, tiw);
@@ -229,7 +229,7 @@ int compare(const vector&lt;Card&gt; & b, const vector&lt;Card&gt; & w) {
       case Pair: {
         r = tib[2][0] - tiw[2][0];
         if (!r) {
-          for (int i = 0; i &lt; tib[1].size(); i++) {
+          for (int i = 0; i < tib[1].size(); i++) {
             r = tib[1][i] - tiw[1][i];
             if (r)
               break;
@@ -275,16 +275,16 @@ int compare(const vector&lt;Card&gt; & b, const vector&lt;Card&gt; & w) {
 }
 
 int main() {
-  vector&lt;Card&gt; b, w;
+  vector<Card> b, w;
   while (load_input(b, w)) {
     int r = compare(b, w);
-    if (r &gt; 0)
-      cout &lt;&lt; "Black wins.";
-    else if (r &lt; 0)
-      cout &lt;&lt; "White wins.";
+    if (r > 0)
+      cout << "Black wins.";
+    else if (r < 0)
+      cout << "White wins.";
     else
-      cout &lt;&lt; "Tie.";
-    cout &lt;&lt; endl;
+      cout << "Tie.";
+    cout << endl;
   }
   return 0;
 }

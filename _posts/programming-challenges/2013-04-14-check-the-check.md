@@ -12,8 +12,8 @@ PC/UVa 题号：110107/10196 <a href="http://uva.onlinejudge.org/index.php?optio
 分析：不需要一般象棋程序的“着法生成器”也可以求解<!--more-->
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -25,10 +25,10 @@ typedef struct _Position {
 
 bool load_board(Board & board, Position & k, Position & K) {
   bool empty = true;
-  for (int i = 0; i &lt; 8; i++) {
-    for (int j = 0; j &lt; 8; j++) {
+  for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 8; j++) {
       char ch;
-      if (!(cin &gt;&gt; ch))
+      if (!(cin >> ch))
         break;
 
       if (empty && ch != '.')
@@ -51,7 +51,7 @@ bool load_board(Board & board, Position & k, Position & K) {
 
 bool check_black(const Board & board, const Position & k) {
   //horizontal check
-  for (int i = k.col + 1; i &lt; 8; i++) {
+  for (int i = k.col + 1; i < 8; i++) {
     char ch = board[k.row][i];
     if (ch == '.')
       continue;
@@ -60,7 +60,7 @@ bool check_black(const Board & board, const Position & k) {
     break;
   }
 
-  for (int i = k.col - 1; i &gt;= 0; i--) {
+  for (int i = k.col - 1; i >= 0; i--) {
     char ch = board[k.row][i];
     if (ch == '.')
       continue;
@@ -70,7 +70,7 @@ bool check_black(const Board & board, const Position & k) {
   }
 
   //vertical check
-  for (int i = k.row - 1; i &gt;= 0; i--) {
+  for (int i = k.row - 1; i >= 0; i--) {
     char ch = board[i][k.col];
     if (ch == '.')
       continue;
@@ -79,7 +79,7 @@ bool check_black(const Board & board, const Position & k) {
     break;
   }
 
-  for (int i = k.row + 1; i &lt; 8; i++) {
+  for (int i = k.row + 1; i < 8; i++) {
     char ch = board[i][k.col];
     if (ch == '.')
       continue;
@@ -89,7 +89,7 @@ bool check_black(const Board & board, const Position & k) {
   }
 
   //diagonal check
-  for (int i = k.row + 1, j = k.col + 1; i &lt; 8 && j &lt; 8; i++, j++) {
+  for (int i = k.row + 1, j = k.col + 1; i < 8 && j < 8; i++, j++) {
     char ch = board[i][j];
     if (ch == '.')
       continue;
@@ -98,7 +98,7 @@ bool check_black(const Board & board, const Position & k) {
     break;
   }
 
-  for (int i = k.row + 1, j = k.col - 1; i &lt; 8 && j &gt;= 0; i++, j--) {
+  for (int i = k.row + 1, j = k.col - 1; i < 8 && j >= 0; i++, j--) {
     char ch = board[i][j];
     if (ch == '.')
       continue;
@@ -107,7 +107,7 @@ bool check_black(const Board & board, const Position & k) {
     break;
   }
 
-  for (int i = k.row - 1, j = k.col - 1; i &gt;= 0 && j &gt;= 0; i--, j--) {
+  for (int i = k.row - 1, j = k.col - 1; i >= 0 && j >= 0; i--, j--) {
     char ch = board[i][j];
     if (ch == '.')
       continue;
@@ -116,7 +116,7 @@ bool check_black(const Board & board, const Position & k) {
     break;
   }
 
-  for (int i = k.row - 1, j = k.col + 1; i &gt;= 0 && j &lt; 8; i--, j++) {
+  for (int i = k.row - 1, j = k.col + 1; i >= 0 && j < 8; i--, j++) {
     char ch = board[i][j];
     if (ch == '.')
       continue;
@@ -151,9 +151,9 @@ bool check_black(const Board & board, const Position & k) {
   pos[7].row = k.row - 1;
   pos[7].col = k.col + 2;
 
-  for (int i = 0; i &lt; 8; i++) {
+  for (int i = 0; i < 8; i++) {
     Position & p = pos[i];
-    if (p.row &lt; 8 && p.row &gt;= 0 && p.col &lt; 8 && p.col &gt;= 0
+    if (p.row < 8 && p.row >= 0 && p.col < 8 && p.col >= 0
       && board[p.row][p.col] == 'N')
       return true;
   }
@@ -164,12 +164,12 @@ bool check_black(const Board & board, const Position & k) {
 inline char flip_char(char ch) {
   if (ch == '.')
     return ch;
-  return ch &gt;= 'a' ? (ch - ('a' - 'A')) : (ch + ('a' - 'A'));
+  return ch >= 'a' ? (ch - ('a' - 'A')) : (ch + ('a' - 'A'));
 }
 
 void flip_board(Board & board, Position & K) {
-  for (int i = 0; i &lt; 8; i++) {
-    for (int j = 0; j &lt; 4; j++) {
+  for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 4; j++) {
       char up = board[j][i];
       char down = board[7 - j][i];
       board[j][i] = flip_char(down);
@@ -204,7 +204,7 @@ int main() {
         who = "white king";
       break;
     }
-    cout &lt;&lt; "Game #" &lt;&lt; ++d &lt;&lt; ": " &lt;&lt; who &lt;&lt; " is in check." &lt;&lt; endl;
+    cout << "Game #" << ++d << ": " << who << " is in check." << endl;
   }
   return 0;
 }

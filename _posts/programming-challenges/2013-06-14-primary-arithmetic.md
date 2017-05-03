@@ -14,15 +14,15 @@ PC/UVa IDs: 110501/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 <!--more-->
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
+#include <iostream>
+#include <vector>
 
 #define MAX_SIZE 10
 
 using namespace std;
 
-inline vector&lt;char&gt; to_vec(int n) {
-  vector&lt;char&gt; v;
+inline vector<char> to_vec(int n) {
+  vector<char> v;
   v.reserve(MAX_SIZE);
   while (n) {
     v.push_back(n % 10);
@@ -34,16 +34,16 @@ inline vector&lt;char&gt; to_vec(int n) {
 int carry_times(int n, int m) {
   if (!n || !m)
     return 0;
-  vector&lt;char&gt; bn = to_vec(n);
-  vector&lt;char&gt; bm = to_vec(m);
+  vector<char> bn = to_vec(n);
+  vector<char> bm = to_vec(m);
   int carry = 0;
   int times = 0;
-  int size = n &gt;= m ? bn.size() : bm.size();
+  int size = n >= m ? bn.size() : bm.size();
   bn.resize(size);
   bm.resize(size);
-  for (int i = 0; i &lt; size; i++) {
+  for (int i = 0; i < size; i++) {
     int s = carry + bn[i] + bm[i];
-    if (s &gt; 9) {
+    if (s > 9) {
       carry = 1;
       times++;
     }
@@ -56,15 +56,15 @@ int carry_times(int n, int m) {
 
 int main() {
   int n, m;
-  while ((cin &gt;&gt; n &gt;&gt; m) && (n || m)) {
+  while ((cin >> n >> m) && (n || m)) {
     int t = carry_times(n, m);
     if (!t)
-      cout &lt;&lt; "No carry operation.";
+      cout << "No carry operation.";
     else if (t == 1)
-      cout &lt;&lt; "1 carry operation.";
+      cout << "1 carry operation.";
     else
-      cout &lt;&lt; t &lt;&lt; " carry operations.";
-    cout &lt;&lt; endl;
+      cout << t << " carry operations.";
+    cout << endl;
   }
   return 0;
 }

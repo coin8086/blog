@@ -28,13 +28,13 @@ f(s(n-1)) = n &#8211; 1
 即：当x在区间(s(n-1), s(n)]时，f(x) = n。可以据此来求得f(x)：我们可以把s(n)的值记录在数组里，通过比较来确定x所属的区间——s(n)所组成的数列元素数量大致在几万的数量级（这可以由sample给出的一组数据来佐证：n = 1000000000, f(n) = 438744），因此记录s(n)是可以实现的。还有一个好消息就是此题不需要高精度整数运算了！
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
-vector&lt;int&gt; F;
-vector&lt;int&gt; S; //Sum of first n items from F
+vector<int> F;
+vector<int> S; //Sum of first n items from F
 int k; //Pointer to item in F
 
 inline void init() {
@@ -52,22 +52,22 @@ inline void init() {
 
 inline int f(int n) {
   int r;
-  if (F.size() &gt; n) {
+  if (F.size() > n) {
     r = F[n];
   }
   else {
-    while (S.back() &lt; n) {
+    while (S.back() < n) {
       //Add f(k) occurences of k to F, and save the sum of first n items
       int c = F[++k];
       int s = S.back();
-      for (int i = 0; i &lt; c; i++) {
+      for (int i = 0; i < c; i++) {
         F.push_back(k);
         s += k;
         S.push_back(s);
       }
     }
-    for (r = S.size() - 1; r &gt;= 0; r--) {
-      if (n &gt; S[r - 1] && n &lt;= S[r])
+    for (r = S.size() - 1; r >= 0; r--) {
+      if (n > S[r - 1] && n <= S[r])
         break;
     }
   }
@@ -77,8 +77,8 @@ inline int f(int n) {
 int main() {
   init();
   int n;
-  while ((cin &gt;&gt; n) && n &gt; 0) {
-    cout &lt;&lt; f(n) &lt;&lt; endl;
+  while ((cin >> n) && n > 0) {
+    cout << f(n) << endl;
   }
   return 0;
 }

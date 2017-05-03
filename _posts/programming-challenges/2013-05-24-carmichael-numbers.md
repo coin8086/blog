@@ -24,8 +24,8 @@ PC/UVa IDs: 110702/10006 <a href="http://uva.onlinejudge.org/index.php?option=co
 另外：本答案会导致超时（TLE），优化的方案是：先把65000以内的所有Carmichael数计算出来！其实不过区区十几个数而已。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;cmath&gt;
+#include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -36,7 +36,7 @@ bool prime(uint n) {
     return false;
   uint i = 3;
   uint h = sqrt(n) + 1;
-  while (i &lt;= h) {
+  while (i <= h) {
     if (n % i == 0)
       return false;
     i += 2;
@@ -56,7 +56,7 @@ uint mod(uint a, uint n, uint m) {
 
 bool carm(uint n) {
   bool r = true;
-  for (int i = 2; i &lt; n; i++) {
+  for (int i = 2; i < n; i++) {
     if (mod(i, n, n) != i) {
       r = false;
       break;
@@ -69,11 +69,11 @@ bool carm(uint n) {
 
 int main() {
   uint n;
-  while (cin &gt;&gt; n && n) {
+  while (cin >> n && n) {
     if (carm(n))
-      cout &lt;&lt; "The number " &lt;&lt; n &lt;&lt; " is a Carmichael number." &lt;&lt; endl;
+      cout << "The number " << n << " is a Carmichael number." << endl;
     else
-      cout &lt;&lt; n &lt;&lt; " is normal." &lt;&lt; endl;
+      cout << n << " is normal." << endl;
   }
   return 0;
 }

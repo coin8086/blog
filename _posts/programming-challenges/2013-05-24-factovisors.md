@@ -22,15 +22,15 @@ m=(p1^k1)(p2^k2)&#8230;(pi^ki)
 另外：programming-challenges.com对本答案判定为正确，但UVa却判错。笔者仔细检查了算法和实现，没有发现问题。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;utility&gt;
-#include &lt;cmath&gt;
+#include <iostream>
+#include <vector>
+#include <utility>
+#include <cmath>
 
 using namespace std;
 
 typedef unsigned int uint;
-typedef vector&lt;pair&lt;uint, uint&gt; &gt; PVec;
+typedef vector<pair<uint, uint> > PVec;
 
 PVec prime_factors(uint m) {
   PVec r;
@@ -43,7 +43,7 @@ PVec prime_factors(uint m) {
   if (c)
     r.push_back(make_pair(i, c));
   i = 3;
-  while (i &lt;= sqrt(m) + 1) {
+  while (i <= sqrt(m) + 1) {
     c = 0;
     while (m % i == 0) {
       m /= i;
@@ -57,29 +57,29 @@ PVec prime_factors(uint m) {
 }
 
 bool divisible(uint n, uint m) {
-  if (m &lt; 2) {
+  if (m < 2) {
     return m ? true : false;
   }
   bool r = true;
   PVec factors = prime_factors(m);
   if (factors.empty()) {
-    if (n &lt; m)
+    if (n < m)
       r = false;
   }
   else {
-    for (int i = 0; i &lt; factors.size(); i++) {
+    for (int i = 0; i < factors.size(); i++) {
       uint p = factors[i].first;
       uint c = factors[i].second;
       uint count = 0;
       uint np;
       uint t = n;
-      while ((np = t / p) &gt; 0) {
+      while ((np = t / p) > 0) {
         count += np;
-        if (count &gt;= c)
+        if (count >= c)
           break;
         t = np;
       }
-      if (count &lt; c) {
+      if (count < c) {
         r = false;
         break;
       }
@@ -90,12 +90,12 @@ bool divisible(uint n, uint m) {
 
 int main() {
   uint n, m;
-  while (cin &gt;&gt; n &gt;&gt; m) {
+  while (cin >> n >> m) {
     if (divisible(n, m)) {
-      cout &lt;&lt; m &lt;&lt; " divides " &lt;&lt; n &lt;&lt; "!" &lt;&lt; endl;
+      cout << m << " divides " << n << "!" << endl;
     }
     else {
-      cout &lt;&lt; m &lt;&lt; " does not divide " &lt;&lt; n &lt;&lt; "!" &lt;&lt; endl;
+      cout << m << " does not divide " << n << "!" << endl;
     }
   }
   return 0;

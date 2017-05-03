@@ -14,9 +14,9 @@ PC/UVa IDs: 110303/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 <a href="https://code.google.com/p/programming-challenges-robert/source/browse/ch3_ex3_lcs.cpp" target="_blank">这里</a>。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;algorithm&gt;
+#include <iostream>
+#include <string>
+#include <algorithm>
 
 #define MAX_LEN 1000
 
@@ -37,7 +37,7 @@ string cp(string & s1, string & s2) {
       ++p1;
       ++p2;
     }
-    else if (*p1 &lt; *p2) {
+    else if (*p1 < *p2) {
       ++p1;
     }
     else {
@@ -52,7 +52,7 @@ int main() {
   s1.reserve(MAX_LEN);
   s2.reserve(MAX_LEN);
   while (getline(cin, s1) && getline(cin, s2)) {
-    cout &lt;&lt; cp(s1, s2) &lt;&lt; endl;
+    cout << cp(s1, s2) << endl;
   }
   return 0;
 }

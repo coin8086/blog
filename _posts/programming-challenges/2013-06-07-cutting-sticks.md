@@ -38,32 +38,32 @@ f(i, j) = 0
 如果用表格seg\[i\]\[j\]来存贮f(i, j)的值，即可以动态规划解之。但须注意单元格的计算顺序：从左至右，从下往上。只需计算i < j的格子，i = j的格子初始化为0。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;climits&gt;
+#include <iostream>
+#include <vector>
+#include <climits>
 
 using namespace std;
 
-int cut(int l, const vector&lt;int&gt; & pos) {
-  if (pos.size() &lt; 1)
+int cut(int l, const vector<int> & pos) {
+  if (pos.size() < 1)
     return pos.empty() ? 0 : l;
   //n cut positions divides one stick into n + 1 sections.
   //sec stores the beginning position of a section. To make it easy to calculate
   //a section length, sec stores the length of the stick as the begnning of a section
   //beyond the n + 1 real sections.
-  vector&lt;int&gt; sec;
+  vector<int> sec;
   sec.push_back(0);
   sec.insert(sec.end(), pos.begin(), pos.end());
   sec.push_back(l);
   int n = sec.size() &#8211; 1;
-  vector&lt;vector&lt;int&gt; &gt; seg(n, vector&lt;int&gt;(n, 0));
-  for (int j = 1; j &lt; n; j++) {
-    for (int i = j &#8211; 1; i &gt;= 0; i&#8211;) {
+  vector<vector<int> > seg(n, vector<int>(n, 0));
+  for (int j = 1; j < n; j++) {
+    for (int i = j &#8211; 1; i >= 0; i&#8211;) {
       int s = 0;
       int m = INT_MAX;
-      for (int k = 1; k &lt;= j &#8211; i; k++) {
+      for (int k = 1; k <= j &#8211; i; k++) {
         s = seg[i][j - k] + seg[j - k + 1][j];
-        if (s &lt; m)
+        if (s < m)
           m = s;
       }
       seg[i][j] = m + (sec[j + 1] &#8211; sec[i]); //m + the length of sections from i to j
@@ -74,17 +74,17 @@ int cut(int l, const vector&lt;int&gt; & pos) {
 
 int main() {
   int l;
-  while ((cin &gt;&gt; l) && l &gt; 0) {
+  while ((cin >> l) && l > 0) {
     int n = 0;
-    cin &gt;&gt; n;
-    vector&lt;int&gt; pos;
+    cin >> n;
+    vector<int> pos;
     pos.reserve(n);
-    for (int i = 0; i &lt; n; i++) {
+    for (int i = 0; i < n; i++) {
       int p;
-      cin &gt;&gt; p;
+      cin >> p;
       pos.push_back(p);
     }
-    cout &lt;&lt; "The minimum cutting is " &lt;&lt; cut(l, pos) &lt;&lt; "." &lt;&lt; endl;
+    cout << "The minimum cutting is " << cut(l, pos) << "." << endl;
   }
   return 0;
 }

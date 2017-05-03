@@ -14,22 +14,22 @@ PC/UVa 题号：110401/10041 <a href="http://uva.onlinejudge.org/index.php?optio
 <a href="http://wenku.baidu.com/view/375f42dc5022aaea998f0fea" target="_blank">中位数性质的证明</a>。得到证明之后，解题便相当容易了。另外值得商榷的是：书中本题的难度系数很低，但如果不了解中位数的这个性质，解题还是相当头疼的。因此笔者以为这不是一道好题目。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;algorithm&gt;
-#include &lt;cstdlib&gt;
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cstdlib>
 
 using namespace std;
 
-inline int sum(const vector&lt;int&gt; & rel, int k) {
+inline int sum(const vector<int> & rel, int k) {
   int sum = 0;
-  for (int i = 0; i &lt; rel.size(); i++) {
+  for (int i = 0; i < rel.size(); i++) {
     sum += abs(rel[i] - k);
   }
   return sum;
 }
 
-int min(vector&lt;int&gt; & rel) {
+int min(vector<int> & rel) {
   if (rel.size() == 1)
     return 0;
   sort(rel.begin(), rel.end());
@@ -39,16 +39,16 @@ int min(vector&lt;int&gt; & rel) {
 
 int main() {
   int n = 0;
-  cin &gt;&gt; n;
-  for (int i = 0; i &lt; n; i++) {
+  cin >> n;
+  for (int i = 0; i < n; i++) {
     int r = 0;
-    cin &gt;&gt; r;
-    vector&lt;int&gt; rel(r);
+    cin >> r;
+    vector<int> rel(r);
     int j;
-    for (j = 0; j &lt; r; j++) {
-      cin &gt;&gt; rel[j];
+    for (j = 0; j < r; j++) {
+      cin >> rel[j];
     }
-    cout &lt;&lt; min(rel) &lt;&lt; endl;
+    cout << min(rel) << endl;
   }
 }
 ```

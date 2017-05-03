@@ -36,9 +36,9 @@ m(d) = 1 + k + k^2 + &#8230; + k^(d &#8211; 1)
 3)注意到k*d<=21，当k=4,d=5时m的数量级在1000，但1000!已远超64位整数的能力范围，如不能设法简化a(k, d)的算式，避免(m!)^k这样的大数运算，就只有……使用自定义的大数运算了（很不幸地，C/C++的标准库都没有大整数运算函数，因此为解题不得不手工编写　<a href="https://code.google.com/p/programming-challenges-robert/source/browse/bigint.h" target="_blank">bigint.h</a>（但是Java标准库却有BigInt类可用，因此此题用Java可以很方便地求解）。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
+#include <iostream>
+#include <vector>
+#include <cstring>
 #include "bigint.h"
 
 using namespace std;
@@ -49,10 +49,10 @@ int m[22][22];
 
 void init() {
   int k, d;
-  for (d = 0; d &lt; 22; d++) {
+  for (d = 0; d < 22; d++) {
     results[1][d] = 1;
   }
-  for (k = 2; k &lt; 22; k++) {
+  for (k = 2; k < 22; k++) {
     results[k][0] = 1;
   }
   memset(m, 0, sizeof(m));
@@ -84,8 +84,8 @@ BigInt compute(int k, int d) {
 int main() {
   init();
   int k, d;
-  while (cin &gt;&gt; k &gt;&gt; d) {
-    cout &lt;&lt; compute(k, d) &lt;&lt; endl;
+  while (cin >> k >> d) {
+    cout << compute(k, d) << endl;
   }
   return 0;
 }

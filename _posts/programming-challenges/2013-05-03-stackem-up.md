@@ -10,29 +10,29 @@ categories:
 PC/UVa 题号：110205/10205 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1146" target="_blank">题目描述</a><!--more-->
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;string&gt;
-#include &lt;cstdlib&gt;
+#include <iostream>
+#include <vector>
+#include <string>
+#include <cstdlib>
 
 using namespace std;
 
 const char * values[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
 const char * suits[] = {"Clubs", "Diamonds", "Hearts", "Spades"};
 
-vector&lt;int&gt; shuffle(const vector&lt;int&gt; & cards, const vector&lt;int&gt; & order) {
-  vector&lt;int&gt; r(cards.size());
-  for (int i = 0; i &lt; order.size(); i++) {
+vector<int> shuffle(const vector<int> & cards, const vector<int> & order) {
+  vector<int> r(cards.size());
+  for (int i = 0; i < order.size(); i++) {
     r[i] = cards[order[i]];
   }
   return r;
 }
 
-void output(const vector&lt;int&gt; & cards) {
-  for (int i = 0; i &lt; cards.size(); i++) {
+void output(const vector<int> & cards) {
+  for (int i = 0; i < cards.size(); i++) {
     int v = cards[i] % 13;
     int s = cards[i] / 13;
-    cout &lt;&lt; values[v] &lt;&lt; " of " &lt;&lt; suits[s] &lt;&lt; endl;
+    cout << values[v] << " of " << suits[s] << endl;
   }
 }
 
@@ -41,20 +41,20 @@ int main() {
   getline(cin, line);
   int n = atoi(line.c_str());
   getline(cin, line); //skip empty line
-  for (int i = 0; i &lt; n; i++) {
+  for (int i = 0; i < n; i++) {
     int m = 0;
-    cin &gt;&gt; m;
-    vector&lt;vector&lt;int&gt; &gt; methods(m);
-    for (int j = 0; j &lt; m; j++) {
-      for (int k = 0; k &lt; 52; k++) {
+    cin >> m;
+    vector<vector<int> > methods(m);
+    for (int j = 0; j < m; j++) {
+      for (int k = 0; k < 52; k++) {
         int order;
-        cin &gt;&gt; order;
+        cin >> order;
         methods[j].push_back(order - 1);
       }
     }
     getline(cin, line); //skip till a new line
-    vector&lt;int&gt; cards(52);
-    for (int l = 0; l &lt; cards.size(); l++) {
+    vector<int> cards(52);
+    for (int l = 0; l < cards.size(); l++) {
       cards[l] = l;
     }
     while(getline(cin, line)) {
@@ -65,7 +65,7 @@ int main() {
     }
     output(cards);
     if (i != n - 1)
-      cout &lt;&lt; endl;
+      cout << endl;
   }
   return 0;
 }

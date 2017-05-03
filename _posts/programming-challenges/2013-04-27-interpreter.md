@@ -14,9 +14,9 @@ PC/UVa题号：110106/10033 <a href="http://uva.onlinejudge.org/index.php?option
 解法一：
 
 ```cpp
-#include &lt;cstdio&gt;
-#include &lt;cstdlib&gt;
-#include &lt;cstring&gt;
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 #ifdef DEBUG
 #include "../comm_headers/debug_helper.h"
@@ -124,7 +124,7 @@ int main() {
   fgets(line, 32, stdin); //skip empty line
 
   Program p;
-  for (int i = 0; i &lt; n; i++) {
+  for (int i = 0; i < n; i++) {
     load_program(p);
     int count = run_program(p);
     printf("%dn", count);
@@ -138,9 +138,9 @@ int main() {
 解法二：
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;string&gt;
+#include <iostream>
+#include <vector>
+#include <string>
 
 #ifdef DEBUG
 #include "../comm_headers/debug_helper.h"
@@ -165,7 +165,7 @@ public:
   static Instruction from_int(int i) {
     Instruction ins;
     if (i) {
-      if (i &lt; 100) {
+      if (i < 100) {
         ins.first = 0;
         ins.second = i / 10;
         ins.third = i % 10;
@@ -181,7 +181,7 @@ public:
   }
 };
 
-typedef vector&lt;Instruction&gt; Program;
+typedef vector<Instruction> Program;
 
 void load_program(Program & p) {
   string line;
@@ -195,12 +195,12 @@ void load_program(Program & p) {
 }
 
 inline void overflow(int & n) {
-  if (n &gt;= 1000)
+  if (n >= 1000)
     n %= 1000;
 }
 
 int run_program(Program & p) {
-  vector&lt;int&gt; r(10, 0);
+  vector<int> r(10, 0);
   int i = 0;
   bool halt = false;
   int count = 0;
@@ -279,7 +279,7 @@ int run_program(Program & p) {
 
 int main() {
   int n;
-  if (!(cin &gt;&gt; n))
+  if (!(cin >> n))
     return false;
 
   //skip empty line
@@ -288,12 +288,12 @@ int main() {
   getline(cin, line);
 
   Program p;
-  for (int i = 0; i &lt; n; i++) {
+  for (int i = 0; i < n; i++) {
     load_program(p);
     int count = run_program(p);
-    cout &lt;&lt; count &lt;&lt; endl;
+    cout << count << endl;
     if (i != n - 1)
-      cout &lt;&lt; endl;
+      cout << endl;
   }
   return 0;
 }

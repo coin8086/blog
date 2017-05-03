@@ -26,30 +26,30 @@ PC/UVa IDs: 110804/10160 <a href="http://uva.onlinejudge.org/index.php?option=co
 特别感谢“寂静山林”给出的<a href="http://blog.csdn.net/metaphysis/article/details/6601365" target="_blank">优化提示</a>。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;map&gt;
-#include &lt;set&gt;
-#include &lt;queue&gt;
-#include &lt;algorithm&gt;
-#include &lt;climits&gt;
+#include <iostream>
+#include <vector>
+#include <map>
+#include <set>
+#include <queue>
+#include <algorithm>
+#include <climits>
 
 #define MAX_TOWNS 35
 
 using namespace std;
 
-typedef map&lt;int, vector&lt;int&gt; &gt; Graph;
+typedef map<int, vector<int> > Graph;
 typedef long long llt;
 
 //bfs g from vertex v and record visited vertexes in visited
-void visit(const Graph & g, int v, set&lt;int&gt; & visited) {
-  queue&lt;int&gt; q;
+void visit(const Graph & g, int v, set<int> & visited) {
+  queue<int> q;
   visited.insert(v);
   q.push(v);
   while (!q.empty()) {
     int u = q.front();
-    const vector&lt;int&gt; & vec = g.at(u);
-    for (int i = 0; i &lt; vec.size(); i++) {
+    const vector<int> & vec = g.at(u);
+    for (int i = 0; i < vec.size(); i++) {
       if (!visited.count(vec[i])) {
         visited.insert(vec[i]);
         q.push(vec[i]);
@@ -60,19 +60,19 @@ void visit(const Graph & g, int v, set&lt;int&gt; & visited) {
 }
 
 //get a subgraph from g, with only vertexes in s
-Graph subgraph(const Graph & g, const set&lt;int&gt; & s) {
+Graph subgraph(const Graph & g, const set<int> & s) {
   Graph ng;
   if (g.size() == s.size()) {
     ng = g;
   }
   else {
-    set&lt;int&gt;::const_iterator it = s.begin();
+    set<int>::const_iterator it = s.begin();
     for (; it != s.end(); it++) {
       int v = *it;
       ng[v] = g.at(v);
-      vector&lt;int&gt; & vec = ng[v];
+      vector<int> & vec = ng[v];
       int i, j;
-      for (i = vec.size() - 1, j = i; i &gt;= 0; i--) {
+      for (i = vec.size() - 1, j = i; i >= 0; i--) {
         if (!s.count(vec[i])) {
           if (i != j)
             swap(vec[i], vec[j]);
@@ -86,19 +86,19 @@ Graph subgraph(const Graph & g, const set&lt;int&gt; & s) {
 }
 
 //get max connected subgraphs from g
-vector&lt;Graph&gt; conn_graphs(const Graph & g) {
-  vector&lt;Graph&gt; gs;
-  set&lt;int&gt; visited;
+vector<Graph> conn_graphs(const Graph & g) {
+  vector<Graph> gs;
+  set<int> visited;
   Graph::const_iterator it = g.begin();
   while (visited.size() != g.size()) {
     int v;
     for (; it != g.end(); it++) {
-      if (!visited.count(it-&gt;first)) {
-        v = it-&gt;first;
+      if (!visited.count(it->first)) {
+        v = it->first;
         break;
       }
     }
-    set&lt;int&gt; accessed;
+    set<int> accessed;
     visit(g, v, accessed);
     gs.push_back(subgraph(g, accessed));
     visited.insert(accessed.begin(), accessed.end());
@@ -106,29 +106,29 @@ vector&lt;Graph&gt; conn_graphs(const Graph & g) {
   return gs;
 }
 
-inline vector&lt;int&gt; vertexes(const Graph & g) {
-  vector&lt;int&gt; r;
+inline vector<int> vertexes(const Graph & g) {
+  vector<int> r;
   r.reserve(g.size());
   Graph::const_iterator it = g.begin();
   for (; it != g.end(); it++) {
-    r.push_back(it-&gt;first);
+    r.push_back(it->first);
   }
   return r;
 }
 
-inline llt vec_to_llt(const vector&lt;bool&gt; & vec) {
+inline llt vec_to_llt(const vector<bool> & vec) {
   llt r = 0;
-  for (int i = vec.size() - 1; i &gt;= 0; i--) {
-    r = r &lt;&lt; 1;
+  for (int i = vec.size() - 1; i >= 0; i--) {
+    r = r << 1;
     if (vec[i])
       r |= 1;
   }
   return r;
 }
 
-inline llt to_llt(int n, const vector&lt;int&gt; & vec) {
-  vector&lt;bool&gt; v(n);
-  for (int i = 0; i &lt; n; i++) {
+inline llt to_llt(int n, const vector<int> & vec) {
+  vector<bool> v(n);
+  for (int i = 0; i < n; i++) {
     if (find(vec.begin(), vec.end(), i) != vec.end()) {
       v[i] = true;
     }
@@ -136,15 +136,15 @@ inline llt to_llt(int n, const vector&lt;int&gt; & vec) {
   return vec_to_llt(v);
 }
 
-template&lt;typename Success&gt;
-bool combine(int total, int wanted, vector&lt;int&gt; & selected, Success & success)
+template<typename Success>
+bool combine(int total, int wanted, vector<int> & selected, Success & success)
 {
   if (selected.size() == wanted) {
     return success(selected);
   }
   else {
     int idx = selected.size() ? selected.back() + 1 : 0;
-    for (int i = idx; i &lt; total; i++) {
+    for (int i = idx; i < total; i++) {
       selected.push_back(i);
       if (combine(total, wanted, selected, success))
         return true;
@@ -156,35 +156,35 @@ bool combine(int total, int wanted, vector&lt;int&gt; & selected, Success & succ
 
 class Checker {
 public:
-  Checker(const vector&lt;llt&gt; & towns, llt target) : _towns(towns), _target(target) {}
+  Checker(const vector<llt> & towns, llt target) : _towns(towns), _target(target) {}
 
-  bool operator ()(const vector&lt;int&gt; & selected) {
+  bool operator ()(const vector<int> & selected) {
     llt t = 0;
-    for (int i = 0; i &lt; selected.size(); i++) {
+    for (int i = 0; i < selected.size(); i++) {
       t |= _towns[selected[i]];
     }
     return t == _target;
   }
 
 private:
-  const vector&lt;llt&gt; & _towns;
+  const vector<llt> & _towns;
   llt _target;
 };
 
 int serv_station(const Graph & g) {
   int r = 0;
   //Split a graph into several connected subgraphs. This is A KEY OPTIMIZATION in speed.
-  vector&lt;Graph&gt; gs = conn_graphs(g);
-  for (int j = 0; j &lt; gs.size(); j++) {
+  vector<Graph> gs = conn_graphs(g);
+  for (int j = 0; j < gs.size(); j++) {
     //Build towns vector, each dimension representing a town and its neighbours.
-    vector&lt;llt&gt; towns;
+    vector<llt> towns;
     Graph::iterator it = gs[j].begin();
     for (; it != gs[j].end(); it++) {
       //In a connected graph with more than 2 vertexes, we select a vertex only
       //when it has a degree bigger than 1. This is A KEY OPTIMIZATION in speed.
-      if (gs[j].size() &lt; 3 || it-&gt;second.size() &gt; 1) {
-        it-&gt;second.push_back(it-&gt;first);
-        towns.push_back(to_llt(g.size(), it-&gt;second));
+      if (gs[j].size() < 3 || it->second.size() > 1) {
+        it->second.push_back(it->first);
+        towns.push_back(to_llt(g.size(), it->second));
       }
     }
     //The target represents all the towns in a max connected subgraph.
@@ -192,8 +192,8 @@ int serv_station(const Graph & g) {
     Checker checker(towns, target);
     //Select i towns from all to check if we make it. It's like an Iterative Deepening.
     int i;
-    for (i = 1; i &lt;= gs[j].size(); i++) {
-      vector&lt;int&gt; sel;
+    for (i = 1; i <= gs[j].size(); i++) {
+      vector<int> sel;
       if (combine(towns.size(), i, sel, checker))
         break;
     }
@@ -204,20 +204,20 @@ int serv_station(const Graph & g) {
 
 int main() {
   int n, m;
-  while ((cin &gt;&gt; n &gt;&gt; m) && n && m) {
+  while ((cin >> n >> m) && n && m) {
     Graph g;
     int i;
-    for (i = 0; i &lt; n; i++) {
-      g[i] = vector&lt;int&gt;();
+    for (i = 0; i < n; i++) {
+      g[i] = vector<int>();
     }
-    for (i = 0; i &lt; m; i++) {
+    for (i = 0; i < m; i++) {
       int u, v;
-      cin &gt;&gt; u &gt;&gt; v;
+      cin >> u >> v;
       u--, v--; //we start from 0
       g[u].push_back(v);
       g[v].push_back(u);
     }
-    cout &lt;&lt; serv_station(g) &lt;&lt; endl;
+    cout << serv_station(g) << endl;
   }
   return 0;
 }

@@ -26,32 +26,32 @@ n = ceil(T / (n &#8211; 1))
 另外：本题也可以运用Floyd递归求解任意点对间最短路线的思想来解，<a href="http://aduni.org/courses/algorithms/courseware/handouts/Reciation_07.html#25504" target="_blank">参考这里</a>。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;queue&gt;
-#include &lt;utility&gt;
-#include &lt;algorithm&gt;
-#include &lt;climits&gt;
-#include &lt;cmath&gt;
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <utility>
+#include <algorithm>
+#include <climits>
+#include <cmath>
 
 using namespace std;
 
-typedef vector&lt;vector&lt;pair&lt;int, int&gt; &gt; &gt; Graph;
+typedef vector<vector<pair<int, int> > > Graph;
 
 int trips(const Graph & g, int src, int dest, int t) {
-  queue&lt;int&gt; q;
-  vector&lt;int&gt; cap(g.size());
+  queue<int> q;
+  vector<int> cap(g.size());
   cap[src] = INT_MAX;
   q.push(src);
   while (!q.empty()) {
     int v = q.front();
     int c = cap[v];
     q.pop();
-    for (int i = 0; i &lt; g[v].size(); i++) {
+    for (int i = 0; i < g[v].size(); i++) {
       int v2 = g[v][i].first;
       int c2 = g[v][i].second;
       int m = min(c, c2);
-      if (cap[v2] &lt; m) {
+      if (cap[v2] < m) {
         cap[v2] = m;
         q.push(v2);
       }
@@ -63,19 +63,19 @@ int trips(const Graph & g, int src, int dest, int t) {
 int main() {
   int nv, ne;
   int count = 0;
-  while ((cin &gt;&gt; nv &gt;&gt; ne) && nv) {
+  while ((cin >> nv >> ne) && nv) {
     Graph g(nv + 1);
-    for (int i = 0; i &lt; ne; i++) {
+    for (int i = 0; i < ne; i++) {
       int v1, v2, p;
-      cin &gt;&gt; v1 &gt;&gt; v2 &gt;&gt; p;
+      cin >> v1 >> v2 >> p;
       g[v1].push_back(make_pair(v2, p));
       g[v2].push_back(make_pair(v1, p));
     }
     int s, d, t;
-    cin &gt;&gt; s &gt;&gt; d &gt;&gt; t;
-    cout &lt;&lt; "Scenario #" &lt;&lt; ++count &lt;&lt; endl;
-    cout &lt;&lt; "Minimum Number of Trips = " &lt;&lt; trips(g, s, d, t) &lt;&lt; endl;
-    cout &lt;&lt; endl;
+    cin >> s >> d >> t;
+    cout << "Scenario #" << ++count << endl;
+    cout << "Minimum Number of Trips = " << trips(g, s, d, t) << endl;
+    cout << endl;
   }
   return 0;
 }

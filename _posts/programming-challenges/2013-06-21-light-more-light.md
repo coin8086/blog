@@ -15,7 +15,7 @@ PC/UVa IDs: 110701/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 
 ```cpp
 bool on = false;
-for (int i = 1; i &lt;=n; i++)
+for (int i = 1; i <=n; i++)
   if (n % i == 0)
     on = !on
 ```
@@ -33,8 +33,8 @@ n = p1\*p2\*p3\*&#8230;\*pk
 也就是说，当且仅当n为完全平方数时，灯亮。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;cmath&gt;
+#include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -47,8 +47,8 @@ inline bool light_on(uint n) {
 
 int main() {
   uint n = 0;
-  while ((cin &gt;&gt; n) && n) {
-    cout &lt;&lt; (light_on(n) ? "yes" : "no") &lt;&lt; endl;
+  while ((cin >> n) && n) {
+    cout << (light_on(n) ? "yes" : "no") << endl;
   }
   return 0;
 }

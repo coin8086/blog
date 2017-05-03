@@ -14,20 +14,20 @@ PC/UVa IDs: 110206/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 <a href="http://online-judge.uva.es/board/viewtopic.php?f=9&#038;t=2931&#038;start=15&#038;hilit=Erdos+Numbers" target="_blank">相关讨论</a>，或者试试这个<a href="https://code.google.com/p/programming-challenges-robert/source/browse/ch2_ex6_input" target="_blank">input</a>，对应的<a href="https://code.google.com/p/programming-challenges-robert/source/browse/ch2_ex6_output" target="_blank">output</a>在这里——程序必须通过这样的测试才有可能AC。笔者必须说，此题对输入格式的描述极不严谨，极大地浪费了读者的时间，在这样一本书中实属不该。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-#include &lt;map&gt;
-#include &lt;set&gt;
-#include &lt;queue&gt;
-#include &lt;cctype&gt;
-#include &lt;climits&gt;
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <set>
+#include <queue>
+#include <cctype>
+#include <climits>
 
 #define ERDOS "Erdos, P."
 
 using namespace std;
 
-typedef map&lt;string, set&lt;string&gt; &gt; Relation;
+typedef map<string, set<string> > Relation;
 
 inline void skip_space(const string & str, int & i) {
   while (isspace(str[i]))
@@ -58,8 +58,8 @@ inline string parse_author(const string & line, int start = 0, int * end = 0) {
   return a;
 }
 
-inline vector&lt;string&gt; parse_authors(const string & line) {
-  vector&lt;string&gt; a;
+inline vector<string> parse_authors(const string & line) {
+  vector<string> a;
   string names = line.substr(0, line.find(':'));
   int i = 0;
   int j;
@@ -78,29 +78,29 @@ inline vector&lt;string&gt; parse_authors(const string & line) {
   return a;
 }
 
-inline void relate(Relation & r, const vector&lt;string&gt; & authors) {
+inline void relate(Relation & r, const vector<string> & authors) {
   int n = authors.size();
-  for (int i = 0; i &lt; n; i++) {
-    for (int j = i + 1; j &lt; n; j++) {
+  for (int i = 0; i < n; i++) {
+    for (int j = i + 1; j < n; j++) {
       r[authors[i]].insert(authors[j]);
       r[authors[j]].insert(authors[i]);
     }
   }
 }
 
-vector&lt;int&gt; erdos_numbers(const Relation & r, const vector&lt;string&gt; & authors) {
-  vector&lt;int&gt; en(authors.size(), INT_MAX);
+vector<int> erdos_numbers(const Relation & r, const vector<string> & authors) {
+  vector<int> en(authors.size(), INT_MAX);
   if (r.count(ERDOS)) { //Erdos himself may not in r at all!
-    map&lt;string, int&gt; stat;
-    queue&lt;string&gt; q;
+    map<string, int> stat;
+    queue<string> q;
     stat[ERDOS] = 0;
     q.push(ERDOS);
     while (!q.empty()) {
       string author = q.front();
       q.pop();
       int n = stat[author];
-      const set&lt;string&gt; & coauthors = r.at(author);
-      set&lt;string&gt;::const_iterator it = coauthors.begin();
+      const set<string> & coauthors = r.at(author);
+      set<string>::const_iterator it = coauthors.begin();
       for (; it != coauthors.end(); it++) {
         if (!stat.count(*it)) {
           stat[*it] = n + 1;
@@ -108,10 +108,10 @@ vector&lt;int&gt; erdos_numbers(const Relation & r, const vector&lt;string&gt; &
         }
       }
     }
-    for (int i = 0; i &lt; authors.size(); i++) {
-      map&lt;string, int&gt;::iterator it = stat.find(authors[i]);
+    for (int i = 0; i < authors.size(); i++) {
+      map<string, int>::iterator it = stat.find(authors[i]);
       if (it != stat.end())
-        en[i] = it-&gt;second;
+        en[i] = it->second;
     }
   }
   return en;
@@ -119,33 +119,33 @@ vector&lt;int&gt; erdos_numbers(const Relation & r, const vector&lt;string&gt; &
 
 int main() {
   int N = 0;
-  cin &gt;&gt; N;
-  for (int i = 1; i &lt;= N; i++) {
+  cin >> N;
+  for (int i = 1; i <= N; i++) {
     int p, n;
-    cin &gt;&gt; p &gt;&gt; n;
+    cin >> p >> n;
     Relation r;
     string line;
     getline(cin, line); //Skip empty line
     int j;
-    for (j = 0; j &lt; p; j++) {
+    for (j = 0; j < p; j++) {
       getline(cin, line);
       relate(r, parse_authors(line));
     }
-    vector&lt;string&gt; authors;
+    vector<string> authors;
     authors.reserve(n);
-    for (j = 0; j &lt; n; j++) {
+    for (j = 0; j < n; j++) {
       getline(cin, line);
       authors.push_back(parse_author(line));
     }
-    vector&lt;int&gt; en = erdos_numbers(r, authors);
-    cout &lt;&lt; "Scenario " &lt;&lt; i &lt;&lt; endl;
-    for (j = 0; j &lt; n; j++) {
-      cout &lt;&lt; authors[j] &lt;&lt; ' ';
+    vector<int> en = erdos_numbers(r, authors);
+    cout << "Scenario " << i << endl;
+    for (j = 0; j < n; j++) {
+      cout << authors[j] << ' ';
       if (en[j] == INT_MAX)
-        cout &lt;&lt; "infinity";
+        cout << "infinity";
       else
-        cout &lt;&lt; en[j];
-      cout &lt;&lt; endl;
+        cout << en[j];
+      cout << endl;
     }
   }
   return 0;

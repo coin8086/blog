@@ -26,14 +26,14 @@ mb(n, i)*mw(n, k &#8211; i)
 另外：以下解法假设棋盘左上角(即：未旋转前的棋盘格子矩阵(0,0)的位置)着黑色。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;utility&gt;
+#include <iostream>
+#include <vector>
+#include <utility>
 
 using namespace std;
 
 typedef unsigned long long ull_t;
-typedef vector&lt;pair&lt;int, int&gt; &gt; PVec;
+typedef vector<pair<int, int> > PVec;
 
 class Black {
 public:
@@ -47,7 +47,7 @@ public:
 
   static void col_range(int n, int row, int & first, int & last) {
     int mid = cols(n) / 2;
-    if (row &gt; mid)
+    if (row > mid)
       row = n - 1 - row;
     first = mid - row;
     last = mid + row;
@@ -55,7 +55,7 @@ public:
 
   //1, 1, 2, 3, 4, 5, 6, 7
   static int max(int n) {
-    return n &gt; 1 ? n - 1 : 1;
+    return n > 1 ? n - 1 : 1;
   }
 };
 
@@ -71,7 +71,7 @@ public:
 
   static void col_range(int n, int row, int & first, int & last) {
     int mid = cols(n) / 2;
-    if (row &gt;= mid)
+    if (row >= mid)
       row = n - 2 - row;
     first = mid - 1 - row;
     last = mid + row;
@@ -79,33 +79,33 @@ public:
 
   //0, 1, 2, 3, 4, 5, 6, 7
   static int max(int n) {
-    return n &gt; 1 ? n - 1 : 0;
+    return n > 1 ? n - 1 : 0;
   }
 };
 
 inline bool avail(int col, const PVec & a) {
-  for (int i = 0; i &lt; a.size(); i++) {
+  for (int i = 0; i < a.size(); i++) {
     if (a[i].second == col)
       return false;
   }
   return true;
 }
 
-template&lt;typename T&gt;
+template<typename T>
 void backtrack(int n, int k, PVec & a, int & c) {
   if (a.size() == k) {
     c++;
   }
   //go on only when there are available rows to hold remaining bishops(one in each row)
-  else if (k - a.size() &lt;= T::rows(n) - (a.empty() ? 0 : (a.back().first + 1))) {
+  else if (k - a.size() <= T::rows(n) - (a.empty() ? 0 : (a.back().first + 1))) {
     int i = a.empty() ? 0 : a.back().first + 1;
-    for (; i &lt; T::rows(n); i++) {
+    for (; i < T::rows(n); i++) {
       int first, last;
       T::col_range(n, i, first, last);
-      for (int j = first; j &lt;= last; j++) {
+      for (int j = first; j <= last; j++) {
         if (avail(j, a)) {
           a.push_back(make_pair(i, j));
-          backtrack&lt;T&gt;(n, k, a, c);
+          backtrack<T>(n, k, a, c);
           a.pop_back();
         }
       }
@@ -113,22 +113,22 @@ void backtrack(int n, int k, PVec & a, int & c) {
   }
 }
 
-template&lt;typename T&gt;
+template<typename T>
 inline int methods(int n, int k) {
   if (!k)
     return 1;
   int c = 0;
   PVec a;
-  backtrack&lt;T&gt;(n, k, a, c);
+  backtrack<T>(n, k, a, c);
   return c;
 }
 
 ull_t bishops(int n, int k) {
   ull_t c = 0;
-  for (int i = 0; i &lt;= k; i++) {
-    if (i &lt;= Black::max(n) && k - i &lt;= White::max(n)) {
-      ull_t r = methods&lt;Black&gt;(n, i);
-      r *= methods&lt;White&gt;(n, k - i);
+  for (int i = 0; i <= k; i++) {
+    if (i <= Black::max(n) && k - i <= White::max(n)) {
+      ull_t r = methods<Black>(n, i);
+      r *= methods<White>(n, k - i);
       c += r;
     }
   }
@@ -137,8 +137,8 @@ ull_t bishops(int n, int k) {
 
 int main() {
   int n, k;
-  while ((cin &gt;&gt; n &gt;&gt; k) && n) {
-    cout &lt;&lt; bishops(n, k) &lt;&lt; endl;
+  while ((cin >> n >> k) && n) {
+    cout << bishops(n, k) << endl;
   }
   return 0;
 }

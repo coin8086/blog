@@ -26,14 +26,14 @@ h3(n) = 2 ^ n &#8211; 1
 由此可见当k=0时问题蜕化成3根柱普通汉诺塔问题，当n=10000时h4(n)有上界2 ^ 10000 - 1。高精度整数运算在此必不可少。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
+#include <iostream>
+#include <vector>
 #include "bigint.h"
 
 using namespace std;
 
-vector&lt;BigInt&gt; H;
-vector&lt;BigInt&gt; P2;
+vector<BigInt> H;
+vector<BigInt> P2;
 
 void init() {
   H.reserve(10001);
@@ -49,8 +49,8 @@ void init() {
 }
 
 inline BigInt p2(int n) {
-  if (n &gt;= P2.size()) {
-    for (int i = P2.size(); i &lt;= n; i++) {
+  if (n >= P2.size()) {
+    for (int i = P2.size(); i <= n; i++) {
       P2.push_back(P2.back() * 2);
     }
   }
@@ -62,18 +62,18 @@ inline BigInt h(int n, int k) {
 }
 
 BigInt h(int n) {
-  if (n &gt;= H.size()) {
-    for (int i = H.size(); i &lt;= n; i++) {
+  if (n >= H.size()) {
+    for (int i = H.size(); i <= n; i++) {
       BigInt min = h(i, 1);
       //int mk = 1;
-      for (int k = 2; k &lt; i; k++) {
+      for (int k = 2; k < i; k++) {
         BigInt m = h(i, k);
-        if (m &lt; min) {
+        if (m < min) {
           min = m;
           //mk = k;
         }
       }
-      //clog &lt;&lt; "h(" &lt;&lt; i &lt;&lt; ", " &lt;&lt; mk &lt;&lt; ") = " &lt;&lt; min &lt;&lt; endl;
+      //clog << "h(" << i << ", " << mk << ") = " << min << endl;
       H.push_back(min);
     }
   }
@@ -83,8 +83,8 @@ BigInt h(int n) {
 int main() {
   init();
   int n;
-  while (cin &gt;&gt; n) {
-    cout &lt;&lt; h(n) &lt;&lt; endl;
+  while (cin >> n) {
+    cout << h(n) << endl;
   }
   return 0;
 }

@@ -14,8 +14,8 @@ PC/UVa IDs: 110502/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 <!--more-->
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
+#include <iostream>
+#include <vector>
 
 #define MAX_SIZE 10
 
@@ -23,11 +23,11 @@ using namespace std;
 
 typedef long long llt;
 
-typedef vector&lt;char&gt; BigInt;
+typedef vector<char> BigInt;
 
-ostream & operator &lt;&lt;(ostream & os, const BigInt & n) {
-  for (int i = n.size() - 1; i &gt;= 0; i--)
-    os &lt;&lt; (char)('0' + n[i]);
+ostream & operator <<(ostream & os, const BigInt & n) {
+  for (int i = n.size() - 1; i >= 0; i--)
+    os << (char)('0' + n[i]);
   return os;
 }
 
@@ -49,7 +49,7 @@ inline BigInt to_bigint(llt n) {
 inline bool done(const BigInt & bn) {
   bool ok = true;
   int h = bn.size() / 2;
-  for (int i = 0; i &lt; h; i++) {
+  for (int i = 0; i < h; i++) {
     if (bn[i] != bn[bn.size() - i - 1]) {
       ok = false;
       break;
@@ -60,9 +60,9 @@ inline bool done(const BigInt & bn) {
 
 inline void add(BigInt & bn, const BigInt & br) {
   int carry = 0;
-  for (int i = 0; i &lt; bn.size(); i++) {
+  for (int i = 0; i < bn.size(); i++) {
     int s = bn[i] + br[i] + carry;
-    if (s &gt; 9) {
+    if (s > 9) {
       carry = 1;
       s %= 10;
     }
@@ -88,13 +88,13 @@ int reverse_add(llt n, BigInt & bn) {
 
 int main() {
   int n = 0;
-  cin &gt;&gt; n;
-  for (int i = 0; i &lt; n; i++) {
+  cin >> n;
+  for (int i = 0; i < n; i++) {
     llt p;
-    cin &gt;&gt; p;
+    cin >> p;
     BigInt bn;
     int t = reverse_add(p, bn);
-    cout &lt;&lt; t &lt;&lt; ' ' &lt;&lt; bn &lt;&lt; endl;
+    cout << t << ' ' << bn << endl;
   }
   return 0;
 }

@@ -16,15 +16,15 @@ PC/UVa IDs: 110905/10029 <a href="http://uva.onlinejudge.org/index.php?option=co
 （需要注意的是：虽然算法的时间复杂度是O(n^2)，但若不考虑优化系数，仍然会在UVa里超时。为此以下算法把已计算过的单词按长度分组以减少比较次数，降低时间复杂度系数）
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;map&gt;
-#include &lt;string&gt;
+#include <iostream>
+#include <vector>
+#include <map>
+#include <string>
 
 using namespace std;
 
-typedef vector&lt;string&gt; Dict;
-typedef map&lt;string, int&gt; LadderLen;
+typedef vector<string> Dict;
+typedef map<string, int> LadderLen;
 
 //p1 and p2 must have the same length.
 inline bool equal(const char * p1, const char * p2) {
@@ -47,7 +47,7 @@ bool one_step(const string & w1, const string & w2) {
   }
   else {
     while (*p1++ == *p2++);
-    if (d &gt; 0)
+    if (d > 0)
       r = equal(p1, --p2);
     else
       r = equal(p2, --p1);
@@ -56,9 +56,9 @@ bool one_step(const string & w1, const string & w2) {
 }
 
 inline void search(const string & w, const Dict & d, LadderLen & len, int & max) {
-  for (int j = 0; j &lt; d.size(); j++) {
+  for (int j = 0; j < d.size(); j++) {
     const string & w2 = d[j];
-    if (one_step(w, w2) && len[w2] &gt; max) {
+    if (one_step(w, w2) && len[w2] > max) {
       max = len[w2];
     }
   }
@@ -66,19 +66,19 @@ inline void search(const string & w, const Dict & d, LadderLen & len, int & max)
 
 int ladder(const Dict & d) {
   LadderLen len;
-  vector&lt;Dict&gt; d2(17);
+  vector<Dict> d2(17);
   int r = 0;
-  for (int i = d.size() - 1; i &gt; 0; i--) {
+  for (int i = d.size() - 1; i > 0; i--) {
     const string & w = d[i];
     int max = -1;
     search(w, d2[w.size()], len, max);
-    if (w.size() &lt; 16)
+    if (w.size() < 16)
       search(w, d2[w.size() + 1], len, max);
-    if (w.size() &gt; 1)
+    if (w.size() > 1)
       search(w, d2[w.size() - 1], len, max);
     d2[w.size()].push_back(w);
     len[w] = ++max;
-    if (max &gt; r)
+    if (max > r)
       r = max;
   }
   return r + 1;
@@ -87,10 +87,10 @@ int ladder(const Dict & d) {
 int main() {
   Dict d(1); //The first word is just a place holder
   string w;
-  while (cin &gt;&gt; w) {
+  while (cin >> w) {
     d.push_back(w);
   }
-  cout &lt;&lt; ladder(d) &lt;&lt; endl;
+  cout << ladder(d) << endl;
   return 0;
 }
 ```

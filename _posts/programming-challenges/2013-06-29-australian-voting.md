@@ -12,60 +12,60 @@ PC/UVa IDs: 110108/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 分析：用什么样的数据结构来表示投票有很多选择；如果选择了合适的数据结构，不但可以提高时间效率还可以简化编程。<!--more-->
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;sstream&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-#include &lt;map&gt;
-#include &lt;algorithm&gt;
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <map>
+#include <algorithm>
 
 using namespace std;
 
-typedef vector&lt;int&gt; Voting;
-typedef map&lt;int, vector&lt;Voting&gt; &gt; Result;
+typedef vector<int> Voting;
+typedef map<int, vector<Voting> > Result;
 
 class Candidate {
 public:
   Candidate(int ai, int av) : idx(ai), votes(av) {}
-  bool operator &lt;(const Candidate & c) const { return votes &gt; c.votes; }
+  bool operator <(const Candidate & c) const { return votes > c.votes; }
   int idx;   //index for a candidate
   int votes; //his/her votes
 };
 
-inline Result init(const vector&lt;Voting&gt; & votings) {
+inline Result init(const vector<Voting> & votings) {
   Result result;
-  for (int i = 0; i &lt; votings.size(); i++) {
+  for (int i = 0; i < votings.size(); i++) {
     result[votings[i].back()].push_back(votings[i]);
   }
   return result;
 }
 
-bool elect(const Result & result, int total, vector&lt;int&gt; & victors,
-  vector&lt;int&gt; & losers)
+bool elect(const Result & result, int total, vector<int> & victors,
+  vector<int> & losers)
 {
   bool over = false;
   victors.clear();
   losers.clear();
-  vector&lt;Candidate&gt; cand;
+  vector<Candidate> cand;
   Result::const_iterator it = result.begin();
   for (; it != result.end(); it++) {
-    cand.push_back(Candidate(it-&gt;first, it-&gt;second.size()));
+    cand.push_back(Candidate(it->first, it->second.size()));
   }
   sort(cand.begin(), cand.end());
-  if (cand[0].votes * 1.0 / total &gt; 0.5) {
+  if (cand[0].votes * 1.0 / total > 0.5) {
     over = true;
     victors.push_back(cand[0].idx);
   }
   else if (cand.front().votes == cand.back().votes) {
     over = true;
-    for (int i = 0; i &lt; cand.size(); i++) {
+    for (int i = 0; i < cand.size(); i++) {
       victors.push_back(cand[i].idx);
     }
   }
   else {
     int v = cand.back().votes;
     losers.push_back(cand.back().idx);
-    for (int i = cand.size() - 2; i &gt; 0; i--) {
+    for (int i = cand.size() - 2; i > 0; i--) {
       if (cand[i].votes == v)
         losers.push_back(cand[i].idx);
     }
@@ -73,16 +73,16 @@ bool elect(const Result & result, int total, vector&lt;int&gt; & victors,
   return over;
 }
 
-inline bool contain(const vector&lt;int&gt; & vec, int e) {
+inline bool contain(const vector<int> & vec, int e) {
   return find(vec.begin(), vec.end(), e) != vec.end();
 }
 
-void eliminate(Result & result, const vector&lt;int&gt; & losers) {
-  for (int i = 0; i &lt; losers.size(); i++) {
+void eliminate(Result & result, const vector<int> & losers) {
+  for (int i = 0; i < losers.size(); i++) {
     Result::iterator it = result.find(losers[i]);
-    vector&lt;Voting&gt; & votings = it-&gt;second;
+    vector<Voting> & votings = it->second;
     //Reassign losers' votings to those non-eliminated
-    for (int j = 0; j &lt; votings.size(); j++) {
+    for (int j = 0; j < votings.size(); j++) {
       Voting & v = votings[j];
       v.pop_back();
       while (!result.count(v.back()) || contain(losers, v.back()))
@@ -93,9 +93,9 @@ void eliminate(Result & result, const vector&lt;int&gt; & losers) {
   }
 }
 
-inline vector&lt;int&gt; vote(const vector&lt;Voting&gt; & votings) {
-  vector&lt;int&gt; victors;
-  vector&lt;int&gt; losers;
+inline vector<int> vote(const vector<Voting> & votings) {
+  vector<int> victors;
+  vector<int> losers;
   Result result = init(votings);
   int total = votings.size();
   while (!elect(result, total, victors, losers)) {
@@ -106,29 +106,29 @@ inline vector&lt;int&gt; vote(const vector&lt;Voting&gt; & votings) {
 
 int main() {
   int N = 0;
-  cin &gt;&gt; N;
-  for (int i = 0; i &lt; N; i++) {
+  cin >> N;
+  for (int i = 0; i < N; i++) {
     int n;
-    cin &gt;&gt; n;
+    cin >> n;
     //Read candidate names
     string line;
     getline(cin, line); //Skip empty line
-    vector&lt;string&gt; names(n + 1);
+    vector<string> names(n + 1);
     int j;
-    for (j = 1; j &lt;= n; j++) {
+    for (j = 1; j <= n; j++) {
       getline(cin, names[j]);
     }
     //Read votings
-    vector&lt;Voting&gt; votings;
+    vector<Voting> votings;
     votings.reserve(1000);
     getline(cin, line);
     while(!line.empty()) {
       istringstream is(line);
       Voting v;
       v.reserve(n);
-      for (int k = 0; k &lt; n; k++) {
+      for (int k = 0; k < n; k++) {
         int p;
-        is &gt;&gt; p;
+        is >> p;
         v.push_back(p);
       }
       //The last one has the highest rank, the first one the lowest.
@@ -137,11 +137,11 @@ int main() {
       votings.push_back(v);
       getline(cin, line);
     }
-    vector&lt;int&gt; victors = vote(votings);
+    vector<int> victors = vote(votings);
     if (i)
-      cout &lt;&lt; endl;
-    for (j = 0; j &lt; victors.size(); j++) {
-      cout &lt;&lt; names[victors[j]] &lt;&lt; endl;
+      cout << endl;
+    for (j = 0; j < victors.size(); j++) {
+      cout << names[victors[j]] << endl;
     }
   }
   return 0;

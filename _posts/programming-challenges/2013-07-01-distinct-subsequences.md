@@ -22,7 +22,7 @@ times(x, z) {
   if z.size == 1
     return times(x, z[0]) //寻找字符z[0]在串x中出现的次数
   s = 0
-  for i = 0; i &lt; x.size; i++
+  for i = 0; i < x.size; i++
     if x[i] == z[0]
       //s[i, j]表示s从索引i开始到j结束（包括j在内）的子串，索引-1的位置指向串的最后一个字符
       s += times(x[i + 1, -1], z[1, -1]) 
@@ -37,7 +37,7 @@ times(x, z, i, j) { //i,j分别为x,z从0开始的子串长度
   if j == 1
     return times(x, i, z[0]) //寻找字符z[0]在串x子串中出现的次数
   s = 0
-  for k = i - 1; k &gt;= 0; k--
+  for k = i - 1; k >= 0; k--
     if x[k] == z[j - 1]
       s += times(x, z, k, j - 1) 
   return s
@@ -49,7 +49,7 @@ times(x, z, i, j) { //i,j分别为x,z从0开始的子串长度
 ```cpp
 T[i][j] = {
   s = 0
-  for k = i - 1; k &gt;= 0; k--
+  for k = i - 1; k >= 0; k--
     if x[k] == z[j - 1]
       s += T[k][j - 1]
   return s
@@ -78,30 +78,30 @@ T[i][j] = {
 现在足够简单了。不过还有最后一个问题：因为x、z的长度最长分别可达10000和100，所以最多可以有C(10000, 100)种组合方法（10000个数里选出100个），这是一个天文数字，必须用大数运算。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
+#include <iostream>
+#include <string>
+#include <vector>
 #include "bigint.h"
 
 using namespace std;
 
 BigInt times(const string & x, const string & z) {
-  if (x.empty() || z.empty() || x.size() &lt; z.size()) {
+  if (x.empty() || z.empty() || x.size() < z.size()) {
     return BigInt();
   }
   int rows = x.size() + 1;
   int cols = z.size() + 1;
-  vector&lt;vector&lt;BigInt&gt; &gt; T(rows, vector&lt;BigInt&gt;(cols));
+  vector<vector<BigInt> > T(rows, vector<BigInt>(cols));
   int i, j;
   int c = 0;
   char ch = z[0];
-  for (i = 0; i &lt; x.size(); i++) {
+  for (i = 0; i < x.size(); i++) {
     if (x[i] == ch)
       c++;
     T[i + 1][1] = c;
   }
-  for (i = 2; i &lt; rows; i++) {
-    for (j = 2; j &lt; cols && j &lt;= i; j++) {
+  for (i = 2; i < rows; i++) {
+    for (j = 2; j < cols && j <= i; j++) {
       BigInt s = T[i - 1][j];
       if (z[j - 1] == x[i - 1]) {
         s += T[i - 1][j - 1];
@@ -114,12 +114,12 @@ BigInt times(const string & x, const string & z) {
 
 int main() {
   int N = 0;
-  cin &gt;&gt; N;
+  cin >> N;
   cin.ignore();
-  for (int i = 0; i &lt; N; i++) {
+  for (int i = 0; i < N; i++) {
     string x, z;
-    cin &gt;&gt; x &gt;&gt; z;
-    cout &lt;&lt; times(x, z) &lt;&lt; endl;
+    cin >> x >> z;
+    cout << times(x, z) << endl;
   }
   return 0;
 }

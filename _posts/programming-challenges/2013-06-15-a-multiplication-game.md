@@ -52,22 +52,22 @@ ceil(upper / 2) > p >= ceil(lower / 9)
 则Stan有必胜策略，否则Ollie必胜。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;cmath&gt;
+#include <iostream>
+#include <cmath>
 
 using namespace std;
 
 bool stan_win(unsigned int n) {
   bool stan = true;
-  if (n &gt; 9) {
+  if (n > 9) {
     //To ensure Stan's success, Ollie's multiplication result must be in
     //[lower, upper).
     unsigned int upper = n;
     unsigned int lower = ceil(n / 9.0);
     stan = !stan; //Indicate the current range is not Stan's.
     while (true) {
-      if (stan && lower &lt;= 9) {
-        if (!(lower &gt;= 2 && upper &gt; lower))
+      if (stan && lower <= 9) {
+        if (!(lower >= 2 && upper > lower))
           stan = false;
         break;
       }
@@ -91,8 +91,8 @@ bool stan_win(unsigned int n) {
 
 int main() {
   unsigned int n;
-  while (cin &gt;&gt; n) {
-    cout &lt;&lt; (stan_win(n) ? "Stan wins." : "Ollie wins.") &lt;&lt; endl;
+  while (cin >> n) {
+    cout << (stan_win(n) ? "Stan wins." : "Ollie wins.") << endl;
   }
   return 0;
 }

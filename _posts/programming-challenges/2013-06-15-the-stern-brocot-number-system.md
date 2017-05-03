@@ -26,8 +26,8 @@ left < mid < right <!--more-->
 根据规则，一边生成节点一边二分查找即可。
 
 ```cpp
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -45,8 +45,8 @@ public:
     return *this;
   }
 
-  bool operator &lt;(const Fraction & f) const {
-    return (llt)_n * f._d - (llt)_d * f._n &lt; 0;
+  bool operator <(const Fraction & f) const {
+    return (llt)_n * f._d - (llt)_d * f._n < 0;
   }
 
   bool operator !=(const Fraction & f) const {
@@ -62,13 +62,13 @@ private:
   unsigned int _d; //denominator
 };
 
-vector&lt;char&gt; stern_brocot_path(const Fraction & f) {
-  vector&lt;char&gt; path;
+vector<char> stern_brocot_path(const Fraction & f) {
+  vector<char> path;
   Fraction mid(1, 1);
   Fraction left(0, 1);
   Fraction right(1, 0);
   while (f != mid) {
-    if (f &lt; mid) {
+    if (f < mid) {
       right = mid;
       mid = mid.middle(left);
       path.push_back('L');
@@ -84,11 +84,11 @@ vector&lt;char&gt; stern_brocot_path(const Fraction & f) {
 
 int main() {
   unsigned int a, b;
-  while ((cin &gt;&gt; a &gt;&gt; b) && !(a == 1 && b == 1)) {
-    vector&lt;char&gt; path = stern_brocot_path(Fraction(a, b));
-    for (int i = 0; i &lt; path.size(); i++)
-      cout &lt;&lt; path[i];
-    cout &lt;&lt; endl;
+  while ((cin >> a >> b) && !(a == 1 && b == 1)) {
+    vector<char> path = stern_brocot_path(Fraction(a, b));
+    for (int i = 0; i < path.size(); i++)
+      cout << path[i];
+    cout << endl;
   }
   return 0;
 }
