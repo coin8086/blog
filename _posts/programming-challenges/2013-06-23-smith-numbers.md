@@ -1,6 +1,6 @@
 ---
 title: Smith Numbers
-date: 2013-06-23T11:29:54+00:00
+date: 2013-06-23T11:29:54+08:00
 layout: post
 excerpt_separator: <!--more-->
 category_sticky_post:

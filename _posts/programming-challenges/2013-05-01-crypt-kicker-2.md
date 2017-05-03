@@ -1,6 +1,6 @@
 ---
 title: Crypt Kicker
-date: 2013-05-01T12:53:05+00:00
+date: 2013-05-01T12:53:05+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

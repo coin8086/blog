@@ -1,6 +1,6 @@
 ---
 title: The Priest Mathematician
-date: 2013-06-21T11:06:32+00:00
+date: 2013-06-21T11:06:32+08:00
 layout: post
 excerpt_separator: <!--more-->
 category_sticky_post:

@@ -1,6 +1,6 @@
 ---
 title: How Many Fibs?
-date: 2013-06-17T00:25:37+00:00
+date: 2013-06-17T00:25:37+08:00
 layout: post
 excerpt_separator: <!--more-->
 category_sticky_post:

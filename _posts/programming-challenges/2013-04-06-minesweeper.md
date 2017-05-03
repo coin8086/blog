@@ -1,6 +1,6 @@
 ---
 title: Minesweeper
-date: 2013-04-06T15:04:26+00:00
+date: 2013-04-06T15:04:26+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

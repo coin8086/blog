@@ -1,6 +1,6 @@
 ---
 title: Australian Voting
-date: 2013-06-29T01:22:38+00:00
+date: 2013-06-29T01:22:38+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

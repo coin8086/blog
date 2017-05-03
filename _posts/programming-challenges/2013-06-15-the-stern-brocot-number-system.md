@@ -1,6 +1,6 @@
 ---
 title: The Stern-Brocot Number System
-date: 2013-06-15T21:27:54+00:00
+date: 2013-06-15T21:27:54+08:00
 layout: post
 excerpt_separator: <!--more-->
 category_sticky_post:

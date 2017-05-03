@@ -1,6 +1,6 @@
 ---
 title: LC-Display
-date: 2013-04-07T18:07:04+00:00
+date: 2013-04-07T18:07:04+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

@@ -1,6 +1,6 @@
 ---
 title: Carmichael Numbers
-date: 2013-05-24T21:37:16+00:00
+date: 2013-05-24T21:37:16+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

@@ -1,6 +1,6 @@
 ---
 title: Fire Station
-date: 2013-06-03T14:10:06+00:00
+date: 2013-06-03T14:10:06+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

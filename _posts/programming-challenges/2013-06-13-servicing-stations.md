@@ -1,6 +1,6 @@
 ---
 title: Servicing Stations
-date: 2013-06-13T00:14:25+00:00
+date: 2013-06-13T00:14:25+08:00
 layout: post
 excerpt_separator: <!--more-->
 category_sticky_post:

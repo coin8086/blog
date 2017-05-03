@@ -1,6 +1,6 @@
 ---
 title: Is Bigger Smarter?
-date: 2013-06-07T16:56:34+00:00
+date: 2013-06-07T16:56:34+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

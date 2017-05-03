@@ -1,6 +1,6 @@
 ---
 title: Where’s Waldorf?
-date: 2013-06-26T12:33:46+00:00
+date: 2013-06-26T12:33:46+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

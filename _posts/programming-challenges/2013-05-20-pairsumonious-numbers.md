@@ -1,6 +1,6 @@
 ---
 title: Pairsumonious Numbers
-date: 2013-05-20T00:54:46+00:00
+date: 2013-05-20T00:54:46+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

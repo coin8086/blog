@@ -1,6 +1,6 @@
 ---
 title: Summation of Four Primes
-date: 2013-06-22T20:55:26+00:00
+date: 2013-06-22T20:55:26+08:00
 layout: post
 excerpt_separator: <!--more-->
 category_sticky_post:

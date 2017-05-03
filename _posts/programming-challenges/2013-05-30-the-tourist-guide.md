@@ -1,6 +1,6 @@
 ---
 title: The Tourist Guide
-date: 2013-05-30T21:28:52+00:00
+date: 2013-05-30T21:28:52+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

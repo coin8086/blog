@@ -1,6 +1,6 @@
 ---
 title: Edit Step Ladders
-date: 2013-05-31T22:18:50+00:00
+date: 2013-05-31T22:18:50+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

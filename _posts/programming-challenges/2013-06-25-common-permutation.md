@@ -1,6 +1,6 @@
 ---
 title: Common Permutation
-date: 2013-06-25T19:38:41+00:00
+date: 2013-06-25T19:38:41+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

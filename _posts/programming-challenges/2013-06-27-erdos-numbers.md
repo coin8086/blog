@@ -1,6 +1,6 @@
 ---
 title: Erdos Numbers
-date: 2013-06-27T23:13:27+00:00
+date: 2013-06-27T23:13:27+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

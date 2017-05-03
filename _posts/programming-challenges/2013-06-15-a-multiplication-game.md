@@ -1,6 +1,6 @@
 ---
 title: A Multiplication Game
-date: 2013-06-15T19:40:57+00:00
+date: 2013-06-15T19:40:57+08:00
 layout: post
 excerpt_separator: <!--more-->
 category_sticky_post:

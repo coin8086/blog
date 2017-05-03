@@ -1,6 +1,6 @@
 ---
 title: Polynomial Coefficients
-date: 2013-06-16T13:15:28+00:00
+date: 2013-06-16T13:15:28+08:00
 layout: post
 excerpt_separator: <!--more-->
 category_sticky_post:

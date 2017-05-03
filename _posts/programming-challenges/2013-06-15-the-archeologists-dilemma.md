@@ -1,6 +1,6 @@
 ---
 title: The Archeologist’s Dilemma
-date: 2013-06-15T11:35:17+00:00
+date: 2013-06-15T11:35:17+08:00
 layout: post
 excerpt_separator: <!--more-->
 category_sticky_post:

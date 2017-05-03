@@ -1,6 +1,6 @@
 ---
 title: Bicoloring
-date: 2013-05-30T20:59:49+00:00
+date: 2013-05-30T20:59:49+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

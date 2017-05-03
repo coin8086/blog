@@ -1,6 +1,6 @@
 ---
 title: Stacks of Flapjacks
-date: 2013-05-08T19:47:04+00:00
+date: 2013-05-08T19:47:04+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

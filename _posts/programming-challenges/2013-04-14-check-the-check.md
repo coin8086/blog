@@ -1,6 +1,6 @@
 ---
 title: Check the Check
-date: 2013-04-14T17:12:11+00:00
+date: 2013-04-14T17:12:11+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

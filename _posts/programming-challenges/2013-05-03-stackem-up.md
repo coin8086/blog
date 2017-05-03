@@ -1,6 +1,6 @@
 ---
 title: 'Stack&#8217;em Up'
-date: 2013-05-03T23:42:34+00:00
+date: 2013-05-03T23:42:34+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm

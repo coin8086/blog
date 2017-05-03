@@ -1,6 +1,6 @@
 ---
 title: Self-describing Sequence
-date: 2013-06-21T18:15:34+00:00
+date: 2013-06-21T18:15:34+08:00
 layout: post
 excerpt_separator: <!--more-->
 category_sticky_post:

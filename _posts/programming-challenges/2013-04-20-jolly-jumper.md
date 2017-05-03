@@ -1,6 +1,6 @@
 ---
 title: Jolly Jumper
-date: 2013-04-20T17:30:31+00:00
+date: 2013-04-20T17:30:31+08:00
 layout: post
 excerpt_separator: <!--more-->
 tags: algorithm
