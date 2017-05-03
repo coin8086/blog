@@ -96,8 +96,3 @@ int main() {
 
 结语：其实，所谓的动态规划，很像回溯的逆过程：前者从“前”往后递增计算，后者从“后”往前递减计算。只不过前者还记录了一些计算的中间结果以避免重复计算（其实后者也可以，但考虑到栈的深度，一些情况下回溯并不合适）。
 
-<div class="addtoany_share_save_container addtoany_content_bottom">
-  <div class="a2a_kit a2a_kit_size_32 addtoany_list a2a_target" id="wpa2a_26">
-    <a class="a2a_button_facebook" href="http://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fkuangtong.me%2F2013%2F05%2F31%2Fedit-step-ladders%2F&linkname=Edit%20Step%20Ladders" title="Facebook" rel="nofollow" target="_blank"></a><a class="a2a_button_twitter" href="http://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fkuangtong.me%2F2013%2F05%2F31%2Fedit-step-ladders%2F&linkname=Edit%20Step%20Ladders" title="Twitter" rel="nofollow" target="_blank"></a><a class="a2a_button_google_plus" href="http://www.addtoany.com/add_to/google_plus?linkurl=http%3A%2F%2Fkuangtong.me%2F2013%2F05%2F31%2Fedit-step-ladders%2F&linkname=Edit%20Step%20Ladders" title="Google+" rel="nofollow" target="_blank"></a><a class="a2a_button_sina_weibo" href="http://www.addtoany.com/add_to/sina_weibo?linkurl=http%3A%2F%2Fkuangtong.me%2F2013%2F05%2F31%2Fedit-step-ladders%2F&linkname=Edit%20Step%20Ladders" title="Sina Weibo" rel="nofollow" target="_blank"></a><a class="a2a_dd addtoany_share_save" href="https://www.addtoany.com/share_save"></a>
-  </div>
-</div>

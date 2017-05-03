@@ -120,8 +120,3 @@ int main() {
 
 需要说明的是：Programming Challenge网站表示此题尚无法正确判定答案，而UVa判以上解WA。但笔者对8到10000000的每一个整数都做了测试，结果表明笔者的解法是正确无误的。测试程序在<a href="https://code.google.com/p/programming-challenges-robert/source/browse/ch7_ex5_test.rb" target="_blank">这里</a>。
 
-<div class="addtoany_share_save_container addtoany_content_bottom">
-  <div class="a2a_kit a2a_kit_size_32 addtoany_list a2a_target" id="wpa2a_45">
-    <a class="a2a_button_facebook" href="http://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fkuangtong.me%2F2013%2F06%2F22%2Fsummation-of-four-primes%2F&linkname=Summation%20of%20Four%20Primes" title="Facebook" rel="nofollow" target="_blank"></a><a class="a2a_button_twitter" href="http://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fkuangtong.me%2F2013%2F06%2F22%2Fsummation-of-four-primes%2F&linkname=Summation%20of%20Four%20Primes" title="Twitter" rel="nofollow" target="_blank"></a><a class="a2a_button_google_plus" href="http://www.addtoany.com/add_to/google_plus?linkurl=http%3A%2F%2Fkuangtong.me%2F2013%2F06%2F22%2Fsummation-of-four-primes%2F&linkname=Summation%20of%20Four%20Primes" title="Google+" rel="nofollow" target="_blank"></a><a class="a2a_button_sina_weibo" href="http://www.addtoany.com/add_to/sina_weibo?linkurl=http%3A%2F%2Fkuangtong.me%2F2013%2F06%2F22%2Fsummation-of-four-primes%2F&linkname=Summation%20of%20Four%20Primes" title="Sina Weibo" rel="nofollow" target="_blank"></a><a class="a2a_dd addtoany_share_save" href="https://www.addtoany.com/share_save"></a>
-  </div>
-</div>
