@@ -19,7 +19,7 @@ lower = ceil(n/9), upper = n
   
 upper > x * p >= lower
   
-其中x=2,3,&#8230;,9。即：
+其中x=2,3,...,9。即：
   
 ceil(upper / x) > p >= ceil(lower / x)<!--more-->
 
