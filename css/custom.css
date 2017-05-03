@@ -1,0 +1,14 @@
+.post-tag {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #ddd;
+}
+
+.footnotes {
+  font-size: 75%;
+  background-color: #f2f2f2;
+  padding: 1em;
+  margin-top: 3em;
+}
+
