@@ -2,6 +2,7 @@
 title: Crypt Kicker II
 date: 2013-05-05T10:57:11+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---

@@ -2,6 +2,7 @@
 title: Distinct Subsequences
 date: 2013-07-01T17:52:20+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---

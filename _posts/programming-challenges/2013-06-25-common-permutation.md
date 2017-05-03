@@ -2,6 +2,7 @@
 title: Common Permutation
 date: 2013-06-25T19:38:41+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---

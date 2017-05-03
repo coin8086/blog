@@ -4,6 +4,7 @@ date: 2013-06-13T00:14:25+00:00
 layout: post
 category_sticky_post:
   - "0"
+tags: algorithm
 categories:
   - 编程挑战
 ---

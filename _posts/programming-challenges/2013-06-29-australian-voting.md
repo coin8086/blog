@@ -2,6 +2,7 @@
 title: Australian Voting
 date: 2013-06-29T01:22:38+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---

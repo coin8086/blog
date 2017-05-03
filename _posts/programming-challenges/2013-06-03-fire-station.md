@@ -2,6 +2,7 @@
 title: Fire Station
 date: 2013-06-03T14:10:06+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---

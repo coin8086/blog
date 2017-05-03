@@ -2,6 +2,7 @@
 title: Factovisors
 date: 2013-05-24T16:51:46+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---

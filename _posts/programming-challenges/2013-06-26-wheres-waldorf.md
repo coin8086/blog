@@ -2,6 +2,7 @@
 title: Where’s Waldorf?
 date: 2013-06-26T12:33:46+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---

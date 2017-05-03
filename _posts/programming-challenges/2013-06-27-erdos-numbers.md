@@ -2,6 +2,7 @@
 title: Erdos Numbers
 date: 2013-06-27T23:13:27+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---

@@ -2,6 +2,7 @@
 title: Pairsumonious Numbers
 date: 2013-05-20T00:54:46+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---

@@ -2,6 +2,7 @@
 title: The Tourist Guide
 date: 2013-05-30T21:28:52+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---

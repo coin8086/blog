@@ -2,6 +2,7 @@
 title: LC-Display
 date: 2013-04-07T18:07:04+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---

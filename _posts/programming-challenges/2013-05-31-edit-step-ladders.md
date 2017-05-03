@@ -2,6 +2,7 @@
 title: Edit Step Ladders
 date: 2013-05-31T22:18:50+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---

@@ -2,6 +2,7 @@
 title: Is Bigger Smarter?
 date: 2013-06-07T16:56:34+00:00
 layout: post
+tags: algorithm
 categories:
   - 编程挑战
 ---
