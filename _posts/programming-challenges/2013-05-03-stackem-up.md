@@ -1,5 +1,5 @@
 ---
-title: 'Stack&#8217;em Up'
+title: "Stack'em Up"
 date: 2013-05-03T23:42:34+08:00
 layout: post
 excerpt_separator: <!--more-->
