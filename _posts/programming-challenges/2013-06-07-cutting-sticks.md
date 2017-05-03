@@ -37,7 +37,8 @@ f(i, j) = 0
   
 如果用表格seg\[i\]\[j\]来存贮f(i, j)的值，即可以动态规划解之。但须注意单元格的计算顺序：从左至右，从下往上。只需计算i < j的格子，i = j的格子初始化为0。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;climits&gt;
 
@@ -87,5 +88,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

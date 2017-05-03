@@ -23,7 +23,8 @@ PC/UVa IDs: 110702/10006 <a href="http://uva.onlinejudge.org/index.php?option=co
   
 另外：本答案会导致超时（TLE），优化的方案是：先把65000以内的所有Carmichael数计算出来！其实不过区区十几个数而已。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;cmath&gt;
 
 using namespace std;
@@ -76,5 +77,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

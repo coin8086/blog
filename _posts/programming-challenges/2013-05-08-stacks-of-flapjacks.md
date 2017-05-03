@@ -11,7 +11,8 @@ PC/UVa 题号：110402/120 <a href="http://uva.onlinejudge.org/index.php?option=
 
 分析：把一堆煎饼按自底向上的顺序插入到数组中（这样饼号就等于元素下标号加一），然后从数组第一个元素开始向后遍历，每次把最大的煎饼放在遍历的当前位置。<!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;sstream&gt;
 #include &lt;vector&gt;
 #include &lt;string&gt;
@@ -59,5 +60,5 @@ int main() {
     cout &lt;&lt; endl;
   }
 }
-</pre>
+```
 

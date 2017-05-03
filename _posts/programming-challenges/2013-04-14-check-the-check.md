@@ -11,7 +11,8 @@ PC/UVa 题号：110107/10196 <a href="http://uva.onlinejudge.org/index.php?optio
 
 分析：不需要一般象棋程序的“着法生成器”也可以求解<!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 
 using namespace std;
@@ -207,5 +208,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

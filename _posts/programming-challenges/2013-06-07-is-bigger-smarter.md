@@ -11,7 +11,8 @@ PC/UVa IDs: 111101/10131 <a href="http://uva.onlinejudge.org/index.php?option=co
 
 分析：此题同<a href="http://kuangtong.net/archives/209" title="Edit Step Ladders" target="_blank">Edit Step Ladders</a>类似（至少在解法思路上很相似）：把大象按体重递增排序，然后从排序后的最后一只大象开始向前“反攻倒算”，总的时间复杂度在O(n^2)。<!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;
 
@@ -88,5 +89,5 @@ int main() {
     cout &lt;&lt; seq[i] &lt;&lt; endl;
   return 0;
 }
-</pre>
+```
 

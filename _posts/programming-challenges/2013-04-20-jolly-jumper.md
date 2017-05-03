@@ -9,7 +9,8 @@ categories:
 ---
 PC/UVa 题号：110201/10038　<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=30&page=show_problem&problem=979" target="_blank">题目描述</a><!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 
 using namespace std;
@@ -58,5 +59,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

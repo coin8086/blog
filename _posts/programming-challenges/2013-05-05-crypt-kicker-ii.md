@@ -11,7 +11,8 @@ PC/UVa题号：110304/850 <a href="http://uva.onlinejudge.org/index.php?option=c
 
 分析：注意到“the quick brown fox jumps over the lazy dog”包含了全部26个英文字母，所以只要找到一句相匹配的密文，就可以解密全部了。<!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;sstream&gt;
 #include &lt;string&gt;
 #include &lt;vector&gt;
@@ -120,5 +121,5 @@ int main() {
       cout &lt;&lt; endl;
   }
 }
-</pre>
+```
 

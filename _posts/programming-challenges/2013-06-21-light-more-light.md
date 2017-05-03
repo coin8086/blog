@@ -13,11 +13,12 @@ PC/UVa IDs: 110701/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 
 分析：最直接的想法是如下代码：
 
-<pre class="brush: cpp; title: ; notranslate" title="">bool on = false;
+```cpp
+bool on = false;
 for (int i = 1; i &lt;=n; i++)
   if (n % i == 0)
     on = !on
-</pre>
+```
 
 但n最大可达数十亿，此法计算效率太低！那么能不能倒过来想：n可以被多少个不大于n的数整除？很容易给n分解质因数：<!--more-->
 
@@ -31,7 +32,8 @@ n = p1\*p2\*p3\*&#8230;\*pk
   
 也就是说，当且仅当n为完全平方数时，灯亮。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;cmath&gt;
 
 using namespace std;
@@ -50,5 +52,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

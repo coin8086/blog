@@ -15,7 +15,8 @@ PC/UVa IDs: 110905/10029 <a href="http://uva.onlinejudge.org/index.php?option=co
   
 （需要注意的是：虽然算法的时间复杂度是O(n^2)，但若不考虑优化系数，仍然会在UVa里超时。为此以下算法把已计算过的单词按长度分组以减少比较次数，降低时间复杂度系数）
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;map&gt;
 #include &lt;string&gt;
@@ -92,7 +93,7 @@ int main() {
   cout &lt;&lt; ladder(d) &lt;&lt; endl;
   return 0;
 }
-</pre>
+```
 
 结语：其实，所谓的动态规划，很像回溯的逆过程：前者从“前”往后递增计算，后者从“后”往前递减计算。只不过前者还记录了一些计算的中间结果以避免重复计算（其实后者也可以，但考虑到栈的深度，一些情况下回溯并不合适）。
 

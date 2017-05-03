@@ -49,7 +49,8 @@ x1 ^ n1 \* x2 ^ n2 \* &#8230; \* xk \* nk
   
 由此得到递归解法：
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 
 #define MAX 12
@@ -102,5 +103,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

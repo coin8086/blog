@@ -13,7 +13,8 @@ PC/UVa IDs: 110206/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 
 <a href="http://online-judge.uva.es/board/viewtopic.php?f=9&#038;t=2931&#038;start=15&#038;hilit=Erdos+Numbers" target="_blank">相关讨论</a>，或者试试这个<a href="https://code.google.com/p/programming-challenges-robert/source/browse/ch2_ex6_input" target="_blank">input</a>，对应的<a href="https://code.google.com/p/programming-challenges-robert/source/browse/ch2_ex6_output" target="_blank">output</a>在这里——程序必须通过这样的测试才有可能AC。笔者必须说，此题对输入格式的描述极不严谨，极大地浪费了读者的时间，在这样一本书中实属不该。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;string&gt;
 #include &lt;vector&gt;
 #include &lt;map&gt;
@@ -149,5 +150,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

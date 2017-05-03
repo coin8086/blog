@@ -25,7 +25,8 @@ n = ceil(T / (n &#8211; 1))
   
 另外：本题也可以运用Floyd递归求解任意点对间最短路线的思想来解，<a href="http://aduni.org/courses/algorithms/courseware/handouts/Reciation_07.html#25504" target="_blank">参考这里</a>。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;queue&gt;
 #include &lt;utility&gt;
@@ -78,5 +79,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

@@ -13,7 +13,8 @@ PC/UVa题号：110106/10033 <a href="http://uva.onlinejudge.org/index.php?option
 
 解法一：
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;cstdio&gt;
+```cpp
+#include &lt;cstdio&gt;
 #include &lt;cstdlib&gt;
 #include &lt;cstring&gt;
 
@@ -132,11 +133,12 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 
 解法二：
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;string&gt;
 
@@ -295,5 +297,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

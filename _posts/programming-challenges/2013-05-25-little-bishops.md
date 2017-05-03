@@ -25,7 +25,8 @@ mb(n, i)*mw(n, k &#8211; i)
   
 另外：以下解法假设棋盘左上角(即：未旋转前的棋盘格子矩阵(0,0)的位置)着黑色。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;utility&gt;
 
@@ -141,5 +142,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

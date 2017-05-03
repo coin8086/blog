@@ -37,7 +37,8 @@ N * 10 ^ k < 2 ^ e < (N + 1) * 10 ^ k
   
 其中N为已知的10进制数（即y的高n位），可以实现比较简单的验算，<a href="http://blog.csdn.net/metaphysis/article/details/6453199" target="_blank">例如这样</a>；但根据UVa的测试结果，笔者的实现大概比后者快40%左右。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;cmath&gt;
 
@@ -98,5 +99,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

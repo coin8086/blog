@@ -25,7 +25,8 @@ PC/UVa IDs: 110804/10160 <a href="http://uva.onlinejudge.org/index.php?option=co
 
 特别感谢“寂静山林”给出的<a href="http://blog.csdn.net/metaphysis/article/details/6601365" target="_blank">优化提示</a>。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;map&gt;
 #include &lt;set&gt;
@@ -220,5 +221,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

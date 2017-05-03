@@ -21,7 +21,8 @@ m=(p1^k1)(p2^k2)&#8230;(pi^ki)
   
 另外：programming-challenges.com对本答案判定为正确，但UVa却判错。笔者仔细检查了算法和实现，没有发现问题。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;utility&gt;
 #include &lt;cmath&gt;
@@ -99,5 +100,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

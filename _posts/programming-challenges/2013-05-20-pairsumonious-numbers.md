@@ -23,7 +23,8 @@ s1 + s2 + &#8230; + s(n-1) = (a1 + a2) + (a1 + a3) + &#8230; + (a1 + an) = (n &#
   
 通过S，从上式可得a1，以及a2, a3, &#8230;, an。但问题是哪些和是包含a1的s1,s2,&#8230;？这需要我们不断地尝试，即：从n(n-1)/2个和中选出n-1个和，计算a1&#8230;an以及两两和，然后用计算得出的两两和与给出的和相比较，如相同则正解；若尝试了所有的组合都没有成功，则无解。算法利用回溯来枚举出所有可能的组合、找出一个可能的解：
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;
 
@@ -148,5 +149,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

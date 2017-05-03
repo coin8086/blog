@@ -25,7 +25,8 @@ left < mid < right <!--more-->
   
 根据规则，一边生成节点一边二分查找即可。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 
 using namespace std;
@@ -91,5 +92,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

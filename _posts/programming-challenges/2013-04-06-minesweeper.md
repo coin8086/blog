@@ -11,7 +11,8 @@ PC/UVa IDs: 110102/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 
 <!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 
 #ifdef DEBUG
@@ -111,5 +112,5 @@ int main() {
     put_map(map, n);
   }
 }
-</pre>
+```
 

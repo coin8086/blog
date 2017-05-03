@@ -13,7 +13,8 @@ PC/UVa IDs: 110706/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 
 分析：分解质因数，求各位数字之和。如果担心当n等于10亿时，Smith数的计算会使unsigned int溢出，可以先试算一下——其实不小于10亿的最小Smith数是1000000165，不算大。<!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;cmath&gt;
 #include &lt;climits&gt;
@@ -93,5 +94,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

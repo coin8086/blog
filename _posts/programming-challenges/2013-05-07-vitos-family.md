@@ -13,7 +13,8 @@ PC/UVa 题号：110401/10041 <a href="http://uva.onlinejudge.org/index.php?optio
 
 <a href="http://wenku.baidu.com/view/375f42dc5022aaea998f0fea" target="_blank">中位数性质的证明</a>。得到证明之后，解题便相当容易了。另外值得商榷的是：书中本题的难度系数很低，但如果不了解中位数的这个性质，解题还是相当头疼的。因此笔者以为这不是一道好题目。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;
 #include &lt;cstdlib&gt;
@@ -50,5 +51,5 @@ int main() {
     cout &lt;&lt; min(rel) &lt;&lt; endl;
   }
 }
-</pre>
+```
 

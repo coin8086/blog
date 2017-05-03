@@ -51,7 +51,8 @@ ceil(upper / 2) > p >= ceil(lower / 9)
   
 则Stan有必胜策略，否则Ollie必胜。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;cmath&gt;
 
 using namespace std;
@@ -95,5 +96,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

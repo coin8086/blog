@@ -13,7 +13,8 @@ PC/UVa IDs: 110502/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
   
 <!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 
 #define MAX_SIZE 10
@@ -97,5 +98,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

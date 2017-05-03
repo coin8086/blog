@@ -25,7 +25,8 @@ h3(n) = 2 ^ n &#8211; 1
   
 由此可见当k=0时问题蜕化成3根柱普通汉诺塔问题，当n=10000时h4(n)有上界2 ^ 10000 - 1。高精度整数运算在此必不可少。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include "bigint.h"
 
@@ -87,5 +88,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

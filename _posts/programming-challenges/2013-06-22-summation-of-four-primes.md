@@ -13,7 +13,8 @@ PC/UVa IDs: 110705/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 
 分析：试验表明：任何一个不小于8的整数都可以表示为四素数之和，且答案可能不唯一；另外，如果按照“从大到小”的顺序来找四个素数会比较快地找到解。因此有如下解：先用筛选质数法列出10000000以内的素数，然后用回溯法把一个整数n分解为四素数之和——在回溯时从不超过n的最大素数开始向前尝试。<!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 
 #define MAX_N 10000000
@@ -116,7 +117,7 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 
 需要说明的是：Programming Challenge网站表示此题尚无法正确判定答案，而UVa判以上解WA。但笔者对8到10000000的每一个整数都做了测试，结果表明笔者的解法是正确无误的。测试程序在<a href="https://code.google.com/p/programming-challenges-robert/source/browse/ch7_ex5_test.rb" target="_blank">这里</a>。
 

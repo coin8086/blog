@@ -27,7 +27,8 @@ f(s(n-1)) = n &#8211; 1
   
 即：当x在区间(s(n-1), s(n)]时，f(x) = n。可以据此来求得f(x)：我们可以把s(n)的值记录在数组里，通过比较来确定x所属的区间——s(n)所组成的数列元素数量大致在几万的数量级（这可以由sample给出的一组数据来佐证：n = 1000000000, f(n) = 438744），因此记录s(n)是可以实现的。还有一个好消息就是此题不需要高精度整数运算了！
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 
 using namespace std;
@@ -81,5 +82,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

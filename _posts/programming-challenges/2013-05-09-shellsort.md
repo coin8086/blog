@@ -11,7 +11,8 @@ PC/UVa IDs: 110407/10152 <a href="http://uva.onlinejudge.org/index.php?option=co
 
 <!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;string&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;
@@ -68,5 +69,5 @@ int main() {
     cout &lt;&lt; endl;
   }
 }
-</pre>
+```
 

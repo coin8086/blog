@@ -25,7 +25,8 @@ f(n) = f(n &#8211; 1) + n
   
 算法的思想需要借助一些图示，这个<a href="http://en.wikipedia.org/wiki/Dividing_a_circle_into_areas" target="_blank">Wiki</a>说得比较清楚了。可惜的是，本题用递推的方法解会超时！从递推式又很难推导出封闭形式！不过上面提到的Wiki里还记录了一种使用欧拉公式的拓扑方法，形式比较简单，应用这种方式解就可以AC。但笔者以为，贴出递推式的解法也是有意义的——起码笔者很难想到欧拉公式！
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 
 using namespace std;
@@ -84,5 +85,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

@@ -11,7 +11,8 @@ PC/UVa IDs: 110901/10004 <a href="http://uva.onlinejudge.org/index.php?option=co
 
 分析：对图做广度优先遍历，一边对节点v着色一边检查v是否与某个已着色的临接点同色。<!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;queue&gt;
 
@@ -67,5 +68,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

@@ -15,7 +15,8 @@ PC/UVa IDs: 111006/10199 <a href="http://uva.onlinejudge.org/index.php?option=co
   
 另外，寻找关节点还有效率更高的办法：可以通过一次dfs找出图的所有关节点，实现稍复杂。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;map&gt;
 #include &lt;set&gt;
@@ -165,5 +166,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

@@ -37,7 +37,8 @@ c = 5 ^ (1 / 2)
   
 解法：根据输入范围先算好一个Fibonaaci数列的子序列，然后对输入的数在该序列中进行二分查找。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include "bigint.h"
 
@@ -94,5 +95,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

@@ -13,7 +13,8 @@ PC/UVa IDs: 110303/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 
 <a href="https://code.google.com/p/programming-challenges-robert/source/browse/ch3_ex3_lcs.cpp" target="_blank">这里</a>。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;string&gt;
 #include &lt;algorithm&gt;
 
@@ -55,5 +56,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

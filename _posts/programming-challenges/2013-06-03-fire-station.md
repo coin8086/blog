@@ -17,7 +17,8 @@ PC/UVa IDs: 111003/10278 <a href="http://uva.onlinejudge.org/index.php?option=co
   
 对图g中的所有点，依次尝试在没有消防站的点上建立一个消防站，找出一个最远“最近距离”；再比较这些值，找出一个最小的即可解题。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;sstream&gt;
 #include &lt;string&gt;
 #include &lt;vector&gt;
@@ -120,5 +121,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

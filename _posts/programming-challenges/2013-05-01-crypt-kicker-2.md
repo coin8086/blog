@@ -11,7 +11,8 @@ PC/UVa题号：110204/843 <a href="http://uva.onlinejudge.org/index.php?option=c
 
 分析：使用回溯法求解。为了提高搜索效率，在选择“分支”时应该挑选“分支因子”较小的子树优先搜索，下面的order函数即为此目的而设。它根据单词所含字母在全句中出现的频度以及单词的长度给单词打分，然后根据分值对单词进行排序（升序），排在最后的单词会被首先破译，接下来是排在倒数第二的单词，依次进行。如果不使用order函数对加密后的单词进行排序就直接尝试破译也是可以的，不影响程序的正确性，只是会降低时间效率（虽然在本题中，仍不会超时）。<!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;sstream&gt;
 #include &lt;vector&gt;
 #include &lt;map&gt;
@@ -154,7 +155,7 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 
 测试<a href="https://code.google.com/p/programming-challenges-robert/source/browse/ch2_ex4_input" target="_blank">输入</a>、<a href="https://code.google.com/p/programming-challenges-robert/source/browse/ch2_ex4_output" target="_blank">输出</a>文件
 

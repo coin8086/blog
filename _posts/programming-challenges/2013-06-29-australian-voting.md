@@ -11,7 +11,8 @@ PC/UVa IDs: 110108/<a href="http://uva.onlinejudge.org/index.php?option=com_onli
 
 分析：用什么样的数据结构来表示投票有很多选择；如果选择了合适的数据结构，不但可以提高时间效率还可以简化编程。<!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;sstream&gt;
 #include &lt;string&gt;
 #include &lt;vector&gt;
@@ -145,5 +146,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

@@ -17,7 +17,8 @@ x=babgbag z=bag
   
 假设函数times(x, z)返回z在x中的次数（z可以是字符串也可以是字符——后者相当容易处理），容易得到递归解（伪代码）：<!--more-->
 
-<pre class="brush: cpp; title: ; notranslate" title="">times(x, z) {
+```cpp
+times(x, z) {
   if z.size == 1
     return times(x, z[0]) //寻找字符z[0]在串x中出现的次数
   s = 0
@@ -27,11 +28,12 @@ x=babgbag z=bag
       s += times(x[i + 1, -1], z[1, -1]) 
   return s
 }
-</pre>
+```
 
 以上代码在每次递归之前都要生成两个新的子串，在此我们做一点优化：如果我们从串的尾部向前处理，则可以仅用子串的长度值来表示子串。由此得到
 
-<pre class="brush: cpp; title: ; notranslate" title="">times(x, z, i, j) { //i,j分别为x,z从0开始的子串长度
+```cpp
+times(x, z, i, j) { //i,j分别为x,z从0开始的子串长度
   if j == 1
     return times(x, i, z[0]) //寻找字符z[0]在串x子串中出现的次数
   s = 0
@@ -40,18 +42,19 @@ x=babgbag z=bag
       s += times(x, z, k, j - 1) 
   return s
 }
-</pre>
+```
 
 如果我们以一个二维表格T来表示times计算的结果，则T\[i\]\[j\]就是我们想要的答案，而且我们现在已经有了递推公式：
 
-<pre class="brush: cpp; title: ; notranslate" title="">T[i][j] = {
+```cpp
+T[i][j] = {
   s = 0
   for k = i - 1; k &gt;= 0; k--
     if x[k] == z[j - 1]
       s += T[k][j - 1]
   return s
 }
-</pre>
+```
 
 和初始值：
   
@@ -63,17 +66,19 @@ T\[i\]\[j\] = 0 when i == 0 || j == 0 || i < j
   
 但是在我们着手计算之前，结合表格仔细考虑一下递推公式，还可以消除一些重复计算：
 
-<pre class="brush: cpp; title: ; notranslate" title="">T[i][j] = {
+```cpp
+T[i][j] = {
   s = T[i - 1][j]
   if z[j - 1] == x[i - 1]
     s += T[i - 1][j - 1]
   return s
 }
-</pre>
+```
 
 现在足够简单了。不过还有最后一个问题：因为x、z的长度最长分别可达10000和100，所以最多可以有C(10000, 100)种组合方法（10000个数里选出100个），这是一个天文数字，必须用大数运算。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;string&gt;
 #include &lt;vector&gt;
 #include "bigint.h"
@@ -118,5 +123,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 

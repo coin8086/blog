@@ -47,7 +47,8 @@ O1, O2, ..., Oj, Oi, ..., On
   
 由结论**(d)**我们可以用插入排序，结论**(e)**可以用冒泡排序，结论**(f)**则可以使我们用任何排序算法给订单排序而不失正确性。
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;iostream&gt;
+```cpp
+#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;
 
@@ -103,5 +104,5 @@ int main() {
   }
   return 0;
 }
-</pre>
+```
 
