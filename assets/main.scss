@@ -4,6 +4,12 @@
 // Import partials from the `minima` theme.
 @import "minima";
 
+.back-to-top {
+  display: inline-block;
+  float: right;
+  font-size: 70%;
+}
+
 .post-tag {
   padding: 0px 0px 0px 20px;
   margin: 0;
