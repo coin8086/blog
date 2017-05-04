@@ -5,10 +5,19 @@
 @import "minima";
 
 .post-tag {
-  font-size: 15px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  background-color: #ddd;
+  padding: 0px 0px 0px 20px;
+  margin: 0;
+  background: url(/assets/tag_bg_l.png) no-repeat left center;
+  display: inline-block;
+}
+
+.post-tag-inner {
+  font: bold 13px/26px sans-serif;
+  text-decoration: none;
+  text-shadow: #f4f4f4 1px 1px 1px;
+  padding: 0px 10px 0px 2px;
+  background: url(/assets/tag_bg_r.png) no-repeat right center;
+  display: inline-block;
 }
 
 .footnotes {
