@@ -1,7 +1,6 @@
 ---
 layout: page
 title: 典故
-permalink: /about
 ---
 
 ![风雨鸡鸣](/assets/huiming.jpg)

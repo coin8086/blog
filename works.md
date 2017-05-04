@@ -1,7 +1,6 @@
 ---
 layout: page
 title: 拙著
-permalink: /works
 ---
 
 ## 书
