@@ -2,9 +2,9 @@
 title: 算法
 layout: page
 ---
-《挑战编程——程序设计竞赛训练手册》题解
+《挑战编程——程序设计竞赛训练手册》（清华大学出版社@2012）题解
 
-全部代码在[https://github.com/coin8086/programming-challenges](https://github.com/coin8086/programming-challenges){:target="_blank"}
+全部代码位于[GitHub](https://github.com/coin8086/programming-challenges){:target="_blank"}
 
 * Chapter 1 Getting Started
   * [The 3n + 1 Problem]({% post_url programming-challenges/2013-04-06-3n-1 %} "3n + 1")
