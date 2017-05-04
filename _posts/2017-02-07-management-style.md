@@ -4,7 +4,7 @@ title: 【译】示范，但不命令——一种管理风格
 tags: GitHub 管理
 excerpt: 在GitHub工作是怎样一种体验？GitHub工程总监Ryan Tomayko分享了他的管理经验——据说人人都是“经理”（不是那种“产品经理”）、没有人监督你工作、甚至都没人告诉你该干什么……
 ---
-（原作者Ryan Tomayko于2012年 [http://2ndscale.com/rtomayko/2012/management-style](http://2ndscale.com/rtomayko/2012/management-style){:target="_blank"} )
+（原作者Ryan Tomayko于2012年 [http://2ndscale.com/rtomayko/2012/management-style](http://2ndscale.com/rtomayko/2012/management-style) )
 
 对我来说在GitHub工作最让人激动的事之一就是可以从头开始从容不迫地思考组织和流程的问题，而不是盲目照抄其他公司或者照搬现有的、在上个世纪产生的解决方案。用户为我们的产品付费，同时也给了我们自由：我们可以用任何方式打造一家公司，只要它能向用户交付最好的产品体验。
 
