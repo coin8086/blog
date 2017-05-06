@@ -9,6 +9,7 @@ title: 拙著
 ## 文章
 * [Ruby Rack及其应用（上）]({% post_url 2016-11-10-ruby-rack %}), [Ruby Rack及其应用（下）]({% post_url 2017-04-30-ruby-rack-2 %})
 * [Lua快速入门]({% post_url 2011-05-01-lua-quick-start %})
+* [Lua OOP with Lua Class Lib]({% post_url 2011-06-01-lua-oop %})
 * [PaaS与云计算]({% post_url 2013-03-25-paas-and-cloud-computing %})
 
 ## 网站
