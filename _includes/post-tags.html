@@ -1,6 +1,6 @@
 {% for tag in include.tags %}
   <span class="post-tag">
-    <span class="post-tag-inner">{{ tag | escape }}</span>
+    <span class="post-tag-inner">{{ tag | tag_link }}</span>
   </span>
 {% endfor %}
 

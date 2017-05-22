@@ -26,6 +26,10 @@
   display: inline-block;
 }
 
+.post-tag-inner a:hover {
+  text-decoration: none;
+}
+
 .post table {
   width: 100%;
 }
