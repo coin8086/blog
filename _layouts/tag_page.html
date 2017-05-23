@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<h2>{{ page.tag }}</h2>
+
+<ul>
+{% for post in page.posts %}
+  <li><a href="{{ post.url }}">{{ post.title }}</a> {% include post-tags.html tags=post.tags %}</li>
+{% endfor %}
+</ul>
+
+全部标签：
+<div id="tag-cloud">
+  {{ site | tag_cloud2 }}
+</div>
+

@@ -31,5 +31,11 @@ google_analytics: "UA-85747376-1"
 
 paginate: 10
 
-gems:
-  - jekyll-paginate
+tag_page_layout: tag_page
+tag_page_dir: tags
+# It's too bad to have to put the followings in config: it should be put in
+# Front Matter but unfortunately jekyll-tagging doesn't read YAML in
+# tag_page_layout file.
+tag_page_data:
+  script: tag_cloud_js.html
+
