@@ -1,4 +1,4 @@
 
 task :default do
-  system 'bundle exec jekyll build'
+  fail unless system('bundle exec jekyll build')
 end
