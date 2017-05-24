@@ -1,3 +1,13 @@
 language: ruby
 rvm:
  - 2.3.0
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
+  local_dir: _site
+  repo: coin8086.github.io
+  target_branch: master
