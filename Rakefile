@@ -1,4 +1,4 @@
 
 task :default do
-  puts "Hi there!"
+  system 'bundle exec jekyll build'
 end
