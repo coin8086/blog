@@ -9,5 +9,5 @@ deploy:
   on:
     branch: master
   local_dir: _site
-  repo: coin8086.github.io
+  repo: coin8086/coin8086.github.io
   target_branch: master
