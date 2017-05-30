@@ -26,10 +26,10 @@ int solve(int i, int left, int right) {
   int r = 0;
   //如果a[i]放在左边
   if (a[i] <= left)
-    l = solve(left - a[i], right, i + 1) + 1;
+    l = solve(i + 1, left - a[i], right) + 1;
   //如果a[i]放在右边
   if (a[i] <= right)
-    r = solve(left, right - a[i], i + 1) + 1;
+    r = solve(i + 1, left, right - a[i]) + 1;
   return l >= r ? l : r;
 }
 
