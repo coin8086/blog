@@ -79,6 +79,7 @@ layout: page
 * Chapter 11 Dynamic Programming
   * [Is Bigger Smarter?]({% post_url programming-challenges/2013-06-07-is-bigger-smarter %} "Is Bigger Smarter?")
   * [Distinct Subsequences]({% post_url programming-challenges/2013-07-01-distinct-subsequences %} "Distinct Subsequences")
+  * [Weights and Measures]({% post_url programming-challenges/2017-05-28-weights-and-measures %})
   * [Cutting Sticks]({% post_url programming-challenges/2013-06-07-cutting-sticks %} "Cutting Sticks")
   * [Ferry Loading]({% post_url programming-challenges/2017-05-29-ferry-loading %})
   * [Chopsticks]({% post_url programming-challenges/2017-05-30-chopsticks %})
