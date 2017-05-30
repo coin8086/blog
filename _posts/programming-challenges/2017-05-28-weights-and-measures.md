@@ -7,7 +7,7 @@ tags: algorithm
 categories:
   - programming-challenges
 ---
-PC/UVa：111103/10154
+PC/UVa：[111103](http://www.programming-challenges.com/pg.php?page=downloadproblem&format=html&probid=111103)/10154
 
 此题贪心可解：定义第i层的最大负载为p(i)，则：
 
@@ -72,3 +72,4 @@ int main() {
 
 时间复杂度为O(N * N)，N为乌龟数。
 
+另外，UVa上对此题的判定似乎有误，读者可在www.programming-challenges.com上试一试，PC题号和链接在开始已给出。
