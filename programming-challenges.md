@@ -80,4 +80,5 @@ layout: page
   * [Is Bigger Smarter?]({% post_url programming-challenges/2013-06-07-is-bigger-smarter %} "Is Bigger Smarter?")
   * [Distinct Subsequences]({% post_url programming-challenges/2013-07-01-distinct-subsequences %} "Distinct Subsequences")
   * [Cutting Sticks]({% post_url programming-challenges/2013-06-07-cutting-sticks %} "Cutting Sticks")
+  * [Chopsticks]({% post_url programming-challenges/2017-05-30-chopsticks %})
 
