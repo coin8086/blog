@@ -39,3 +39,12 @@ tag_page_dir: tags
 tag_page_data:
   script: tag_cloud_js.html
 
+defaults:
+  - scope:
+      path: _posts/programming-challenges
+      type: posts
+    values:
+      layout: programming-challenges
+      excerpt_separator: <!--more-->
+      tags: algorithm 挑战编程
+      categories: programming-challenges
