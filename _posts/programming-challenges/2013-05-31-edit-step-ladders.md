@@ -1,18 +1,11 @@
 ---
 title: Edit Step Ladders
 date: 2013-05-31T22:18:50+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110905
+uva-id: 10029
 ---
-PC/UVa IDs: 110905/10029 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=970" target="_blank">题目描述</a>
-
 分析：按字典序排列的n个单词构成了一个隐式的有向无环图：每个单词单词都有一条出边指向在它字典序之后的每一个单词。要在这张图里找出符合条件的最长路径包含的顶点数。简单的想法就是“暴力”回溯了：对每个顶点进行一次回溯，找出以该点开始的最长的edit step ladder——这个时间复杂度高得能上了火星！思考一下就会发现，回溯包含了大量的重复计算：假设以单词w开始的最长ladder长度为l，那么对于字典中排在w之前的每一个单词（实际上是edit step为1的那些单词），在回溯经过w时都要做同样的重复计算，浪费了大量时间。如果我们计算好了以w开始的最长ladder的长度l，那么对于w的每一个one edit step前驱顶点，其最长ladder长度即为l+1。<!--more-->想到这里，我们可以从字典最后一个单词开始向前，计算每一个单词的最长ladder长度并保存，如下：
 
-
-  
 （需要注意的是：虽然算法的时间复杂度是O(n^2)，但若不考虑优化系数，仍然会在UVa里超时。为此以下算法把已计算过的单词按长度分组以减少比较次数，降低时间复杂度系数）
 
 ```cpp

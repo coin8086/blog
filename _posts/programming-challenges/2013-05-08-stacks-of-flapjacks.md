@@ -1,14 +1,9 @@
 ---
 title: Stacks of Flapjacks
 date: 2013-05-08T19:47:04+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110402
+uva-id: 120
 ---
-PC/UVa 题号：110402/120 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=56" target="_blank">题目描述</a>
-
 分析：把一堆煎饼按自底向上的顺序插入到数组中（这样饼号就等于元素下标号加一），然后从数组第一个元素开始向后遍历，每次把最大的煎饼放在遍历的当前位置。<!--more-->
 
 ```cpp

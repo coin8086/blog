@@ -1,14 +1,9 @@
 ---
 title: Is Bigger Smarter?
 date: 2013-06-07T16:56:34+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 111101
+uva-id: 10131
 ---
-PC/UVa IDs: 111101/10131 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;category=39&#038;problem=1072&#038;mosmsg=Submission+received+with+ID+11870299" target="_blank">题目描述</a>
-
 分析：此题同<a href="http://kuangtong.net/archives/209" title="Edit Step Ladders" target="_blank">Edit Step Ladders</a>类似（至少在解法思路上很相似）：把大象按体重递增排序，然后从排序后的最后一只大象开始向前“反攻倒算”，总的时间复杂度在O(n^2)。<!--more-->
 
 ```cpp

@@ -1,14 +1,9 @@
 ---
 title: Bicoloring
 date: 2013-05-30T20:59:49+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110901
+uva-id: 10004
 ---
-PC/UVa IDs: 110901/10004 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;category=37&#038;page=show_problem&#038;problem=945" target="_blank">题目描述</a>
-
 分析：对图做广度优先遍历，一边对节点v着色一边检查v是否与某个已着色的临接点同色。<!--more-->
 
 ```cpp

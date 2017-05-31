@@ -1,40 +1,33 @@
 ---
 title: Cutting Sticks
 date: 2013-06-07T23:01:55+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 111105
+uva-id: 10003
 ---
-PC/UVa IDs: 111105/10003 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;category=39&#038;page=show_problem&#038;problem=944" target="_blank">题目描述</a>
-
 分析：割点把木棍分成了若干区间，把这些区间从0到n编号，假设从区间i到j的最小代价为f(i, j)，则f(0, n)即整根木棍的代价。不妨在稿纸上推演一下，如何从f(0, 1)开始一步步计算得到f(0, 2)，f(0, 3)（以下设len(i, j)为区间i到j的长度）：
-  
+
 f(0, 1) = len(0, 1)
-  
+
 f(1, 2) = ...
-  
+
 f(0, 2) = min(f(0, 1) + f(2, 2), f(0, 0) + f(1, 2)) + len(0, 2)
-  
+
 f(1, 3) = ...
-  
+
 f(2, 3) = ...
-  
+
 f(0, 3) = min(f(0, 2) + f(3, 3), f(0, 1) + f(2, 3), f(0, 0) + f(1, 3)) + len(0, 3)
-  
+
 可以归纳得到：<!--more-->
 
-
-  
 当i < j时：
-  
+
 f(i, j) = min(f(i, j - 1) + f(j, j), f(i, j - 2) + f(j - 1, j), ..., f(i, i) + f(i + 1, j)) + len(i, j)
-  
+
 当i == j时
-  
+
 f(i, j) = 0
-  
+
 如果用表格seg\[i\]\[j\]来存贮f(i, j)的值，即可以动态规划解之。但须注意单元格的计算顺序：从左至右，从下往上。只需计算i < j的格子，i = j的格子初始化为0。
 
 ```cpp

@@ -1,16 +1,9 @@
 ---
 title: Reverse and Add
 date: 2013-06-14T14:22:10+08:00
-layout: post
-excerpt_separator: <!--more-->
-category_sticky_post:
-  - "0"
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110502
+uva-id: 10018
 ---
-PC/UVa IDs: 110502/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=959" target="_blank">10018</a>
-  
 <!--more-->
 
 ```cpp

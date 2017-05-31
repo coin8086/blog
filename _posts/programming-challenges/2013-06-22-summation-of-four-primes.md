@@ -1,16 +1,9 @@
 ---
 title: Summation of Four Primes
 date: 2013-06-22T20:55:26+08:00
-layout: post
-excerpt_separator: <!--more-->
-category_sticky_post:
-  - "0"
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110705
+uva-id: 10168
 ---
-PC/UVa IDs: 110705/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=1109" target="_blank">10168</a>
-
 分析：试验表明：任何一个不小于8的整数都可以表示为四素数之和，且答案可能不唯一；另外，如果按照“从大到小”的顺序来找四个素数会比较快地找到解。因此有如下解：先用筛选质数法列出10000000以内的素数，然后用回溯法把一个整数n分解为四素数之和——在回溯时从不超过n的最大素数开始向前尝试。<!--more-->
 
 ```cpp

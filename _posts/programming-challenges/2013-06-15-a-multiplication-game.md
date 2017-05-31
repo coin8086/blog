@@ -1,54 +1,45 @@
 ---
 title: A Multiplication Game
 date: 2013-06-15T19:40:57+08:00
-layout: post
-excerpt_separator: <!--more-->
-category_sticky_post:
-  - "0"
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110505
+uva-id: 847
 ---
-PC/UVa IDs: 110505/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=788" target="_blank">847</a>
-
 分析：如果n<10,则Stan一步即可轻松获胜；当n>=10时，假设Stan能获胜，那么Ollie的最后一次乘积必须在[ceil(n/9), n)之间。设：
-  
+
 lower = ceil(n/9), upper = n
-  
+
 又设在此之前Stan的乘积是p，则Stan必须保证：
-  
+
 upper > x * p >= lower
-  
+
 其中x=2,3,...,9。即：
-  
+
 ceil(upper / x) > p >= ceil(lower / x)<!--more-->
 
-
-  
 取上式右边最大最小值及左边最小最大值，即：
-  
+
 ceil(upper / 9) > p >= ceil(lower / 2)
-  
+
 可保证x * p的值对**任意x**必在upper和lower之间。设：
-  
+
 upper = ceil(upper / 9), lower = ceil(lower / 2)
-  
+
 接下来该Ollie做乘法，**只要存在x**使得：
-  
+
 upper > x * p >= lower
-  
+
 其中p为Ollie的乘积，upper和lower为刚刚更新的upper和lower值，则Stan可以获胜，即：
-  
+
 9 \* p >= lower, 2 \* p < upper
-  
+
 即：
-  
+
 ceil(upper / 2) > p >= ceil(lower / 9)
-  
+
 重复以上过程，直到某次Stan的乘积下界lower不超过9为止。此时若
-  
+
 9 >= lower >= 2
-  
+
 则Stan有必胜策略，否则Ollie必胜。
 
 ```cpp

@@ -1,14 +1,9 @@
 ---
 title: Ferry Loading
 date: 2017-05-29T21:00:00+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 111106
+uva-id: 10261
 ---
-PC/UVa：111106/[10261](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1202)
-
 此题最简单、直观的办法是递归求解：
 
 <!--more-->

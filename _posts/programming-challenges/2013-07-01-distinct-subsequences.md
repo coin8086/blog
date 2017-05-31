@@ -1,20 +1,15 @@
 ---
 title: Distinct Subsequences
 date: 2013-07-01T17:52:20+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 111102
+uva-id: 10069
 ---
-PC/UVa IDs: 111102/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=1010" target="_blank">10069</a>
-
 分析：先考虑一个例子：
-  
+
 x=babgbag z=bag
-  
+
 答案是5，如何数数？
-  
+
 假设函数times(x, z)返回z在x中的次数（z可以是字符串也可以是字符——后者相当容易处理），容易得到递归解（伪代码）：<!--more-->
 
 ```cpp
@@ -25,7 +20,7 @@ times(x, z) {
   for i = 0; i < x.size; i++
     if x[i] == z[0]
       //s[i, j]表示s从索引i开始到j结束（包括j在内）的子串，索引-1的位置指向串的最后一个字符
-      s += times(x[i + 1, -1], z[1, -1]) 
+      s += times(x[i + 1, -1], z[1, -1])
   return s
 }
 ```
@@ -39,7 +34,7 @@ times(x, z, i, j) { //i,j分别为x,z从0开始的子串长度
   s = 0
   for k = i - 1; k >= 0; k--
     if x[k] == z[j - 1]
-      s += times(x, z, k, j - 1) 
+      s += times(x, z, k, j - 1)
   return s
 }
 ```
@@ -57,13 +52,13 @@ T[i][j] = {
 ```
 
 和初始值：
-  
+
 T\[i\]\[1\] = times(x, i, z[0])
-  
+
 以及：
-  
+
 T\[i\]\[j\] = 0 when i == 0 || j == 0 || i < j
-  
+
 但是在我们着手计算之前，结合表格仔细考虑一下递推公式，还可以消除一些重复计算：
 
 ```cpp

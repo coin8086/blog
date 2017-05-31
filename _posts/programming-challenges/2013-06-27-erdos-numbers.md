@@ -1,14 +1,9 @@
 ---
 title: Erdos Numbers
 date: 2013-06-27T23:13:27+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110206
+uva-id: 10044
 ---
-PC/UVa IDs: 110206/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=985" target="_blank">10044</a>
-
 分析：如果把一个作者看作一个顶点，若两个作者合作发表过一篇论文则对应的两点有一条边相连，那么一个作者的Erdos数就是该点到Erdos点的最短距离。在此图中从Erdos点开始宽度优先遍历即可得解。不过，此题真正困难之处并不在此，<!--more-->而在于如何处理输入！因为题目对于输入格式的说明含混不清，仅举了个例子，且例子也没包括一些特殊情况，所以大家就只能猜了！读者可以参考UVa BBS上的
 
 <a href="http://online-judge.uva.es/board/viewtopic.php?f=9&#038;t=2931&#038;start=15&#038;hilit=Erdos+Numbers" target="_blank">相关讨论</a>，或者试试这个<a href="https://code.google.com/p/programming-challenges-robert/source/browse/ch2_ex6_input" target="_blank">input</a>，对应的<a href="https://code.google.com/p/programming-challenges-robert/source/browse/ch2_ex6_output" target="_blank">output</a>在这里——程序必须通过这样的测试才有可能AC。笔者必须说，此题对输入格式的描述极不严谨，极大地浪费了读者的时间，在这样一本书中实属不该。

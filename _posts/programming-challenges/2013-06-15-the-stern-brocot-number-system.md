@@ -1,28 +1,19 @@
 ---
 title: The Stern-Brocot Number System
 date: 2013-06-15T21:27:54+08:00
-layout: post
-excerpt_separator: <!--more-->
-category_sticky_post:
-  - "0"
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110507
+uva-id: 10077
 ---
-PC/UVa IDs: 110507/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=1018" target="_blank">10077</a>
-
 分析：Stern-Brocot树的每个节点（包括根节点）都是由两个分数生成的，分别记其为left, right。生成规则为：
-  
+
 mid.numerator = left.numerator + right.numerator
-  
+
 mid.denominator = left.denominator + right.denominator
-  
+
 且有：
-  
+
 left < mid < right <!--more-->
 
-
-  
 根据规则，一边生成节点一边二分查找即可。
 
 ```cpp

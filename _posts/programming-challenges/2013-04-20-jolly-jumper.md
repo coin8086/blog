@@ -1,13 +1,10 @@
 ---
 title: Jolly Jumper
 date: 2013-04-20T17:30:31+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110201
+uva-id: 10038　
 ---
-PC/UVa 题号：110201/10038　<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=30&page=show_problem&problem=979" target="_blank">题目描述</a><!--more-->
+<!--more-->
 
 ```cpp
 #include <iostream>

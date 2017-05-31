@@ -1,14 +1,9 @@
 ---
 title: Where’s Waldorf?
 date: 2013-06-26T12:33:46+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110302
+uva-id: 10010
 ---
-PC/UVa IDs: 110302/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=951" target="_blank">10010</a>
-
 分析：按从上到下、从左到右的顺序对矩阵中每一个字符向八个方向查找是否存在一个以它开头的单词。<!--more-->
 
 ```cpp

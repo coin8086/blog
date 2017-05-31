@@ -1,14 +1,9 @@
 ---
 title: Check the Check
 date: 2013-04-14T17:12:11+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110107
+uva-id: 10196
 ---
-PC/UVa 题号：110107/10196 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=29&page=show_problem&problem=1137" target="_blank">题目描述</a>
-
 分析：不需要一般象棋程序的“着法生成器”也可以求解<!--more-->
 
 ```cpp

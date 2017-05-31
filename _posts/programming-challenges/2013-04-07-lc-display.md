@@ -1,13 +1,10 @@
 ---
 title: LC-Display
 date: 2013-04-07T18:07:04+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110104
+uva-id: 706
 ---
-PC/UVa 题号：110104/706 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=29&page=show_problem&problem=647" target="_blank">题目描述</a><!--more-->
+<!--more-->
 
 ```cpp
 #include <iostream>

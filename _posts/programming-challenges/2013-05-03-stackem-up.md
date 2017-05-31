@@ -1,13 +1,10 @@
 ---
 title: "Stack'em Up"
 date: 2013-05-03T23:42:34+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110205
+uva-id: 10205
 ---
-PC/UVa 题号：110205/10205 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1146" target="_blank">题目描述</a><!--more-->
+<!--more-->
 
 ```cpp
 #include <iostream>

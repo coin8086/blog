@@ -1,24 +1,17 @@
 ---
 title: Factovisors
 date: 2013-05-24T16:51:46+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110704
+uva-id: 10139
 ---
-<a href="http://www.programming-challenges.com/pg.php?page=downloadproblem&probid=110704&format=html" target="_blank">题目描述</a>
-
 分析：若m是合数，把m分解为质因数的乘积
-  
+
 m=(p1^k1)(p2^k2)...(pi^ki)
-  
+
 对于m的每一个质因数pi，若其次数ki都不大于n!里pi的最大次数Ki，则m可以整除n!，反之则不能。
-  
+
 若m是质数，只要m不大于n即可整除n!；若m等于1，m可以整除任何n!。<!--more-->
 
-
-  
 另外：programming-challenges.com对本答案判定为正确，但UVa却判错。笔者仔细检查了算法和实现，没有发现问题。
 
 ```cpp

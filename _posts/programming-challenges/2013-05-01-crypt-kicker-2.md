@@ -1,14 +1,9 @@
 ---
 title: Crypt Kicker
 date: 2013-05-01T12:53:05+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110204
+uva-id: 843
 ---
-PC/UVa题号：110204/843 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=784" target="_blank">题目描述见这里</a>
-
 分析：使用回溯法求解。为了提高搜索效率，在选择“分支”时应该挑选“分支因子”较小的子树优先搜索，下面的order函数即为此目的而设。它根据单词所含字母在全句中出现的频度以及单词的长度给单词打分，然后根据分值对单词进行排序（升序），排在最后的单词会被首先破译，接下来是排在倒数第二的单词，依次进行。如果不使用order函数对加密后的单词进行排序就直接尝试破译也是可以的，不影响程序的正确性，只是会降低时间效率（虽然在本题中，仍不会超时）。<!--more-->
 
 ```cpp

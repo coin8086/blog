@@ -1,28 +1,21 @@
 ---
 title: Little Bishops
 date: 2013-05-25T18:46:56+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110801
+uva-id: 861
 ---
-PC/UVa IDs: 110801/861 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;category=36&#038;page=show_problem&#038;problem=802" target="_blank">题目描述</a>
-
 分析：考虑两点：
-  
+
 第一，国际象棋棋盘的格子由黑白两色交替填充，黑色格子里的象吃不到白色格子里的象，反之亦然。
-  
+
 第二，把棋盘顺时针旋转４５度，象就变成了车！虽然棋盘也从正方形变成了菱形，但其边界不难确定。
-  
+
 由此形成解法：首先把棋盘拆为黑、白两部分，然后旋转棋盘，接着把ｋ个象分为两组，一组ｉ个，一组ｋ－ｉ个，分别放在黑、白棋盘里，各有mb(n, i)和mw(n, k - i)种放置方法，则总的方法数为<!--more-->
 
-
-  
 mb(n, i)*mw(n, k - i)
-  
+
 对上式求i = 0,...,k的和。mb/mw可以用类似八皇后的回溯法求解，只要注意棋盘边界。
-  
+
 另外：以下解法假设棋盘左上角(即：未旋转前的棋盘格子矩阵(0,0)的位置)着黑色。
 
 ```cpp

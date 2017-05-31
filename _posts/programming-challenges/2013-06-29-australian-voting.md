@@ -1,14 +1,9 @@
 ---
 title: Australian Voting
 date: 2013-06-29T01:22:38+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110108
+uva-id: 10142
 ---
-PC/UVa IDs: 110108/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=1083" target="_blank">10142</a>
-
 分析：用什么样的数据结构来表示投票有很多选择；如果选择了合适的数据结构，不但可以提高时间效率还可以简化编程。<!--more-->
 
 ```cpp

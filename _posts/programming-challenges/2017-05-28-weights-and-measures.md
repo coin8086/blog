@@ -1,14 +1,9 @@
 ---
 title: Weights and Measures
 date: 2017-05-28T21:00:00+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 111103
+uva-id: 10154
 ---
-PC/UVa：[111103](http://www.programming-challenges.com/pg.php?page=downloadproblem&format=html&probid=111103)/10154
-
 此题贪心可解：定义第i层的最大负载为p(i)，则：
 
 <!--more-->

@@ -1,14 +1,9 @@
 ---
 title: Chopsticks
 date: 2017-05-30T16:15:00+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 111107
+uva-id: 10271
 ---
-PC/UVa：111107/[10271](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1212)
-
 如果考虑一般情况：把n个元素划分成p组（p = k + 8）、每组3个元素，分别计算每种划分的“难用度”然后找出最小值，这种穷举算法时间复杂度巨大、不可用。
 
 题目中说筷子数组l是按长度排好序的，这是一点很重要的提示：如果我们拿l[i]做A筷，则B筷一定是l[i + 1]才能保证(A - B) ^ 2最小，至于C筷，只要它的序号大于i + 1即可。

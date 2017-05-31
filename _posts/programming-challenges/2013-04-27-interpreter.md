@@ -1,14 +1,9 @@
 ---
 title: Interpreter
 date: 2013-04-27T20:36:17+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110106
+uva-id: 10033
 ---
-PC/UVa题号：110106/10033 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=29&page=show_problem&problem=974" target="_blank">题目描述</a>
-
 分析：此题根据如何来表示一条指令，有两种解法：一种是用一个整数（3位数）来表示，另一种用一个对象（含有3个成员，分别表示指令的3个位）来表示。前者的好处是存贮方便，但需要运行时“译码”；后者的好处是不需要运行时“译码”，但有额外的开销在对象的创建和复制上。根据网站的判题结果，二者的时间效率大体相当。<!--more-->
 
 解法一：

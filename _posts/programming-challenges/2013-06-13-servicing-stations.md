@@ -1,26 +1,17 @@
 ---
 title: Servicing Stations
 date: 2013-06-13T00:14:25+08:00
-layout: post
-excerpt_separator: <!--more-->
-category_sticky_post:
-  - "0"
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110804
+uva-id: 10160
 ---
-PC/UVa IDs: 110804/10160 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=1101" target="_blank">题目描述</a>
-
 分析：此题不难，但特别容易超时！——这正是困难之处：有n个元素的集合的子集共有2^n个，枚举算法的时间复杂度在O(2^n)，且本题除枚举外别无他法（NP完全），因此必须尽一切可能性优化，着力在降低计算中n的值（以下1、2项优化）。关键的优化有以下几点（按重要性排列）：
-  
+
 １输入的图可能是非连通图，把它分解成若干最大连通子图分别计算
-  
+
 ２对于顶点数大于二的连通图，服务站只考虑建在度数大于一的点上即可
-  
+
 ３使用类似迭代加深的方式来枚举可能的组合：先考虑一个点的组合，再考虑二个点的组合，然后三个，……<!--more-->
 
-
-  
 ４使用位向量，即整数，来表示一个顶点和它的邻接顶点，用位运算来加速计算
 
 特别感谢“寂静山林”给出的<a href="http://blog.csdn.net/metaphysis/article/details/6601365" target="_blank">优化提示</a>。

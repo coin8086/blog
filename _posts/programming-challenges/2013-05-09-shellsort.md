@@ -1,14 +1,9 @@
 ---
 title: ShellSort
 date: 2013-05-09T21:25:01+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110407
+uva-id: 10152
 ---
-PC/UVa IDs: 110407/10152 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1093" target="_blank">题目描述</a>
-
 <!--more-->
 
 ```cpp

@@ -1,14 +1,9 @@
 ---
 title: Minesweeper
 date: 2013-04-06T15:04:26+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110102
+uva-id: 10189
 ---
-PC/UVa IDs: 110102/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=1130" target="_blank">10189</a>
-
 <!--more-->
 
 ```cpp

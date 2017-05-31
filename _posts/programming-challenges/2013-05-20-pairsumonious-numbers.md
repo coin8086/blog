@@ -1,26 +1,19 @@
 ---
 title: Pairsumonious Numbers
 date: 2013-05-20T00:54:46+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110508
+uva-id: 10202
 ---
-<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=1143" target="_blank">题目描述</a>
-
 分析：设有n个整数a1,a2,...,an，已知两两整数的和，则：
-  
+
 (a1 + a2) + ... + (a1 + an) + (a2 + a3) + ... + (a2 + an) + ... + (an-1 + an) = (n - 1)S
-  
+
 其中S即a1 + a2 + ... + an的总和。
-  
+
 现假设已知a1与其它n-1个数的和分别为s1, s2,...,s(n-1)，则：
-  
+
 s1 + s2 + ... + s(n-1) = (a1 + a2) + (a1 + a3) + ... + (a1 + an) = (n - 2)a1 + S<!--more-->
 
-
-  
 通过S，从上式可得a1，以及a2, a3, ..., an。但问题是哪些和是包含a1的s1,s2,...？这需要我们不断地尝试，即：从n(n-1)/2个和中选出n-1个和，计算a1...an以及两两和，然后用计算得出的两两和与给出的和相比较，如相同则正解；若尝试了所有的组合都没有成功，则无解。算法利用回溯来枚举出所有可能的组合、找出一个可能的解：
 
 ```cpp

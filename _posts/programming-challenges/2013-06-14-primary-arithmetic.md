@@ -1,16 +1,9 @@
 ---
 title: Primary Arithmetic
 date: 2013-06-14T12:37:23+08:00
-layout: post
-excerpt_separator: <!--more-->
-category_sticky_post:
-  - "0"
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110501
+uva-id: 10035
 ---
-PC/UVa IDs: 110501/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=976" target="_blank">10035</a>
-
 <!--more-->
 
 ```cpp

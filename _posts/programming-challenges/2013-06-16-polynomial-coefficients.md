@@ -1,52 +1,43 @@
 ---
 title: Polynomial Coefficients
 date: 2013-06-16T13:15:28+08:00
-layout: post
-excerpt_separator: <!--more-->
-category_sticky_post:
-  - "0"
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110506
+uva-id: 10105
 ---
-PC/UVa IDs: 110506/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=1046" target="_blank">10105</a>
-
 分析：考虑二项式
-  
+
 (x1 + x2) ^ n
-  
+
 其中
-  
+
 x1 ^ m * x2 ^ (n - m)
-  
+
 项的系数是组合数
-  
+
 C(n, m)
-  
+
 多项式
-  
+
 (x1 + x2 + ... + xk) ^ n
-  
+
 可以记为
-  
+
 ((x1 + x2 + ... + x(k - 1)) + xk) ^ n <!--more-->
 
-
-  
 其中
-  
+
 (x1 + x2 + ... + x(k -1)) ^ (n - nk) * xk ^ nk
-  
+
 项的系数是
-  
+
 C(n, nk) * f(n - nk, k - 1)
-  
+
 其中f(n, k)即n次k项式中
-  
+
 x1 ^ n1 \* x2 ^ n2 \* ... \* xk \* nk
-  
+
 项的系数。
-  
+
 由此得到递归解法：
 
 ```cpp

@@ -1,20 +1,13 @@
 ---
 title: Fire Station
 date: 2013-06-03T14:10:06+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 111003
+uva-id: 10278
 ---
-PC/UVa IDs: 111003/10278 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;category=38&#038;page=show_problem&#038;problem=1219" target="_blank">题目描述</a>
-
 分析：如果点i有一个消防站，那么i到其它各点的最近距离是多少？如果点j又有一个消防站呢？如果用矩阵表示图g，用Floyd算法求出每对顶点的最短距离（直接更新图g），那么g[i]就是i点的消防站到各点的最近距离的向量。如果j点又有一个消防站，则按如下方式把g[i]和g[j]合并起来就得到各点到最近消防站的距离向量（即下面的merge函数）：
-  
+
 对g\[i]和g[j]的每一个元素（索引为k），取min(g[i\]\[k\], g\[j\]\[k\])作为新的距离向量的元素k的值。<!--more-->
 
-
-  
 对图g中的所有点，依次尝试在没有消防站的点上建立一个消防站，找出一个最远“最近距离”；再比较这些值，找出一个最小的即可解题。
 
 ```cpp

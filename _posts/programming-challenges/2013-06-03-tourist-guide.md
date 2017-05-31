@@ -1,18 +1,11 @@
 ---
 title: Tourist Guide
 date: 2013-06-03T22:58:06+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 111006
+uva-id: 10199
 ---
-PC/UVa IDs: 111006/10199 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;category=38&#038;problem=1140&#038;mosmsg=Submission+received+with+ID+11854360" target="_blank">题目表述</a>
-
 分析：此题是图的连通性问题。摄像头都位于图的关节点（articulation point）上。判断点v是否是关节点的简单办法是把v及其附着边从图中删去，然后用dfs或bfs检验图是否连通，若不连通则v是关节点。对图中的点依次做判断即可得出摄像头位置。<!--more-->需要注意的是：输入的图可能是不连通的，须要把它拆成若干最大连通子图，然后再找出每个子图中的关节点。笔者不得不说，这是一个大坑。
 
-
-  
 另外，寻找关节点还有效率更高的办法：可以通过一次dfs找出图的所有关节点，实现稍复杂。
 
 ```cpp

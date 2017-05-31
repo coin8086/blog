@@ -1,16 +1,9 @@
 ---
 title: Smith Numbers
 date: 2013-06-23T11:29:54+08:00
-layout: post
-excerpt_separator: <!--more-->
-category_sticky_post:
-  - "0"
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110706
+uva-id: 10042
 ---
-PC/UVa IDs: 110706/<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&#038;Itemid=8&#038;page=show_problem&#038;problem=983" target="_blank">10042</a>
-
 分析：分解质因数，求各位数字之和。如果担心当n等于10亿时，Smith数的计算会使unsigned int溢出，可以先试算一下——其实不小于10亿的最小Smith数是1000000165，不算大。<!--more-->
 
 ```cpp

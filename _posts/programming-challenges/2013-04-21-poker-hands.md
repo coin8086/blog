@@ -1,13 +1,10 @@
 ---
 title: Poker Hands
 date: 2013-04-21T21:16:38+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110202
+uva-id: 10315
 ---
-PC/UVa 题号：110202/10315 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=30&page=show_problem&problem=1256" target="_blank">题目描述</a><!--more-->
+<!--more-->
 
 ```cpp
 #include <cassert>

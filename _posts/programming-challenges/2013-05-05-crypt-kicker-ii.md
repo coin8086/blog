@@ -1,14 +1,9 @@
 ---
 title: Crypt Kicker II
 date: 2013-05-05T10:57:11+08:00
-layout: post
-excerpt_separator: <!--more-->
-tags: algorithm
-categories:
-  - programming-challenges
+pc-id: 110304
+uva-id: 850
 ---
-PC/UVa题号：110304/850 <a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=791" target="_blank">题目描述</a>
-
 分析：注意到“the quick brown fox jumps over the lazy dog”包含了全部26个英文字母，所以只要找到一句相匹配的密文，就可以解密全部了。<!--more-->
 
 ```cpp
