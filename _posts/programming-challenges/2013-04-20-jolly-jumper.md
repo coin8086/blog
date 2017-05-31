@@ -2,7 +2,7 @@
 title: Jolly Jumper
 date: 2013-04-20T17:30:31+08:00
 pc-id: 110201
-uva-id: 10038　
+uva-id: 10038
 ---
 <!--more-->
 
