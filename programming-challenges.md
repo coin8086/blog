@@ -2,11 +2,11 @@
 title: 算法
 layout: page
 ---
-[《挑战编程——程序设计竞赛训练手册》](http://www.programming-challenges.com/)（清华大学出版社）题解
+[《挑战编程——程序设计竞赛训练手册》](http://www.programming-challenges.com/)题解
+
+代码位于GitHub [coin8086/programming-challenges](https://github.com/coin8086/programming-challenges)
 
 ![封面](/assets/programming-challenges-cover.jpg){: .book-cover }
-
-全部代码在GitHub [coin8086/programming-challenges](https://github.com/coin8086/programming-challenges)
 
 * Chapter 1 Getting Started
   * [The 3n + 1 Problem]({% post_url programming-challenges/2013-04-06-3n-1 %} "3n + 1")
