@@ -48,3 +48,4 @@ defaults:
       excerpt_separator: <!--more-->
       tags: algorithm 挑战编程
       categories: programming-challenges
+      permalink: /:categories/:title.html
