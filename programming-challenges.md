@@ -70,6 +70,7 @@ layout: page
 
 * Chapter 9 Graph Traversal
   * [Bicoloring]({% post_url programming-challenges/2013-05-30-bicoloring %} "Bicoloring")
+  * [Playing With Wheels]({% post_url programming-challenges/2017-05-31-playing-with-wheels %})
   * [The Tourist Guide]({% post_url programming-challenges/2013-05-30-the-tourist-guide %} "The Tourist Guide")
   * [Edit Step Ladders]({% post_url programming-challenges/2013-05-31-edit-step-ladders %} "Edit Step Ladders")
 
