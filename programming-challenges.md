@@ -72,6 +72,7 @@ layout: page
   * [Bicoloring]({% post_url programming-challenges/2013-05-30-bicoloring %} "Bicoloring")
   * [Playing With Wheels]({% post_url programming-challenges/2017-05-31-playing-with-wheels %})
   * [The Tourist Guide]({% post_url programming-challenges/2013-05-30-the-tourist-guide %} "The Tourist Guide")
+  * [Slash Maze]({% post_url programming-challenges/2017-06-02-slash-maze %})
   * [Edit Step Ladders]({% post_url programming-challenges/2013-05-31-edit-step-ladders %} "Edit Step Ladders")
 
 * Chapter 10 Graph Algorithms
