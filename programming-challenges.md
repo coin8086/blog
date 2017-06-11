@@ -6,7 +6,7 @@ layout: page
 
 代码位于GitHub [coin8086/programming-challenges](https://github.com/coin8086/programming-challenges)
 
-![封面](/assets/programming-challenges-cover.jpg){: .book-cover }
+![封面](/images/programming-challenges-cover.jpg){: .book-cover }
 
 * Chapter 1 Getting Started
   * [The 3n + 1 Problem]({% post_url programming-challenges/2013-04-06-3n-1 %} "3n + 1")
