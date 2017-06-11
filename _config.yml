@@ -49,3 +49,9 @@ defaults:
       tags: algorithm 挑战编程
       categories: programming-challenges
       permalink: /:categories/:title.html
+  - scope:
+      path: _posts/photos
+      type: posts
+    values:
+      excerpt_separator: <!--more-->
+      tags: photo
