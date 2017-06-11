@@ -55,3 +55,4 @@ defaults:
     values:
       excerpt_separator: <!--more-->
       tags: photo
+      script: photo.html
