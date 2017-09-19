@@ -1,10 +1,10 @@
 ---
-title: 算法
+title: 《挑战编程——程序设计竞赛训练手册》题解
 layout: page
 ---
-[《挑战编程——程序设计竞赛训练手册》](http://www.programming-challenges.com/)题解
+[《挑战编程——程序设计竞赛训练手册》](http://www.programming-challenges.com/)
 
-代码位于GitHub [coin8086/programming-challenges](https://github.com/coin8086/programming-challenges)
+GitHub [coin8086/programming-challenges](https://github.com/coin8086/programming-challenges)
 
 ![封面](/images/programming-challenges-cover.jpg){: .book-cover }
 
