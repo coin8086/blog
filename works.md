@@ -19,3 +19,6 @@ title: 拙著
 ## 网站
 * [GitHub Page精选](http://blog.githuber.cn/)
 * [GitHub开发者](https://githuber.cn/)
+
+## 游戏
+* [连连看](/linkup/)
