@@ -41,6 +41,13 @@ tag_page_data:
 
 defaults:
   - scope:
+      path: _posts/seven-weapons
+      type: posts
+    values:
+      tags: 七种武器 编程语言
+      categories: seven-weapons
+      permalink: /:categories/:title.html
+  - scope:
       path: _posts/programming-challenges
       type: posts
     values:
