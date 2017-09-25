@@ -7,6 +7,7 @@ title: 拙著
 * [Web全栈技术指南](http://getfullstack.com/)（GitBook，自备梯子）
 
 ## 专栏
+* [七种武器——由一个算法的实现看编程语言的横向对比]({% post_url seven-weapons/2017-09-22-seven-weapons %})
 * [《挑战编程——程序设计竞赛训练手册》题解]({% link programming-challenges.md %})
 
 ## 文章
