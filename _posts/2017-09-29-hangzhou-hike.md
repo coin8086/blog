@@ -123,7 +123,7 @@ excerpt_separator: <!--more-->
 
 * [登山杖 QUECHUA ARPENAZ 300](https://www.decathlon.com.cn/zh/p/1-x-arpenaz-300-hiking-pole-green-cane-handle/_/R-p-109506?mc=8355382&c=绿色) 这种一头类似拐杖的登山杖其实很好用，握感舒适、支撑性好，十分适合在那种人工铺设的石头路上徒步。
 * [轻便10L登山背包 QUECHUA ESCAPE 10](https://www.decathlon.com.cn/zh/p/escape-10-litre-backpack/_/R-p-156339?mc=8386999&c=白色) 对于一日／半日的徒步来说，10L是一个十分合适的容量。这个背包的背面有可以通风的泡沫垫子，透气性好。专业的登山包一般有网布和钢架结构在背部通风，但那种背包都是20L起，而且本身自重不轻，对于一日徒步来说没有必要。
-* [男式徒步鞋 QUECHUA ARPENAZ 500 FRESH](https://www.decathlon.com.cn/zh/p/forclaz-500-fresh-men-s-hiking-shoes/_/R-p-150637?mc=8385275&c=灰色) 这双鞋十分轻便、透气性好，而且鞋底有透水孔可以透水，据说还可以做涉溪鞋用。
+* [男式徒步鞋 QUECHUA FORCLAZ 500 FRESH](https://www.decathlon.com.cn/zh/p/forclaz-500-fresh-men-s-hiking-shoes/_/R-p-150637?mc=8385275&c=灰色) 这双鞋十分轻便、透气性好，而且鞋底有透水孔可以透水，据说还可以做涉溪鞋用。
 
 可选：
 
