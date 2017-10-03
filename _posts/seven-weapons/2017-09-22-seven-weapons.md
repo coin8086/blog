@@ -44,6 +44,7 @@ while (game is not over) {
 
 * Java: [hangman.java](https://github.com/coin8086/hangman.java)
 * C#: [hangman.cs](https://github.com/coin8086/hangman.cs)
+* C++: [hangman.cpp](https://github.com/coin8086/hangman.cpp)
 
 ## 对比
 
