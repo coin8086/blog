@@ -64,6 +64,16 @@ using std::string;
 using IntVec = std::vector<int>;
 ```
 
+用它来定义函数指针类型也更简单：
+
+```c++
+//等价于
+//typedef int (* PF)(int);
+using PF = int(int);
+```
+
+[//]: # (This line of comment is in need to correct the VIM display for above typedef statement. *)
+
 此外，它还可以带有模版参数，如
 
 ```c++
