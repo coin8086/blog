@@ -70,10 +70,10 @@ using IntVec = std::vector<int>;
 ```c++
 //等价于
 //typedef int (* PF)(int);
-using PF = int(int);
+using PF = int (*)(int);
 ```
 
-[//]: # (This line of comment is in need to correct the VIM display for above typedef statement. *)
+[//]: # (This line of comment is in need to correct the VIM display for above typedef statement. *)*)
 
 此外，它还可以带有模版参数，如
 
