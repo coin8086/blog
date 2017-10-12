@@ -479,7 +479,187 @@ C++  |编译器产生的函数对象          |引用或值，由用户指定   
 Java |函数接口 Functional Interface |引用，被引用的变量必须是“实质上的常量” |被函数闭包延长
 C#   |代理 Delegate                 |引用                                   |被函数闭包延长
 
-（未完待续）
+### lambda表达式的类型
+
+C++lambda表达式的类型是一个由编译器产生的函数对象（Function Object），虽然我们不知道它的具体名字，但可以用`auto`来解决，如
+
+```c++
+auto f = [](int x) { return x + 1; };
+int r = f(1); //r == 2
+```
+
+如果函数需要一个lambda参数，可以使用`std::function`作为参数类型，如
+
+```c++
+#include <functional>
+
+int foo(int i, std::function<int(int)> f) {
+  return f(i);
+}
+
+//...
+r = foo(1, f); //r == 2
+```
+
+`std::function<int(int)>`不仅接受lambda类型，还接受任何符合`int(int)`签名的函数指针或函数对象（Function Object）作为参数。顺便说，在C++11里，如果你需要一个回调（Callback）参数，你都应该使用`std::function<>`作为参数类型，这样你就可以利用所有的可调用类型，包括lambda在内。
+
+与C++不同，Java的lambda表达式的类型是一个函数接口（Functional Interface）——就是只有一个抽象方法的接口（此外还可以含有静态方法和非抽象方法），如
+
+```java
+import java.util.function.*;
+
+//...
+IntUnaryOperator op = (int x) -> { return x + 1; };
+int r = op.applyAsInt(1); //r == 2
+```
+
+或者简单地
+
+```java
+IntUnaryOperator op = x -> x + 1;
+```
+
+以上`IntUnaryOperator`就是一个函数接口，它有一个抽象方法
+
+```java
+int applyAsInt(int operand);
+```
+
+因此可以接受具有相同签名的lambda表达式。实际上，Java编译器会把lambda表达式转换成一个实现了某个函数接口的匿名类的对象，lambda表达式的消费者只能使用这个接口来调用它，如
+
+```java
+int foo(int i, IntUnaryOperator op) {
+  return op.applyAsint(i);
+}
+```
+
+看上去Java的lambda表达式比C++更简单，其实不一定：你需要为每一种不同签名的lambda表达式找到一种对应的函数接口类型——否则你就没办法保存一个lambda表达式，更没法调用它。为此，Java在`java.util.function`包里预定义了一堆函数接口，而且这些也不能覆盖所有的情况，你可能还需要自定义一个函数接口。Java没法提供一个类似C++`std::function<>`的解决方案，因为Java不像C++那样支持可变参数模版（Variadic Template）。
+
+C#的lambda表达式则对应着一个代理（Delegate）类型，如
+
+```c#
+delegate int F(int);
+
+//...
+F f = x => x + 1;
+int r = f(1); //r == 2
+```
+
+C#在`System`名字空间下定义了一系列的`Action`和`Func`代理模版方便用户使用，如
+
+```c#
+using System;
+
+//...
+Func<int, int> f = x => x + 1;
+```
+
+同样地，C#也没法提供一个类似C++`std::function<>`的解决方案，因为C#也不支持可变参数模版（Variadic Template）。
+
+### 变量捕获方式（Capture Mode）与生命周期
+
+lambda表达式可以“捕获”（capture）外部变量，形成一个函数闭包（closure），这是它与普通函数不同的地方，如以下C++代码
+
+```cpp
+int i = 1;
+auto f = [i](int x) { return x + i; };
+int r = f(1); //r == 2
+```
+
+以上，`[i]`表示捕获外部变量i的值。按值捕获的变量不可以在lambda表达式内被改变，以下代码会产生一个编译错误
+
+```cpp
+int i = 1;
+auto f = [i](int x) { return x + i++; }; //编译错误：改变了i的值
+```
+
+解决方法有二：
+
+其一，按引用捕获变量，如
+
+```cpp
+int i = 1;
+auto f = [&i](int x) { return x + i++; };
+int r = f(1); //r == 2, i == 2
+```
+
+以上，`[&i]`表示捕获外部变量i的引用。
+
+其二，使用`mutable`，如
+
+```cpp
+int i = 1;
+auto f = [i](int x) mutable { return x + i++; };
+int r = f(1); //r == 2, i == 1 注意这里i的值没变！
+```
+
+按值捕获加上`mutable`后，相当于在lambda表达式内拷贝构造了一个被捕获的对象，这样在lambda表达式内修改它的值并不会影响被拷贝的外部对象；另外，如果一个对象被禁止拷贝、赋值，则编译器会产生一个错误报告。
+
+此外，如果要按值或按引用捕获所有外部变量，可以简写为`[=]`或`[&]`。
+
+C++用户必须为被捕获的对象的生命周期负责，否则可能会产生悬空引用／指针，比如：
+
+```cpp
+int * pi = new int(1);
+auto f = [pi](int x) { return x + *pi; };
+delete pi; //现在上面的pi成了悬空指针！
+int r = f(1); //r == ?, *pi == ?
+```
+
+又或者
+
+```cpp
+function<int(int)> generate(int i) {
+  return [&i](int x) { return x + i; };
+}
+
+//...
+auto f = generate(1); //generate调用返回后，位于栈上的变量i也不存在了
+                      //现在闭包f中捕获的变量i引用了一个无效的地址！
+int r = f(1); //r == ?
+```
+
+相比之下，Java和C#的lambda不会给用户带来过多困扰：可以认为它们都是按引用捕获对象并且自动延伸被捕获对象的生命周期直至闭包生命周期终止，如
+
+```java
+//Java
+IntUnaryOperator generate(int i) {
+  return x -> x + i;
+}
+
+//...
+IntUnaryOperator op = generate(1); //被捕获的变量i在generate返回后仍然有效
+int r = op.applyAsInt(1); //r == 2
+```
+
+```c#
+//C#
+Func<int, int> generate(int i) {
+  return x => x + i;
+}
+
+Func<int, int> f = generate(1); //被捕获的变量i在generate返回后仍然有效
+int r = f(1); //r == 2
+```
+
+另外，对于Java来说，可以被lambda捕获的变量有一个额外的要求，即：它必须是实质上的常量（effectively final），换句话说，一旦被捕获，你就不能再改变该变量的值，不论是在lambda内还是在lambda外，否则就会发生编译错误，如
+
+```java
+int i = 0;
+i++; //这里的i++没有问题
+IntUnaryOperator op = x -> x + i++; //这里的i++会产生编译错误：不可以在lambda内修改被捕获变量的值
+i++; //这里的i++也会产生编译错误，不可以在被lambda捕获之后再修改变量的值
+```
+
+但是你可以调用被捕获对象的方法，即使该方法改变了对象本身的状态也没问题。
+
+C#没有这样的限制，所以你可以
+
+```c#
+int i = 1;
+Func<int, int> f = x => x + i++;
+int r = f(1); //r == 2, i == 2
+```
 
 [^run_anywhere]: 实际上情况还要复杂一些，因为虚拟机环境可能并不能够保证在所有的操作系统上都提供一致的“平台服务”，比如某个依赖操作系统的方法调用可能在不同的操作系统上有不一致的行为。因此有人称之为“一次编译，四处调试”。
 [^memory_rw]: 当然，如果胡乱写内存程序就会崩溃，但是C++并不限制用户“自杀”的权利；另外，如果读／写了一些被系统禁止的内存地址则会触发运行时异常，程序可能会被终止。
